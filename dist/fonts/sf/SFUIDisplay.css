@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'SF UI Display';
+	src: url('SFUIDisplay-Regular.eot');
+	src: local('SF UI Display Regular'), local('SFUIDisplay-Regular'),
+		url('SFUIDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+		url('SFUIDisplay-Regular.woff') format('woff'),
+		url('SFUIDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF UI Display';
+	src: url('SFUIDisplay-Semibold.eot');
+	src: local('SF UI Display Semibold'), local('SFUIDisplay-Semibold'),
+		url('SFUIDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('SFUIDisplay-Semibold.woff') format('woff'),
+		url('SFUIDisplay-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: 'SF UI Display';
+	src: url('SFUIDisplay-Bold.eot');
+	src: local('SF UI Display Bold'), local('SFUIDisplay-Bold'),
+		url('SFUIDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+		url('SFUIDisplay-Bold.woff') format('woff'),
+		url('SFUIDisplay-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

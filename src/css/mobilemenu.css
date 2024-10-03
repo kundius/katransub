@@ -1,0 +1,346 @@
+
+.mobilemenu {
+    background: #fff;
+    z-index: 3002;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: left .4s ease 0s,opacity .4s ease 0s;
+    width: 100%;
+    border-top: 1px solid #ececec;
+}
+
+.mobilemenu::-webkit-scrollbar {
+    width: 8px
+}
+
+.mobilemenu::-webkit-scrollbar-track {
+    border-radius: 8px
+}
+
+.mobilemenu::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #999;
+    border: 2px solid #fff
+}
+
+.mobilemenu::-webkit-scrollbar-thumb:window-inactive {
+    background: #999;
+    border: 2px solid #fff
+}
+
+.mobilemenu.dropdown {
+    top: 64px;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #f2f2f2;
+    opacity: 0;
+    visibility: hidden
+}
+
+.mobilemenu.dropdown.show {
+    opacity: 1;
+    visibility: visible
+}
+
+.mobilemenu>.scroller {
+    overflow: hidden
+}
+
+.mobilemenu>.scroller>.wrap {
+    width: 100%;
+    transition: transform .2s ease-in-out;
+    -webkit-transition: transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
+    -ms-transition: transform .2s ease-in-out
+}
+
+.mobilemenu .dropdown {
+    left: 100%;
+    top: 0;
+    width: 100%;
+    border: medium none;
+    box-shadow: none;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    z-index: 5;
+    background: #fff;
+    margin: 0;
+    padding: 0
+}
+
+.mobilemenu .expanded>.dropdown {
+    display: block
+}
+
+.mobilemenu .expanded>.dropdown>div {
+    border-bottom: 1px solid #f2f2f2
+}
+
+.mobilemenu .expanded>.dropdown .menu_back {
+    border-bottom: 1px solid #ececec;
+}
+.mobilemenu .expanded>.dropdown .menu_back a {
+    font-size: 14px;
+    padding: 5px 20px 5px 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mobilemenu .expanded>.dropdown .menu_back .svg {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+.mobilemenu .expanded>.dropdown .menu_title {
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #ececec;
+}
+
+.mobilemenu .expanded>.dropdown .menu_title>a {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+}
+
+.mobilemenu .menu a:hover .svg {
+    background-color: transparent
+}
+
+.mobilemenu .menu>ul {
+    padding: 0;
+    margin: 0;
+    display: block
+}
+
+.mobilemenu .menu ul>li {
+    list-style: none;
+    display: block;
+    margin: 0;
+    width: 100%;
+    padding: 0
+}
+
+.mobilemenu .menu>ul>li {
+    border-bottom: 1px solid #ececec;
+}
+
+.mobilemenu .menu ul li:before {
+    display: none
+}
+
+.mobilemenu .menu ul>li a {
+    padding: 15px 20px;
+    display: block;
+    position: relative;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mobilemenu .menu ul>li.active>a {
+    background: rgba(147, 232, 255, 0.25);
+}
+
+.mobilemenu .menu ul>li a:hover {
+    background: rgb(0, 89, 118);
+    color: #fff;
+}
+
+.mobilemenu .menu ul>li>ul>li a {
+    padding: 5px 30px;
+    font-size: 13px;
+    text-transform: none;
+}
+
+.mobilemenu .menu ul>li a.parent {
+    padding-right: 46px
+}
+
+.mobilemenu .menu ul>li .arrow {
+    position: absolute;
+    z-index: 1;
+    width: 46px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    padding-left: 8px;
+    display: block
+}
+
+.mobilemenu .menu ul>li .arrow .svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mobilemenu .menu ul>li.selected>a:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 9px;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%
+}
+
+.mobilemenu .menu>ul>li>a {
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.mobilemenu .menu>ul>li.selected>a:before {
+    left: 0;
+    top: -1px!important;
+    bottom: -1px;
+    width: 2px;
+    z-index: 1;
+    height: inherit;
+    border-radius: 0
+}
+
+.mobilemenu .menu>ul>li:not(.counters),.menu ul>li.expanded,.menu ul>li.selected:not(.counters) {
+    position: initial
+}
+
+.mobilemenu .menu>ul>li.counters>a>span {
+    padding-right: 25px;
+    position: relative
+}
+
+.mobilemenu .menu>ul>li.counters .count {
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -8px;
+    font-weight: initial;
+    left: auto
+}
+
+.mobilemenu .menu>ul>li.counters .count.empted {
+    background: #969ba5
+}
+
+.mobilemenu .menu.middle>ul>li>a {
+    padding-left: 57px;
+    background: #fbfbfb
+}
+
+.mobilemenu .menu.middle a .svg {
+    position: absolute
+}
+
+.mobilemenu .menu.middle a .svg-cabinet {
+    width: 14px;
+    min-width: 14px;
+    height: 17px;
+    min-height: 17px;
+    left: 21px;
+    top: 22px
+}
+
+.mobilemenu .menu.middle a .svg-cabinet-login,.mobilemenu .menu.middle a .svg-inline-cabinet {
+    width: 16px;
+    min-width: 16px;
+    height: 17px;
+    min-height: 17px;
+    left: 21px;
+    top: 22px
+}
+
+.mobilemenu .menu.middle a .svg-address {
+    width: 16px;
+    min-width: 16px;
+    height: 19px;
+    min-height: 19px;
+    left: 21px;
+    top: 22px;
+    background: url(/bitrix/templates/aspro_next/images/svg/Marker.svg) 2px 0 no-repeat
+}
+
+.mobilemenu .menu.middle a:hover .svg-cabinet-login {
+    background-color: #222
+}
+
+.mobilemenu .menu.middle a .svg-basket,.mobilemenu .menu.middle a .svg-inline-basket {
+    width: 18px;
+    min-width: 18px;
+    height: 17px;
+    min-height: 17px;
+    left: 20px;
+    top: 23px
+}
+
+.mobilemenu .menu.middle a .svg-inline-wish,.mobilemenu .menu.middle a .svg-wish {
+    width: 18px;
+    min-width: 18px;
+    height: 16px;
+    min-height: 16px;
+    left: 20px;
+    top: 23px
+}
+
+.mobilemenu .menu.middle a .svg-compare,.mobilemenu .menu.middle a .svg-inline-compare {
+    width: 17px;
+    min-width: 17px;
+    height: 17px;
+    min-height: 17px;
+    left: 20px;
+    top: 23px
+}
+
+.mobilemenu .menu.middle a .svg-inline-phone,.mobilemenu .menu.middle a .svg-phone {
+    width: 9px;
+    min-width: 9px;
+    height: 12px;
+    min-height: 12px;
+    left: 25px;
+    top: 26px
+}
+
+.mobilemenu .menu.middle a:hover .svg-phone {
+    background-color: transparent
+}
+
+.mobilemenu .menu.middle a:hover .svg-cabinet {
+    background-color: #222
+}
+
+.mobilemenu .downdrop .menu ul>li .arrow .svg {
+    transform: rotate(.25turn)
+}
+
+.mobilemenu .downdrop .dropdown {
+    position: relative;
+    left: inherit;
+    top: inherit;
+    padding: 0 0 0 19px
+}
+
+.mobilemenu .downdrop .menu ul>li.expanded {
+    border-bottom: none
+}
+
+.mobilemenu .downdrop .menu ul>li.expanded>a {
+    border-bottom: 1px solid #f2f2f2
+}

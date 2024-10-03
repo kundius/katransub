@@ -1,0 +1,365 @@
+@import "variables";
+
+.contacts-row + .contacts-row {
+  margin-top: 20px;
+}
+
+.contacts-details {
+	display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.contacts-details__gallery {
+  padding-left: 30px;
+  padding-top: 30px;
+  width: calc(100% / 3);
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
+}
+
+.contacts-details__description {
+  padding-left: 30px;
+  padding-top: 30px;
+  width: calc((100% / 3) * 2);
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+  }
+}
+
+* + .contacts-map {
+  margin-top: 30px;
+}
+
+.contacts-content {
+
+}
+
+.contacts-path {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+* + .contacts-path {
+  margin-top: 45px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 30px;
+  }
+}
+
+.contacts-path__title {
+  text-align: center;
+  color: #005976;
+  font-size: 24px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 15px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+}
+
+.contacts-path__description {
+  width: 50%;
+  padding-right: 90px;
+  font-size: 16px;
+  line-height: 1.25;
+  @media (max-width: $breakpoint-mini-max) {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+.contacts-path__description p {
+  margin: 0;
+}
+
+.contacts-path__description p + p {
+  margin-top: 15px;
+}
+
+.contacts-path__image {
+  width: 50%;
+  @media (max-width: $breakpoint-mini-max) {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+.contacts-path__image img {
+  display: block;
+}
+
+.contacts-cdek {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+* + .contacts-cdek {
+  margin-top: 45px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 30px;
+  }
+}
+
+.contacts-cdek__title {
+  text-align: center;
+  color: #005976;
+  font-size: 24px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 15px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+}
+
+.contacts-cdek__description {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.contacts-cdek__description p {
+  margin: 0;
+}
+
+.contacts-cdek__description p + p {
+  margin-top: 15px;
+}
+
+.contacts-cdek__footer {
+  width: 100%;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.contacts-cdek__footer p {
+  margin: 0;
+}
+
+.contacts-cdek__footer p + p {
+  margin-top: 15px;
+}
+
+.contacts-cdek__widget {
+  width: 100%;
+}
+
+.contacts-calc {
+}
+
+* + .contacts-calc {
+  margin-top: 45px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 30px;
+  }
+}
+
+.contacts-express {
+}
+
+* + .contacts-express {
+  margin-top: 45px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-top: 30px;
+  }
+}
+
+.contacts-express__title {
+  text-align: center;
+  color: #005976;
+  font-size: 24px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 15px;
+  @media (max-width: $breakpoint-mini-max) {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+}
+
+.contacts-express__description {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.contacts-express__description p {
+  margin: 0;
+}
+
+.contacts-express__description p + p {
+  margin-top: 15px;
+}
+
+.cdek-widget {
+  position: relative;
+}
+
+.cdek-map {
+  height: 320px;
+}
+
+.cdek-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #002837;
+  transition: all 1s ease;
+}
+
+.cdek-placeholder__image {
+  position: absolute;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+
+.cdek-placeholder__pls-1 {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 322px;
+  height: 61px;
+  background: url('../img/pls-1.png') no-repeat 50% 50%;
+  background-size: cover;
+  opacity: 0.6;
+  padding: 12px 1px 1px 41px;
+  font-size: 14px;
+}
+
+.cdek-placeholder__pls-2 {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 85px;
+  height: 55px;
+  background: url('../img/pls-2.png') no-repeat 50% 50%;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.cdek-placeholder__pls-3 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 320px;
+  background: url('../img/pls-3.png') no-repeat 50% 50%;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.cdek-placeholder__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  background: #002837;
+  padding: 12px 24px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.cdek-placeholder_hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ymaps-widget {
+  position: relative;
+}
+
+.ymaps-map {
+  height: 320px;
+}
+
+.ymaps-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #002837;
+  transition: all 1s ease;
+}
+
+.ymaps-placeholder__image {
+  position: absolute;
+  background-position: 50% 50%;
+  background-size: cover;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+
+.ymaps-placeholder__buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ymaps-placeholder__button {
+  font-size: 16px;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  background: #002837;
+  padding: 14px 24px;
+  line-height: 1;
+  display: block;
+  border-radius: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+  width: 100%;
+  outline: none;
+}
+
+.ymaps-placeholder__button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ymaps-placeholder__button_yellow {
+  background-color: #e5b612;
+  color: #002837;
+}
+
+.ymaps-placeholder__button_yellow:hover {
+  text-decoration: none;
+  background: #ffce23;
+  color: #002837;
+}
+
+.ymaps-placeholder_hidden {
+  opacity: 0;
+  visibility: hidden;
+}
