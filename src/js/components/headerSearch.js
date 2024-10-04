@@ -5,6 +5,8 @@ const input = document.querySelector('[data-header-search="input"]')
 $(function () {
   if (!(toggle && search && input)) return
 
+  const $input = $(input)
+
   let prevScroll = null
   let scrollDir = null
   let prevScrollDir = null
@@ -88,14 +90,14 @@ $(function () {
 
   // надстройки автокомплита
 
-  $(input).autocomplete('option', 'appendTo', '.header')
-  $(input).autocomplete('option', 'position', {
+  $input.autocomplete('option', 'appendTo', search)
+  $input.autocomplete('option', 'position', {
     my: 'center top',
     at: 'center bottom',
     collision: 'none'
   })
 
-  $(input).data('ui-autocomplete')._renderMenu = function (ul, items) {
+  $input.data('ui-autocomplete')._renderMenu = function (ul, items) {
     var that = this
     $.each(items, function (index, item) {
       that._renderItemData(ul, item)
@@ -104,7 +106,11 @@ $(function () {
     $('<li class="mse2-ac-close"></li>').appendTo(ul).on('click', hide)
   }
 
-  $(input).data('ui-autocomplete')._resizeMenu = function () {
-    this.menu.element.outerWidth(360) // 462
+  $input.data('ui-autocomplete')._resizeMenu = function () {
+    if (window.matchMedia('(min-width: 1792px)').matches) {
+      this.menu.element.outerWidth(360)
+    } else {
+      this.menu.element.outerWidth($(search).outerWidth())
+    }
   }
 })
