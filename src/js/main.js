@@ -637,7 +637,6 @@ UIkit.switcher('#switcher-contacts-tabs', {
   connect: '#switcher-contacts-content',
   swiping: false
 })
-
 ;(function () {
   var prevScroll = window.scrollY
   var delay = 30
@@ -1139,44 +1138,6 @@ $('.js-detail-gallery').each(function () {
     galleryThumbs.params.slidesPerView = perView
     galleryThumbs.update()
     galleryTop.autoplay.start()
-  })
-})
-
-$('.js-home-slider').each(function () {
-  var $wrapper = $(this)
-  var $thumbs = $('.js-home-slider-thumbs', this)
-  var $main = $('.js-home-slider-main', this)
-  var galleryThumbs = new Swiper($thumbs[0], {
-    direction: 'vertical',
-    allowTouchMove: false,
-    slidesPerView: 3,
-    loop: true,
-    loopedSlides: 6,
-    spaceBetween: 10,
-    centeredSlides: true
-  })
-  var galleryTop = new Swiper($main[0], {
-    slidesPerView: 1,
-    loop: true,
-    loopedSlides: 6, //looped slides should be the same
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    thumbs: {
-      swiper: galleryThumbs
-    },
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    }
-  })
-  galleryTop.on('slideChange', function () {
-    galleryThumbs.slideTo(galleryTop.activeIndex)
   })
 })
 
