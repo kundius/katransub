@@ -64,7 +64,7 @@ body:has(.header) {
   position: fixed;
   top: 36px;
   left: 0;
-  right: 0;
+  right: var(--removed-body-scroll-bar-size, 0);
   z-index: 110;
 
   @include --lg {
@@ -103,7 +103,7 @@ body:has(.header) {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: var(--removed-body-scroll-bar-size, 0);
   padding: 2px var(--container-padding);
   z-index: 120;
   display: grid;
@@ -157,7 +157,7 @@ body:has(.header) {
   position: fixed;
   top: 36px;
   left: 0;
-  right: 0;
+  right: var(--removed-body-scroll-bar-size, 0);
   z-index: 100;
   border-bottom: 1px solid rgba(191, 191, 191, 0.478);
   padding: 4px var(--container-padding);
@@ -500,14 +500,12 @@ body:has(.header) {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.3s ease;
-
     &[data-state='opened'] {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
   }
-
   .floating-nav::before {
     content: '';
     position: absolute;
@@ -518,7 +516,6 @@ body:has(.header) {
     border-style: solid;
     border-color: transparent transparent #fff;
   }
-
   .floating-nav__title {
     font-size: 24px;
     color: rgb(0, 0, 0);
@@ -526,12 +523,10 @@ body:has(.header) {
     line-height: 1;
     margin-bottom: 32px;
   }
-
   .floating-nav__body {
     flex-grow: 1;
     overflow: auto;
   }
-
   .floating-nav__content ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -542,16 +537,17 @@ body:has(.header) {
     line-height: 24px;
     font-size: 18px;
   }
-
   .floating-nav__content ul li {
   }
-
   .floating-nav__content ul li a {
     color: rgb(0, 103, 128);
     text-decoration: none;
     &:hover {
       color: #0014ff;
     }
+  }
+  .floating-nav__close {
+    display: none;
   }
 }
 
