@@ -1141,48 +1141,6 @@ $('.js-detail-gallery').each(function () {
   })
 })
 
-function initProductsImageOnDesktop() {
-  $(document).on('mouseenter', '.products-image', function () {
-    this.classList.add('products-image_hover')
-  })
-  $(document).on('mouseleave', '.products-image', function () {
-    this.classList.remove('products-image_hover')
-  })
-}
-
-function initProductsImageOnMobile() {
-  let hoveredItem = null
-
-  document.addEventListener('touchstart', function (e) {
-    if (hoveredItem && !hoveredItem.contains(e.target)) {
-      $(hoveredItem).removeClass('products-image_hover')
-      hoveredItem = null
-    }
-  })
-
-  $(document).on('touchstart', '.products-image', function () {
-    $('.products-image').data('canClick', false)
-    if (hoveredItem == this) {
-      $(this).data('canClick', true)
-    }
-    $('.products-image').removeClass('products-image_hover')
-    $(this).addClass('products-image_hover')
-    hoveredItem = this
-  })
-
-  $(document).on('click', '.products-image', function (e) {
-    if (!$(this).data('canClick')) {
-      e.preventDefault()
-    }
-  })
-}
-
-if (window.matchMedia('(min-width: 768px)').matches) {
-  initProductsImageOnDesktop()
-} else {
-  initProductsImageOnMobile()
-}
-
 function initFeedbackMessageOnDesktop() {
   $('.u-feedback-message').on('mouseenter', function () {
     this.classList.add('u-feedback-message_active')

@@ -1,4 +1,4 @@
-function disableScroll() {
+export function disableScroll() {
   if (document.getElementById('removed-body-scroll-bar-style')) return
 
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
@@ -23,10 +23,7 @@ function disableScroll() {
   document.head.appendChild(styleSheet)
 }
 
-function enableScroll() {
+export function enableScroll() {
   const styleSheet = document.getElementById('removed-body-scroll-bar-style')
   styleSheet?.parentNode?.removeChild(styleSheet)
 }
-
-exports.disableScroll = disableScroll
-exports.enableScroll = enableScroll

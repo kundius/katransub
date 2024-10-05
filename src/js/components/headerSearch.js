@@ -88,29 +88,34 @@ $(function () {
     }
   })
 
-  // надстройки автокомплита
-
-  $input.autocomplete('option', 'appendTo', search)
-  $input.autocomplete('option', 'position', {
-    my: 'center top',
-    at: 'center bottom',
-    collision: 'none'
-  })
-
-  $input.data('ui-autocomplete')._renderMenu = function (ul, items) {
-    var that = this
-    $.each(items, function (index, item) {
-      that._renderItemData(ul, item)
-    })
-    $('<li class="mse2-ac-more"></li>').appendTo(ul).on('click', goToPage)
-    $('<li class="mse2-ac-close"></li>').appendTo(ul).on('click', hide)
-  }
-
-  $input.data('ui-autocomplete')._resizeMenu = function () {
-    if (window.matchMedia('(min-width: 1792px)').matches) {
-      this.menu.element.outerWidth(360)
-    } else {
-      this.menu.element.outerWidth($(search).outerWidth())
+  // обновляем автокомплит после инициализации плагина, определяем это по появившемуся классу на инпуте
+  const observer = new MutationObserver((mutationList, observer) => {
+    for (const mutation of mutationList) {
+      if (mutation.attributeName === 'class' && input.classList.contains('ui-autocomplete-input')) {
+        $input.autocomplete('option', 'appendTo', search)
+        $input.autocomplete('option', 'position', {
+          my: 'center top',
+          at: 'center bottom',
+          collision: 'none'
+        })
+        $input.data('ui-autocomplete')._renderMenu = function (ul, items) {
+          var that = this
+          $.each(items, function (index, item) {
+            that._renderItemData(ul, item)
+          })
+          $('<li class="mse2-ac-more"></li>').appendTo(ul).on('click', goToPage)
+          $('<li class="mse2-ac-close"></li>').appendTo(ul).on('click', hide)
+        }
+        $input.data('ui-autocomplete')._resizeMenu = function () {
+          if (window.matchMedia('(min-width: 1792px)').matches) {
+            this.menu.element.outerWidth(360)
+          } else {
+            this.menu.element.outerWidth($(search).outerWidth())
+          }
+        }
+        observer.disconnect()
+      }
     }
-  }
+  })
+  observer.observe(input, { attributes: true, childList: false, subtree: false })
 })

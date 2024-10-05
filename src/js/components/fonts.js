@@ -1,4 +1,4 @@
-var WebFont = require('webfontloader')
+import WebFont from 'webfontloader'
 
 WebFont.load({
   custom: {

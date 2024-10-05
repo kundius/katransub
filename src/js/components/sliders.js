@@ -1,22 +1,29 @@
 import Swiper from 'swiper'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
-const homeSlider = document.querySelectorAll('.js-home-slider') || []
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
+
+const homeSlider = document.querySelectorAll('[data-home-slider]') || []
 homeSlider.forEach((wrapper) => {
-  var thumbs = wrapper.querySelector('.js-home-slider-thumbs')
-  var main = wrapper.querySelector('.js-home-slider-main')
-  var galleryThumbs = new Swiper(thumbs, {
+  const thumbs = wrapper.querySelector('[data-home-slider-thumbs]')
+  const main = wrapper.querySelector('[data-home-slider-main]')
+
+  const galleryThumbs = new Swiper(thumbs, {
     direction: 'vertical',
     allowTouchMove: false,
+    spaceBetween: 8,
     slidesPerView: 3,
-    loop: true,
-    loopedSlides: 6,
-    spaceBetween: 10,
-    centeredSlides: true
+    centeredSlides: true,
+    loop: true
   })
-  var galleryTop = new Swiper(main, {
-    slidesPerView: 1,
+
+  const galleryTop = new Swiper(main, {
+    modules: [Navigation, Pagination, Autoplay],
+    spaceBetween: 16,
     loop: true,
-    loopedSlides: 6, //looped slides should be the same
     pagination: {
       el: '.swiper-pagination',
       clickable: true
@@ -25,15 +32,24 @@ homeSlider.forEach((wrapper) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    thumbs: {
-      swiper: galleryThumbs
-    },
     autoplay: {
       delay: 4000,
       disableOnInteraction: false
     }
   })
-  galleryTop.on('slideChange', function () {
-    galleryThumbs.slideTo(galleryTop.activeIndex)
+
+  thumbs.addEventListener('click', (e) => {
+    if (e.target.classList.contains('swiper-slide-prev')) {
+      galleryTop.slidePrev()
+    }
+    if (e.target.classList.contains('swiper-slide-next')) {
+      galleryTop.slideNext()
+    }
+    // if (e.target.classList.contains('swiper-slide')) {
+    //   galleryTop.slideToLoop(e.target.dataset.swiperSlideIndex)
+    // }
+  })
+  galleryTop.on('slideChange', function (e, a) {
+    galleryThumbs.slideToLoop(e.realIndex)
   })
 })

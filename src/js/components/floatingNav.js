@@ -1,4 +1,4 @@
-const { disableScroll, enableScroll } = require('../utils')
+import { disableScroll, enableScroll } from '../utils'
 
 const toggle = document.querySelectorAll('[data-floating-nav="toggle"]') || []
 const nav = document.querySelector('[data-floating-nav="nav"]')

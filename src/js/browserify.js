@@ -1,7 +1,7 @@
 require('./components/tooltips.js')
 require('./components/stickyFIlter.js')
-require('./components/headerSearch.js')
 require('./components/contacts.js')
+require('./components/headerSearch.js')
 require('./components/fonts.js')
 require('./components/floatingNav.js')
 require('./components/sliders.js')
