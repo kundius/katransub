@@ -384,30 +384,14 @@ body:has(.header) {
   padding: 0;
   background: transparent;
   position: relative;
-  &:hover {
+  @include --hover {
     background: #8f8f8f;
     color: #585858;
-  }
-  span {
-    position: absolute;
-    border-radius: 8px;
-    padding: 0 2px;
-    height: 16px;
-    font-size: 10px;
-    color: #000;
-    line-height: 16px;
-    text-align: center;
-    background: #efde00;
-    box-sizing: border-box;
-    white-space: nowrap;
-    top: 4px;
-    right: 0;
-    min-width: 16px;
   }
   @include --lg {
     width: 40px;
     height: 40px;
-    &:hover {
+    @include --hover {
       background: #f5f5f5;
       color: #777777;
     }
@@ -415,6 +399,80 @@ body:has(.header) {
   @include --2xl {
     width: 44px;
     height: 44px;
+  }
+}
+
+.header-actions__button [data-msfavorites-indicator]::before {
+  content: attr(data-msfavorites-indicator);
+}
+
+.header-actions__button [data-msfavorites-indicator='0'] {
+  display: none;
+}
+
+.header-actions__button:has([data-msfavorites-indicator]:not([data-msfavorites-indicator='0'])) {
+  color: #efde00;
+  @include --hover {
+    background: #8f8f8f;
+    color: #efde00;
+  }
+  @include --lg {
+    color: #0699bc;
+    @include --hover {
+      background: #f5f5f5;
+      color: #0699bc;
+    }
+  }
+}
+
+.header-actions__button [data-mscomparison-indicator]::before {
+  content: attr(data-mscomparison-indicator);
+}
+
+.header-actions__button [data-mscomparison-indicator='0'] {
+  display: none;
+}
+
+.header-actions__button:has([data-mscomparison-indicator]:not([data-mscomparison-indicator='0'])) {
+  color: #efde00;
+  @include --hover {
+    background: #8f8f8f;
+    color: #efde00;
+  }
+  @include --lg {
+    color: #0699bc;
+    @include --hover {
+      background: #f5f5f5;
+      color: #0699bc;
+    }
+  }
+}
+
+.header-actions__button span {
+  position: absolute;
+  border-radius: 8px;
+  padding: 0 2px;
+  height: 12px;
+  font-size: 9px;
+  color: #000;
+  line-height: 12px;
+  text-align: center;
+  background: #efde00;
+  box-sizing: border-box;
+  white-space: nowrap;
+  top: 2px;
+  right: 2px;
+  min-width: 12px;
+  box-shadow: 0 0 0 1px #585858;
+
+  @include --lg {
+    box-shadow: none;
+    height: 16px;
+    font-size: 10px;
+    min-width: 16px;
+    top: 4px;
+    right: 0;
+    line-height: 16px;
   }
 }
 

@@ -53,3 +53,17 @@ homeSlider.forEach((wrapper) => {
     galleryThumbs.slideToLoop(e.realIndex)
   })
 })
+
+const homeSliderRecent = document.querySelectorAll('[data-home-slider-recent]') || []
+homeSliderRecent.forEach((wrapper) => {
+  new Swiper(wrapper, {
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 0,
+    slidesPerView: 5,
+    loop: true
+  })
+})
