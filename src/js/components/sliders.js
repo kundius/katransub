@@ -62,8 +62,19 @@ homeSliderRecent.forEach((wrapper) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    spaceBetween: 0,
-    slidesPerView: 5,
-    loop: true
+    spaceBetween: 20,
+    slidesPerView: 2,
+    loop: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 3
+      },
+      1280: {
+        slidesPerView: 4
+      },
+      1792: {
+        slidesPerView: 5
+      }
+    }
   })
 })

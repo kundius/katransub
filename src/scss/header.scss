@@ -285,9 +285,45 @@ body:has(.header) {
   @include --max-2xl {
     column-gap: 12px;
   }
+  @include --max-lg {
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(191, 191, 191, 0.478);
+    margin-left: calc(var(--container-padding) * -1);
+    margin-right: calc(var(--container-padding) * -1);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    column-gap: 0;
+  }
 }
 
 .header-menu li {
+  @include --max-lg {
+    padding: 5px 0;
+  }
+  @include --max-sm {
+    display: flex;
+    &:nth-child(1) {
+      width: 33.33%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    &:nth-child(2) {
+      width: 33.33%;
+      justify-content: center;
+    }
+    &:nth-child(3) {
+      width: 33.33%;
+      justify-content: flex-end;
+    }
+    &:nth-child(4) {
+      width: 50%;
+      justify-content: flex-start;
+    }
+    &:nth-child(5) {
+      width: 50%;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .header-menu li a {

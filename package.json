@@ -51,6 +51,7 @@
     "jquery-validation": "^1.19.0",
     "jquery.cookie": "^1.4.1",
     "js-cookie": "^3.0.1",
+    "just-validate": "^4.3.0",
     "lightgallery": "^2.4.0",
     "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.1",
