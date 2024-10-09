@@ -29,5 +29,3 @@ footerFeedbackFormValidate
       errorMessage: 'Согласитесь с правилами'
     }
   ])
-
-console.log(validate)

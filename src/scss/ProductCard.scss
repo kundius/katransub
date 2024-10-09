@@ -1,9 +1,10 @@
 .product-card {
   position: relative;
-  z-index: 1;
   padding: 12px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
   box-sizing: border-box;
 
   @include --max-lg {
@@ -178,7 +179,7 @@
   @include --max-lg {
     gap: 6px;
     grid-template-columns: 30px 44px 1fr;
-    margin-top: 12px;
+    margin-top: 8px;
   }
   @include --max-md {
     gap: 3px;
@@ -233,7 +234,7 @@
     color: #000;
   }
   @include --max-lg {
-    font-size: 11px;
+    font-size: 12px;
     height: 30px;
     gap: 2px;
     svg {
@@ -282,7 +283,7 @@
     border-color: #000;
   }
   @include --max-lg {
-    font-size: 11px;
+    font-size: 12px;
     padding-right: 16px;
     padding-left: 4px;
   }

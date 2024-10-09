@@ -6,6 +6,7 @@ import './src/js/components/imageFlipper'
 import './src/js/components/quantity'
 import './src/js/components/messengers'
 import './src/js/components/formValidations'
+import './src/js/components/modals'
 
 import 'normalize.css'
 import './src/scss/styles.scss'

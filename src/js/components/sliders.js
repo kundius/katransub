@@ -5,6 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import { chunkArray } from '../utils'
 
 const homeSlider = document.querySelectorAll('[data-home-slider]') || []
 homeSlider.forEach((wrapper) => {
@@ -62,19 +63,67 @@ homeSliderRecent.forEach((wrapper) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    spaceBetween: 20,
+    spaceBetween: 12,
     slidesPerView: 2,
     loop: true,
     breakpoints: {
       768: {
+        spaceBetween: 20,
         slidesPerView: 3
       },
       1280: {
+        spaceBetween: 20,
         slidesPerView: 4
       },
       1792: {
+        spaceBetween: 20,
         slidesPerView: 5
       }
     }
   })
 })
+
+if (window.matchMedia('(max-width: 767px)').matches) {
+  const container = document.querySelector('[data-home-brands]')
+  if (container) {
+    const items = container.querySelectorAll('li') || []
+
+    const root = document.createElement('div')
+    root.classList.add('swiper')
+
+    const buttonPrev = document.createElement('div')
+    buttonPrev.classList.add('brands-list-prev', 'swiper-button-prev')
+
+    const buttonNext = document.createElement('div')
+    buttonNext.classList.add('brands-list-next', 'swiper-button-next')
+
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('swiper-wrapper')
+
+    chunkArray(Array.from(items), 8).forEach((arr) => {
+      const slide = document.createElement('div')
+      slide.classList.add('swiper-slide')
+      const ul = document.createElement('ul')
+      arr.forEach((li) => ul.appendChild(li))
+      slide.appendChild(ul)
+      wrapper.appendChild(slide)
+    })
+
+    root.appendChild(wrapper)
+
+    container.innerHTML = ''
+    container.appendChild(root)
+    root.parentNode.insertBefore(buttonPrev, root.nextSibling)
+    root.parentNode.insertBefore(buttonNext, root.nextSibling)
+
+    new Swiper(root, {
+      modules: [Navigation],
+      spaceBetween: 16,
+      loop: false,
+      navigation: {
+        nextEl: '.brands-list-next',
+        prevEl: '.brands-list-prev'
+      }
+    })
+  }
+}
