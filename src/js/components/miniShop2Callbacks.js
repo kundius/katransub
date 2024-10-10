@@ -13,7 +13,8 @@ miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', func
   const productImage = miniShop2.sendData.$form[0].querySelector('[data-product-card-image]')
   const productLink = miniShop2.sendData.$form[0].querySelector('[data-product-card-link]')
   const productTitle = miniShop2.sendData.$form[0].querySelector('[data-product-card-title]')
-  const formatedPrice = new Intl.NumberFormat('ru-RU').format(response.data.row.price)
+  const productPrice = miniShop2.sendData.$form[0].querySelector('[data-product-card-price]')
+  // const formatedPrice = new Intl.NumberFormat('ru-RU').format(response.data.row.price)
   const modalId = `cart-add-success-${response.data.row.id}`
 
   const modal = document.createElement('div')
@@ -51,7 +52,7 @@ miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', func
   <a href="${productLink?.href}">${productTitle?.innerHTML}</a>
   </div>
   <div class="cart-success__product-totals">
-  ${response.data.row.count} x <strong>${formatedPrice} ₽</strong>
+  ${response.data.row.count} x <strong>${productPrice?.innerHTML}</strong>
   </div>
   </div>
   </div>
