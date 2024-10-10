@@ -1,0 +1,154 @@
+.modal {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+  &[aria-hidden='false'] .modal__overlay {
+    animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='false'] .modal__container {
+    animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='true'] .modal__overlay {
+    animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='true'] .modal__container {
+    animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.modal-options .modal__container {
+  width: 380px;
+}
+
+.modal-cart-success .modal__container {
+  width: 640px;
+}
+
+.modal__overlay {
+  will-change: transform;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-right: var(--removed-body-scroll-bar-size, 0);
+  bottom: 0;
+  background: #0009;
+  overflow: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: minmax(var(--container-padding), 1fr) max-content minmax(
+      var(--container-padding),
+      1fr
+    );
+  padding: 0 var(--container-padding);
+}
+
+.modal__container {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #04021821;
+  overflow: hidden;
+  grid-row: 2 / 3;
+  max-width: calc(100vw - (var(--container-padding) * 2));
+  will-change: transform;
+  width: 800px;
+}
+
+.modal__header {
+  padding: 12px 48px 12px 24px;
+  background: #f4f4f4;
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+  min-height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.modal__title {
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: normal;
+  a {
+    color: inherit;
+    &:hover {
+      color: #f18a16;
+    }
+  }
+
+  @include --max-md {
+    font-size: 18px;
+  }
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  &::before {
+    content: '\2715';
+  }
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.modal__content {
+  padding: 24px;
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
