@@ -34,7 +34,7 @@
   }
 }
 
-.home-description {
+.section-description {
   margin: 96px 0;
 
   @include --max-md {
@@ -42,7 +42,7 @@
   }
 }
 
-.home-description__title {
+.section-description__title {
   font-size: 36px;
   line-height: 1;
   color: #000000;
@@ -69,7 +69,7 @@
   }
 }
 
-.home-description__content {
+.section-description__content {
   max-width: 1120px;
   margin: 0 auto;
   font-size: 18px;

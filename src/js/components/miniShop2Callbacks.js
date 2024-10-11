@@ -1,13 +1,7 @@
-/* сообщение о добавлении в корзину */
-// miniShop2.Callbacks.add('Cart.add.before', 'add_to_cart_message_before', function (response, a) {
-//   console.log(response, a)
-//   return true
-// })
 import MicroModal from 'micromodal'
 import { disableScroll, enableScroll } from '../utils'
 
 miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response, a) {
-  console.log(response)
   // data-product-card
   // const productData = miniShop2.sendData.$form.data()
   const productImage = miniShop2.sendData.$form[0].querySelector('[data-product-card-image]')
@@ -81,6 +75,10 @@ miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', func
     ?.querySelector(`#modal-product-${response.data.row.id}`)
     ?.querySelector('[data-modal-close]')
     ?.click()
+
+  // повесить на форму статус добавлено и обновить количество
+  miniShop2.sendData.$form[0].dataset.productCardStatus = 'added'
+  miniShop2.sendData.$form[0].querySelector('[name="count"]').value = response.data.row.count
 
   // открыть созданное окно успешного добавления
   MicroModal.show(modalId, {

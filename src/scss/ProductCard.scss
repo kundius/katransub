@@ -227,9 +227,47 @@
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
+  .product-card[data-product-card-status='added'] & {
+    display: none;
+  }
   @include --hover {
     background: #eed20e;
     color: #000;
+  }
+  @include --max-lg {
+    font-size: 12px;
+    height: 30px;
+    gap: 2px;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  @include --max-md {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+.button-addedcart {
+  background: #0699bc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  .product-card:not([data-product-card-status='added']) & {
+    display: none;
+  }
+  @include --hover {
+    background: #0283a2;
   }
   @include --max-lg {
     font-size: 12px;
