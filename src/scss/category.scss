@@ -1,0 +1,54 @@
+.category-layout {
+  display: flex;
+  gap: 32px;
+  margin-top: 12px;
+
+  @include --max-2xl {
+    gap: 24px;
+  }
+}
+
+.category-layout__side {
+  width: 280px;
+  flex-shrink: 0;
+
+  @include --max-lg {
+    display: none;
+  }
+  @include --max-2xl {
+    width: 260px;
+  }
+}
+
+.category-layout__content {
+  flex-grow: 1;
+}
+
+.category-title {
+  font-size: 30px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+
+.category-products {
+}
+
+.category-products #mse2_results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12px;
+  row-gap: 24px;
+  @include --md {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include --xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include --3xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

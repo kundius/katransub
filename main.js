@@ -10,12 +10,16 @@ import './src/js/components/modals'
 import './src/js/components/miniShop2Callbacks'
 import { initOptionItems } from './src/js/components/optionItems'
 import { initBuyInClick } from './src/js/components/buyInClick'
+import { initStickyFilter } from './src/js/components/stickyFilter'
+import { initViewFilter } from './src/js/components/viewFilter'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
 
 initOptionItems()
 initBuyInClick()
+initStickyFilter()
+initViewFilter()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

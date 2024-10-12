@@ -9,14 +9,16 @@
 .home-products__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  column-gap: 12px;
+  row-gap: 24px;
   @include --md {
+    gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     > *:nth-child(15) + * {
       display: none;
     }
   }
-  @include --xl {
+  @include --lg {
     grid-template-columns: repeat(4, 1fr);
     > *:nth-child(15) + * {
       display: flex;
@@ -27,10 +29,6 @@
     > *:nth-child(15) + * {
       display: none;
     }
-  }
-  @include --max-md {
-    column-gap: 12px;
-    row-gap: 24px;
   }
 }
 
