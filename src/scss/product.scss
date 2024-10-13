@@ -1,0 +1,35 @@
+.product-layout {
+  display: grid;
+  grid-template-columns: 600px 60px 1fr 60px 280px;
+  grid-template-rows: auto 40px auto 80px auto;
+  grid-auto-columns: 1fr;
+  gap: 0;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'gallery . headline . similar'
+    'gallery . . . similar'
+    'gallery . price . similar'
+    'gallery . . . similar'
+    'gallery . description . similar';
+  margin-top: 20px;
+}
+
+.product-layout__headline {
+  grid-area: headline;
+}
+
+.product-layout__price {
+  grid-area: price;
+}
+
+.product-layout__description {
+  grid-area: description;
+}
+
+.product-layout__similar {
+  grid-area: similar;
+}
+
+.product-layout__gallery {
+  grid-area: gallery;
+}

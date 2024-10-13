@@ -10,6 +10,7 @@
 @import 'buy-in-click';
 @import 'modals';
 @import 'category';
+@import 'product';
 
 @import 'contacts';
 
@@ -3205,10 +3206,6 @@ jdiv {
   }
 }
 
-.product-title {
-  margin: 4px 0;
-  text-transform: none;
-}
 .product-buttons {
   margin: 10px 0;
   overflow: hidden;
