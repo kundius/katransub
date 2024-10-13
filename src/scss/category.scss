@@ -6,6 +6,9 @@
   @include --max-2xl {
     gap: 24px;
   }
+  @include --max-md {
+    margin-top: 8px;
+  }
 }
 
 .category-layout__side {
@@ -30,7 +33,17 @@
   text-transform: uppercase;
   color: #000000;
   font-weight: 400;
-  margin: 0 0 24px;
+  margin: 0 0 16px;
+
+  @include --max-lg {
+    line-height: 36px;
+    margin-bottom: 12px;
+  }
+  @include --max-md {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 8px;
+  }
 }
 
 .category-products {

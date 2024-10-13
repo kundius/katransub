@@ -1,7 +1,9 @@
-export function applyBuyInClick(card) {
-  const buyInClickTrigger = card.querySelector('[data-buy-in-click-trigger]')
+import { disableScroll, enableScroll } from '../utils'
 
-  buyInClickTrigger.addEventListener('click', () => {
+export function applyBuyInClick(buyInClick) {
+  buyInClick.addEventListener('click', (e) => {
+    const card = e.target.closest('[data-product-card]')
+
     const modal = document.getElementById('modal-buy-in-click')
 
     const fromImage = card.querySelector('[data-product-card-image]')
@@ -22,16 +24,27 @@ export function applyBuyInClick(card) {
     Array.from(toLinks).forEach((toLink) => {
       toLink.href = fromLink.href
     })
+
+    MicroModal.show('modal-buy-in-click', {
+      onShow: () => {
+        disableScroll()
+      },
+      onClose: () => {
+        enableScroll()
+      },
+      awaitOpenAnimation: true,
+      awaitCloseAnimation: true,
+      closeTrigger: 'data-modal-close'
+    })
   })
 }
 
 export function initBuyInClick() {
-  const cards = document.querySelectorAll('[data-product-card]')
+  const elements = document.querySelectorAll('[data-buy-in-click]')
 
-  if (!cards) return
-
-  // применяем логику к карточкас
-  cards.forEach((card) => applyBuyInClick(card))
+  if (elements) {
+    elements.forEach(applyBuyInClick)
+  }
 
   const modal = document.getElementById('modal-buy-in-click')
   const form = modal.querySelector('[data-buy-in-click-form]')

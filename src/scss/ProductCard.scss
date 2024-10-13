@@ -527,6 +527,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 40px;
     min-width: 40px;
     box-sizing: border-box;
@@ -603,6 +604,7 @@
   a {
     text-decoration: underline;
     color: inherit;
+    display: inline-block;
     &:hover {
       color: #f18a16;
     }

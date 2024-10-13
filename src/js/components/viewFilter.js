@@ -1,53 +1,47 @@
 export function applyViewFilter(viewFilter) {
-  const select = document.getElementById('select_mse2_msoption|view')
+  const select = document.querySelector('#mse2_filters [name="msoption|view"]')
   const options = select.querySelectorAll('option')
-  console.log(select, select.value)
+  const itemsContainer = viewFilter.querySelector('[data-view-filter-items]')
 
-  const values = []
+  const items = {}
 
   options.forEach((option) => {
-    console.log(option.value)
+    if (!option.value) return
 
-    const row = document.createElement('label')
-    row.classList.add('view-filter__row')
+    const label = document.createElement('label')
+    label.classList.add('view-filter__item')
 
     const checkbox = document.createElement('input')
-    checkbox.classList.add('view-filter__checkbox')
+    checkbox.classList.add('view-filter__item-checkbox')
     checkbox.setAttribute('name', 'viewFilter')
     checkbox.setAttribute('type', 'checkbox')
     checkbox.setAttribute('value', option.value)
+    checkbox.checked = option.selected
+    checkbox.disabled = option.disabled
 
     const title = document.createElement('span')
-    title.classList.add('view-filter__title')
-    title.innerHTML = option.value
+    title.classList.add('view-filter__item-title')
+    title.innerHTML = option.innerHTML
 
-    row.appendChild(checkbox)
-    row.appendChild(title)
-    viewFilter.appendChild(row)
+    items[option.value] = { label, checkbox, title, option }
+
+    label.appendChild(checkbox)
+    label.appendChild(title)
+    itemsContainer.appendChild(label)
 
     checkbox.addEventListener('change', (e) => {
-      const index = values.indexOf(e.target.value)
-
-      if (e.target.checked) {
-        if (index === -1) {
-          values.push(e.target.value)
-        }
-      } else {
-        if (index !== -1) {
-          values.splice(index, 1)
-        }
-      }
-
-      // mSearch2.setFilters({
-      //   ...mSearch2.getFilters(),
-      //   'msoption|view': values.join(',')
-      // })
-      // mSearch2.load()
-      mSearch2.setFilters({ 'msoption|view': values.join(',') })
-      mSearch2.load({ 'msoption|view': values.join(',') })
+      option.selected = e.target.checked
+      $(select).trigger('change')
     })
   })
-  // viewFilter
+
+  $(document).on('mse2_load', function (e, response) {
+    Object.entries(response.data.suggestions['msoption|view']).forEach(([name, count]) => {
+      items[name].title.innerHTML = items[name].option.innerHTML
+      items[name].checkbox.disabled = count === 0
+      items[name].checkbox.checked = items[name].option.selected
+    })
+  })
 }
 
 export function initViewFilter() {

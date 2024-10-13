@@ -207,6 +207,11 @@ body {
   padding: 12px 0;
   margin: 0;
   list-style: none;
+
+  @include --max-lg {
+    padding: 8px var(--container-padding);
+    margin: 0 calc(var(--container-padding) * -1);
+  }
 }
 
 .breadcrumb-item {
