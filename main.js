@@ -14,6 +14,8 @@ import { initBuyInClick, applyBuyInClick } from './src/js/components/buyInClick'
 import { initStickyFilter } from './src/js/components/stickyFilter'
 import { initViewFilter } from './src/js/components/viewFilter'
 import { applyOptionsModal, initOptionsModal } from './src/js/components/optionsModal'
+import { initProductGallery } from './src/js/components/productGallery'
+import { initTab } from './src/js/components/tab'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -24,6 +26,8 @@ initQuantity()
 initOptionsModal()
 initStickyFilter()
 initViewFilter()
+initProductGallery()
+initTab()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

@@ -2,14 +2,14 @@ import { disableScroll, enableScroll } from '../utils'
 
 export function applyBuyInClick(buyInClick) {
   buyInClick.addEventListener('click', (e) => {
-    const card = e.target.closest('[data-product-card]')
+    const product = e.target.closest('[data-product]')
 
     const modal = document.getElementById('modal-buy-in-click')
 
-    const fromImage = card.querySelector('[data-product-card-image]')
-    const fromTitle = card.querySelector('[data-product-card-title]')
-    const fromPrice = card.querySelector('[data-product-card-price]')
-    const fromLink = card.querySelector('[data-product-card-link]')
+    const fromImage = product.querySelector('[itemprop="thumb"]').content
+    const fromTitle = product.querySelector('[itemprop="title"]').content
+    const fromPrice = product.querySelector('[itemprop="price"]').content
+    const fromUri = product.querySelector('[itemprop="uri"]').content
 
     const toProductName = modal.querySelector('[name="product"]')
     const toImage = modal.querySelector('[data-buy-in-click-image]')
@@ -17,12 +17,12 @@ export function applyBuyInClick(buyInClick) {
     const toPrice = modal.querySelector('[data-buy-in-click-price]')
     const toLinks = modal.querySelectorAll('[data-buy-in-click-link]')
 
-    toProductName.value = fromTitle.innerHTML
-    toImage.src = fromImage.src
-    toTitle.innerHTML = fromTitle.innerHTML
-    toPrice.innerHTML = fromPrice.innerHTML
+    toProductName.value = fromTitle
+    toImage.src = fromImage
+    toTitle.innerHTML = fromTitle
+    toPrice.innerHTML = fromPrice
     Array.from(toLinks).forEach((toLink) => {
-      toLink.href = fromLink.href
+      toLink.href = fromUri
     })
 
     MicroModal.show('modal-buy-in-click', {

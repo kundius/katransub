@@ -2,13 +2,12 @@ import MicroModal from 'micromodal'
 import { disableScroll, enableScroll } from '../utils'
 
 miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response, a) {
-  // data-product-card
-  // const productData = miniShop2.sendData.$form.data()
-  const productImage = miniShop2.sendData.$form[0].querySelector('[data-product-card-image]')
-  const productLink = miniShop2.sendData.$form[0].querySelector('[data-product-card-link]')
-  const productTitle = miniShop2.sendData.$form[0].querySelector('[data-product-card-title]')
-  const productPrice = miniShop2.sendData.$form[0].querySelector('[data-product-card-price]')
-  // const formatedPrice = new Intl.NumberFormat('ru-RU').format(response.data.row.price)
+  const product = miniShop2.sendData.$form[0].closest('[data-product]')
+  const productThumb = product.querySelector('[itemprop="thumb"]').content
+  const productUri = product.querySelector('[itemprop="uri"]').content
+  const productTitle = product.querySelector('[itemprop="title"]').content
+  const productPrice = product.querySelector('[itemprop="price"]').content
+
   const modalId = `cart-add-success-${response.data.row.id}`
 
   const modal = document.createElement('div')
@@ -38,15 +37,15 @@ miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', func
   content.innerHTML = `
   <div class="cart-success">
   <div class="cart-success__product">
-  <a href="${productLink?.href}" class="cart-success__product-image">
-  <img src="${productImage?.src}" alt="">
+  <a href="${productUri}" class="cart-success__product-image">
+  <img src="${productThumb}" alt="">
   </a>
   <div class="cart-success__product-info">
   <div class="cart-success__product-desc">
-  <a href="${productLink?.href}">${productTitle?.innerHTML}</a>
+  <a href="${productUri}">${productTitle}</a>
   </div>
   <div class="cart-success__product-totals">
-  ${response.data.row.count} x <strong>${productPrice?.innerHTML}</strong>
+  ${response.data.row.count} x <strong>${productPrice}</strong>
   </div>
   </div>
   </div>
@@ -77,7 +76,7 @@ miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', func
     ?.click()
 
   // повесить на форму статус добавлено и обновить количество
-  miniShop2.sendData.$form[0].dataset.productCardStatus = 'added'
+  product.dataset.productStatus = 'added'
   miniShop2.sendData.$form[0].querySelector('[name="count"]').value = response.data.row.count
 
   // открыть созданное окно успешного добавления

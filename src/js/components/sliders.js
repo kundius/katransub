@@ -40,15 +40,13 @@ homeSlider.forEach((wrapper) => {
   })
 
   thumbs.addEventListener('click', (e) => {
-    if (e.target.classList.contains('swiper-slide-prev')) {
+    const slide = e.target.closest('.swiper-slide')
+    if (slide.classList.contains('swiper-slide-prev')) {
       galleryTop.slidePrev()
     }
-    if (e.target.classList.contains('swiper-slide-next')) {
+    if (slide.classList.contains('swiper-slide-next')) {
       galleryTop.slideNext()
     }
-    // if (e.target.classList.contains('swiper-slide')) {
-    //   galleryTop.slideToLoop(e.target.dataset.swiperSlideIndex)
-    // }
   })
   galleryTop.on('slideChange', function (e, a) {
     galleryThumbs.slideToLoop(e.realIndex)

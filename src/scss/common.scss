@@ -263,3 +263,54 @@ body {
     color: #000;
   }
 }
+
+.tab {
+}
+
+.tab-nav {
+  display: flex;
+  gap: 48px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.tab-btn {
+  height: 48px;
+  position: relative;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #bababa;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: -12px;
+    top: 4px;
+    right: -12px;
+    bottom: 4px;
+    border-radius: 12px;
+    background: #f8f8f8;
+  }
+
+  &[data-tab-status='active'] {
+    color: #000;
+  }
+}
+
+.tab-content {
+  margin-top: 24px;
+}
+
+.tab-pane {
+  display: none;
+
+  &[data-tab-status='active'] {
+    display: block;
+  }
+}
