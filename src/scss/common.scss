@@ -314,3 +314,44 @@ body {
     display: block;
   }
 }
+
+.rating-inputs {
+  overflow: hidden;
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  vertical-align: middle;
+  margin: 0;
+  min-width: 116px;
+}
+
+.rating-input {
+  float: right;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0 0 0 -20px;
+  opacity: 0;
+}
+
+.rating-inputs:hover .rating-star:hover,
+.rating-inputs:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+  background-image: url('../images/star.svg');
+}
+
+.rating-star,
+.rating-inputs:hover .rating-star {
+  margin-left: 4px;
+  position: relative;
+  float: right;
+  display: block;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  background: url('../images/star-gray.svg') no-repeat 50% 50%;
+  background-size: cover;
+  &:last-child {
+    margin-left: 0;
+  }
+}

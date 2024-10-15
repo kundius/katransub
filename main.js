@@ -16,9 +16,12 @@ import { initViewFilter } from './src/js/components/viewFilter'
 import { applyOptionsModal, initOptionsModal } from './src/js/components/optionsModal'
 import { initProductGallery } from './src/js/components/productGallery'
 import { initTab } from './src/js/components/tab'
+import { initReviewsForm } from './src/js/components/reviewsForm'
+import { initCalc } from './src/js/components/calc'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
+import 'choices.js/public/assets/styles/choices.css'
 
 initOptionItems()
 initBuyInClick()
@@ -28,6 +31,8 @@ initStickyFilter()
 initViewFilter()
 initProductGallery()
 initTab()
+initReviewsForm()
+initCalc()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
