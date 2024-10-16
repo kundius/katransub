@@ -272,6 +272,10 @@ body {
   display: flex;
   gap: 48px;
   border-bottom: 1px solid #f3f3f3;
+
+  @include --max-xl {
+    gap: 36px;
+  }
 }
 
 .tab-btn {

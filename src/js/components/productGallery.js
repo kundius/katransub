@@ -6,11 +6,30 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import 'swiper/css/thumbs'
+import { disableScroll, enableScroll } from '../utils'
 
 export function applyProductGallery(productGallery) {
-  const close = productGallery.querySelector('[data-product-gallery-close]')
+  const closes = productGallery.querySelectorAll('[data-product-gallery-close]')
   const main = productGallery.querySelector('[data-product-gallery-main]')
   const thumbs = productGallery.querySelector('[data-product-gallery-thumbs]')
+
+  const fullscreenIn = () => {
+    productGallery.setAttribute('data-product-gallery-fullscreen', '')
+    disableScroll()
+  }
+
+  const fullscreenOut = () => {
+    productGallery.removeAttribute('data-product-gallery-fullscreen')
+    enableScroll()
+  }
+
+  main.addEventListener('click', (e) => {
+    if (e.target.closest('[data-product-gallery-slide]')) {
+      fullscreenIn()
+    }
+  })
+
+  closes.forEach((close) => close.addEventListener('click', fullscreenOut))
 
   const galleryThumbs = new Swiper(thumbs, {
     modules: [Navigation, Pagination, Autoplay, Thumbs],

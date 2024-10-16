@@ -23,6 +23,10 @@ export function initProductSlider() {
           spaceBetween: 20,
           slidesPerView: 3
         },
+        1024: {
+          spaceBetween: 20,
+          slidesPerView: 4
+        },
         1280: {
           spaceBetween: 20,
           slidesPerView: 4
