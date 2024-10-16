@@ -53,34 +53,6 @@ homeSlider.forEach((wrapper) => {
   })
 })
 
-const homeSliderRecent = document.querySelectorAll('[data-home-slider-recent]') || []
-homeSliderRecent.forEach((wrapper) => {
-  new Swiper(wrapper, {
-    modules: [Navigation],
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 12,
-    slidesPerView: 2,
-    loop: true,
-    breakpoints: {
-      768: {
-        spaceBetween: 20,
-        slidesPerView: 3
-      },
-      1280: {
-        spaceBetween: 20,
-        slidesPerView: 4
-      },
-      1792: {
-        spaceBetween: 20,
-        slidesPerView: 5
-      }
-    }
-  })
-})
-
 if (window.matchMedia('(max-width: 767px)').matches) {
   const container = document.querySelector('[data-home-brands]')
   if (container) {

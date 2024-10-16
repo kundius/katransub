@@ -265,6 +265,7 @@ body {
 }
 
 .tab {
+  scroll-margin-top: 61px;
 }
 
 .tab-nav {
@@ -274,7 +275,7 @@ body {
 }
 
 .tab-btn {
-  height: 48px;
+  height: 44px;
   position: relative;
   font-size: 20px;
   line-height: 1;
@@ -290,11 +291,11 @@ body {
     content: '';
     position: absolute;
     z-index: -1;
-    left: -12px;
+    left: -8px;
     top: 4px;
-    right: -12px;
+    right: -8px;
     bottom: 4px;
-    border-radius: 12px;
+    border-radius: 8px;
     background: #f8f8f8;
   }
 

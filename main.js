@@ -18,6 +18,8 @@ import { initProductGallery } from './src/js/components/productGallery'
 import { initTab } from './src/js/components/tab'
 import { initReviewsForm } from './src/js/components/reviewsForm'
 import { initCalc } from './src/js/components/calc'
+import { initProductSlider } from './src/js/components/productSlider'
+import { initCheaper } from './src/js/components/cheaper'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -33,6 +35,8 @@ initProductGallery()
 initTab()
 initReviewsForm()
 initCalc()
+initProductSlider()
+initCheaper()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
