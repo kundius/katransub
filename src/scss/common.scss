@@ -266,6 +266,10 @@ body {
 
 .tab {
   scroll-margin-top: 61px;
+
+  @include --max-md {
+    scroll-margin-top: 81px;
+  }
 }
 
 .tab-nav {
@@ -275,6 +279,12 @@ body {
 
   @include --max-xl {
     gap: 36px;
+  }
+  @include --max-lg {
+    gap: 20px;
+  }
+  @include --max-md {
+    gap: 12px;
   }
 }
 
@@ -306,10 +316,18 @@ body {
   &[data-tab-status='active'] {
     color: #000;
   }
+
+  @include --max-lg {
+    font-size: 14px;
+  }
 }
 
 .tab-content {
   margin-top: 24px;
+
+  @include --max-md {
+    margin-top: 16px;
+  }
 }
 
 .tab-pane {

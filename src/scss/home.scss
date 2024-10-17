@@ -122,6 +122,7 @@
 }
 
 .section-other {
+  overflow: hidden;
   margin: 40px 0;
 
   @include --max-md {

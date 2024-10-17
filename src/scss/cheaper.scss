@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: calc(33.33% - 8px) calc(33.33% - 8px) calc(33.33% - 8px);
   gap: 12px;
+
+  @include --max-md {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cheaper-address-rows {
@@ -15,6 +19,19 @@
   display: grid;
   gap: 12px;
   grid-template-columns: calc(66.66% - 4px) 1fr auto;
+
+  @include --max-md {
+    display: flex;
+    flex-wrap: wrap;
+    > *:first-child {
+      width: 100%;
+    }
+    > *:nth-child(2) {
+      width: calc(100% - 64px);
+    }
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: auto auto;
+  }
 }
 
 .cheaper-address-row:last-child .cheaper-controls__minus {
@@ -106,8 +123,14 @@
   font-weight: 500;
   line-height: 1.25;
   margin-top: 24px;
+
   span {
     color: #0699bc;
+  }
+
+  @include --max-md {
+    margin-top: 16px;
+    font-size: 16px;
   }
 }
 
@@ -133,6 +156,17 @@
       box-sizing: border-box;
     }
   }
+
+  @include --max-md {
+    margin: 12px 0;
+    li {
+      font-size: 14px;
+      margin: 8px 0;
+      &::before {
+        top: 4px;
+      }
+    }
+  }
 }
 
 .cheaper-form__submit {
@@ -142,6 +176,13 @@
   > * {
     width: 240px;
   }
+
+  @include --max-md {
+    margin-top: 16px;
+    > * {
+      width: 100%;
+    }
+  }
 }
 
 .cheaper-form__note {
@@ -149,4 +190,9 @@
   font-size: 16px;
   line-height: 1.25;
   margin-top: 24px;
+
+  @include --max-md {
+    margin-top: 16px;
+    font-size: 14px;
+  }
 }

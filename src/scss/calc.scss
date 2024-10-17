@@ -3,6 +3,10 @@
   border: 1px solid rgb(227, 227, 227);
   border-radius: 12px;
   padding: 24px;
+
+  @include --max-md {
+    padding: 16px 12px 24px;
+  }
 }
 
 .u-calc__title {
@@ -13,6 +17,15 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 24px;
+
+  @include --max-lg {
+    font-size: 16px;
+  }
+  @include --max-md {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
 }
 
 .u-calc-city {
@@ -22,6 +35,11 @@
   background: rgb(224, 239, 242);
   padding: 12px;
   border-radius: 12px;
+
+  @include --max-lg {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
 .u-calc-city__control {
@@ -32,15 +50,27 @@
 .u-calc-city__form {
   width: 56%;
   display: flex;
+
+  @include --max-lg {
+    width: 100%;
+  }
 }
 
 .u-calc-city__name {
-  color: #005976;
+  color: #0699bc;
   font-size: 24px;
   line-height: 1;
   min-width: 20%;
   padding-right: 2%;
   box-sizing: border-box;
+
+  @include --max-lg {
+    width: 20%;
+    padding-right: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
 
 .u-calc-city__select {
@@ -120,6 +150,10 @@
     border-color: transparent #909191 #909191 transparent;
     margin-top: -3px;
   }
+
+  @include --max-lg {
+    grid-template-columns: 1fr;
+  }
 }
 
 .u-calc-form__group {
@@ -180,6 +214,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 24px;
+
+  @include --max-lg {
+    font-size: 16px;
+  }
 }
 
 .u-calc-result_error {

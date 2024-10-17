@@ -286,6 +286,11 @@
     background: #eed20e;
     color: #000;
   }
+  @include --max-lg {
+    font-size: 14px;
+    height: 48px;
+    padding: 0 12px;
+  }
   .product-card & {
     gap: 4px;
     padding: 0 12px;
@@ -333,6 +338,11 @@
   @include --hover {
     background: #0283a2;
   }
+  @include --max-lg {
+    font-size: 14px;
+    height: 48px;
+    padding: 0 12px;
+  }
   .product-card & {
     gap: 4px;
     padding: 0 12px;
@@ -360,6 +370,9 @@
   flex-shrink: 0;
   width: 95px;
   height: 48px;
+  @include --max-lg {
+    width: 72px;
+  }
   .product-card & {
     width: 72px;
     height: 44px;
@@ -393,6 +406,11 @@
     outline: none;
     border-color: #000;
   }
+  @include --max-lg {
+    padding-left: 4px;
+    padding-right: 36px;
+    font-size: 14px;
+  }
   .product-card & {
     font-size: 14px;
     padding-left: 6px;
@@ -425,6 +443,9 @@
   @include --hover {
     color: #000;
     background: #e8e8e8;
+  }
+  @include --max-lg {
+    width: 32px;
   }
   .product-card & {
     width: 30px;
