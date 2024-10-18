@@ -20,6 +20,7 @@ import { initReviewsForm } from './src/js/components/reviewsForm'
 import { initCalc } from './src/js/components/calc'
 import { initProductSlider } from './src/js/components/productSlider'
 import { initCheaper } from './src/js/components/cheaper'
+import { initDiscountCode } from './src/js/components/discount-code'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -37,6 +38,7 @@ initReviewsForm()
 initCalc()
 initProductSlider()
 initCheaper()
+initDiscountCode()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
