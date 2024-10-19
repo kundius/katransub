@@ -1,5 +1,10 @@
 export function initDiscountCode() {
   const form = document.querySelector('[data-discount-code]')
+
+  if (!form) {
+    return
+  }
+
   const message = form.querySelector('[data-discount-code-message]')
 
   form.addEventListener('submit', (e) => {

@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'fonts';
 @import 'common';
 @import 'filter';
 @import 'header';
@@ -14,6 +15,7 @@
 @import 'calc';
 @import 'cheaper';
 @import 'cart';
+@import 'order';
 
 @import 'contacts';
 
@@ -6170,19 +6172,6 @@ th.forum-headline__replies {
   font-size: 12px;
   line-height: 1;
 }
-.order-total {
-  font-size: 24px;
-  color: #000;
-  font-weight: bold;
-  line-height: 1.25;
-  margin-bottom: 18px;
-  span {
-    color: #016a88;
-  }
-  @media (max-width: $breakpoint-mini-max) {
-    font-size: 18px;
-  }
-}
 
 .order-preloader {
   position: relative;
@@ -7812,109 +7801,6 @@ textarea.order-control {
     line-height: 1.5;
     margin: 28px auto;
   }
-}
-
-.order-modern {
-  //max-width: 1005px;
-  //margin: 0 auto;
-}
-
-.order-country {
-  max-width: 492px;
-  margin: 0 auto 17px;
-  @media (max-width: $breakpoint-medium-max) {
-    margin: 19px auto 15px;
-  }
-}
-
-.order-country__label {
-  text-align: center;
-  color: #135061;
-  font-size: 19px;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  @media (max-width: $breakpoint-medium-max) {
-    margin-bottom: 0;
-    text-align: left;
-  }
-}
-
-.order-country__controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  label {
-    display: inline-block;
-    color: #2285a0;
-    font-size: 19px;
-    cursor: pointer;
-    position: relative;
-    @media (max-width: $breakpoint-medium-max) {
-      font-size: 14px;
-      .control-radio input + span {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-}
-
-.order-layout {
-  @media (max-width: $breakpoint-medium-max) {
-    display: flex;
-    flex-flow: column;
-  }
-}
-
-.order-layout__left {
-  float: left;
-  width: 55%;
-  clear: left;
-  @media (max-width: $breakpoint-medium-max) {
-    width: 100%;
-    float: none;
-  }
-}
-
-.order-layout__right {
-  float: left;
-  width: 43.5%;
-  @media (max-width: $breakpoint-medium-max) {
-    width: 100%;
-    float: none;
-  }
-}
-
-.order-group {
-  margin-bottom: 17px;
-}
-
-.order-group__title {
-  color: #135061;
-  font-size: 19px;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  @media (max-width: $breakpoint-medium-max) {
-    margin-bottom: 0;
-  }
-}
-
-.order-group__desc {
-  color: #26a00a;
-  font-size: 13px;
-  font-style: italic;
-  margin-bottom: 22px;
-  &_danger {
-    color: #a00a1f;
-  }
-  @media (max-width: $breakpoint-medium-max) {
-    margin-bottom: 17px;
-  }
-}
-
-.order-group__body {
 }
 
 .order-form-rights {

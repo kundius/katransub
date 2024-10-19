@@ -1,7 +1,77 @@
 import MicroModal from 'micromodal'
 import { disableScroll, enableScroll } from '../utils'
 
-miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response, a) {
+const orderTextFields = [
+  'index',
+  'region',
+  'city',
+  'street',
+  'building',
+  'room',
+  'receiver',
+  'email',
+  'phone',
+  'comment'
+]
+
+const orderDisabledTextFields = {
+  1: ['index', 'region', 'street', 'building', 'room'],
+  4: ['index', 'region', 'street', 'room', 'building'],
+  6: ['index'],
+  7: ['index'],
+  9: ['index'],
+  10: ['index'],
+  11: ['index'],
+  13: ['index']
+}
+
+// Сделать обязательные поля действительно обязательными
+miniShop2.Callbacks.add(
+  'Order.getrequired.response.success',
+  'order_required_fields',
+  function (response) {
+    const order = document.getElementById('msOrder')
+
+    orderTextFields.forEach((field) => {
+      order.querySelector(`[name="${field}"]`).removeAttribute('required')
+    })
+
+    response.data.requires.forEach((field) => {
+      order.querySelector(`[name="${field}"]`).setAttribute('required', '')
+    })
+  }
+)
+
+// Отключить некоторые необязательные поля в зависимости от способа доставки
+miniShop2.Callbacks.add('Order.add.response.success', 'order_shady_fields', function (response) {
+  if (typeof response.data.delivery === 'undefined') return
+
+  const fields = orderDisabledTextFields[response.data.delivery] || []
+  const order = document.getElementById('msOrder')
+
+  orderTextFields.forEach((field) => {
+    const input = order.querySelector(`[name="${field}"]`)
+    if (fields.indexOf(field) === -1) {
+      input.removeAttribute('disabled')
+    } else {
+      input.setAttribute('disabled', '')
+    }
+  })
+})
+
+// Изменение суммы позиции в корзине
+miniShop2.Callbacks.add(
+  'Cart.change.response.success',
+  'cart_change_row_cost',
+  function (response) {
+    const row = document.querySelector(`[data-cart-row]#${response.data.key}`)
+    const cost = row.querySelector('[data-cart-row-cost]')
+    cost.innerHTML = new Intl.NumberFormat('ru-RU').format(response.data.cost)
+  }
+)
+
+// Сообщение о добавлении товара
+miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response) {
   const product = miniShop2.sendData.$form[0].closest('[data-product]')
   const productThumb = product.querySelector('[itemprop="thumb"]').content
   const productUri = product.querySelector('[itemprop="uri"]').content
