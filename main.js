@@ -1,5 +1,4 @@
 import './src/js/components/headerSearch'
-// import './src/js/components/fonts'
 import './src/js/components/floatingNav'
 import './src/js/components/sliders'
 import './src/js/components/imageFlipper'
@@ -22,6 +21,9 @@ import { initProductSlider } from './src/js/components/productSlider'
 import { initCheaper } from './src/js/components/cheaper'
 import { initDiscountCode } from './src/js/components/discount-code'
 import { initOrderCountry } from './src/js/components/orderCountry'
+import { initOrderTotal } from './src/js/components/orderTotal'
+import { initOrderDeliveryPrice } from './src/js/components/orderDeliveryPrice'
+import { initOrderPaymentDescription } from './src/js/components/orderPaymentDescription'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -41,6 +43,9 @@ initProductSlider()
 initCheaper()
 initDiscountCode()
 initOrderCountry()
+initOrderTotal()
+initOrderDeliveryPrice()
+initOrderPaymentDescription()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
