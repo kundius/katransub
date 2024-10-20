@@ -248,12 +248,8 @@ body:has(.header) {
 .header-cart__count,
 .header-cart__price {
   position: absolute;
-  border-radius: 8px;
-  padding: 0 2px;
-  height: 16px;
   font-size: 10px;
   color: #000;
-  line-height: 16px;
   text-align: center;
   background: #efde00;
   box-sizing: border-box;
@@ -263,15 +259,20 @@ body:has(.header) {
 .header-cart__count {
   top: 4px;
   right: 0;
+  padding: 0 2px;
   min-width: 16px;
+  border-radius: 8px;
+  height: 16px;
+  line-height: 16px;
 }
 
 .header-cart__price {
-  display: none;
-  min-width: calc(100% + 4px);
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -12px;
+  right: -2px;
+  padding: 0 6px;
+  border-radius: 8px;
+  height: 18px;
+  line-height: 18px;
 }
 
 .header-menu {

@@ -21,6 +21,7 @@ import { initCalc } from './src/js/components/calc'
 import { initProductSlider } from './src/js/components/productSlider'
 import { initCheaper } from './src/js/components/cheaper'
 import { initDiscountCode } from './src/js/components/discount-code'
+import { initOrderCountry } from './src/js/components/orderCountry'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -39,6 +40,7 @@ initCalc()
 initProductSlider()
 initCheaper()
 initDiscountCode()
+initOrderCountry()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
