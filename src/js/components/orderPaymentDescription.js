@@ -1,5 +1,8 @@
 export function initOrderPaymentDescription() {
   const msOrder = document.getElementById('msOrder')
+
+  if (!msOrder) return
+
   const items = msOrder.querySelectorAll('[data-order-payment-description]')
   const delivery = msOrder.querySelector('[name="delivery"]:checked')
 

@@ -9,6 +9,16 @@ body {
   }
 }
 
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-layout__main {
+  flex-grow: 1;
+}
+
 .container {
   width: var(--container-width);
   max-width: calc(100% - calc(var(--container-padding) * 2));

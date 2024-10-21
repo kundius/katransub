@@ -70,6 +70,22 @@ miniShop2.Callbacks.add(
   }
 )
 
+// Редирект на отдельную страницу после совершения заказа
+miniShop2.Callbacks.add('Order.submit.response.success', 'order_redirect', function (response) {
+  if (response.data['redirect']) {
+    document.location.href = response.data['redirect']
+  } else if (response.data['msorder']) {
+    document.location.href =
+      document.location.origin +
+      '/complete' +
+      (document.location.search ? document.location.search + '&' : '?') +
+      'msorder=' +
+      response.data['msorder']
+  } else {
+    location.reload()
+  }
+})
+
 // Сообщение о добавлении товара
 miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response) {
   const product = miniShop2.sendData.$form[0].closest('[data-product]')

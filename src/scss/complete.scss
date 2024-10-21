@@ -1,0 +1,196 @@
+.complete-layout {
+  display: flex;
+  gap: 64px;
+  margin-bottom: 96px;
+
+  @include --max-xl {
+    gap: 48px;
+  }
+  @include --max-lg {
+    gap: 36px;
+  }
+  @include --max-md {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.complete-layout__main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  @include --max-md {
+    gap: 20px;
+  }
+}
+
+.complete-layout__side {
+  width: 320px;
+  flex-shrink: 0;
+
+  @include --max-xl {
+    width: 280px;
+  }
+  @include --max-lg {
+    width: 264px;
+  }
+  @include --max-md {
+    width: 100%;
+    order: -1;
+  }
+}
+
+.complete-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #a1a0a0;
+  text-align: center;
+  line-height: 1.25;
+
+  &_side {
+    @include --md {
+      display: none;
+    }
+  }
+
+  &_main {
+    @include --max-md {
+      display: none;
+    }
+  }
+
+  @include --max-xl {
+    font-size: 20px;
+  }
+
+  @include --max-md {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+
+.complete-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+
+  @include --max-lg {
+    flex-direction: column;
+  }
+}
+
+.complete-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-wrap: balance;
+
+  @include --max-xl {
+    gap: 8px;
+  }
+  @include --max-lg {
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 16px;
+  }
+}
+
+.complete-item__icon {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.complete-item__title {
+  font-size: 18px;
+  line-height: 20px;
+  color: #3a3a3a;
+  font-style: italic;
+
+  @include --max-xl {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @include --max-md {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.complete-thanks {
+  font-size: 20px;
+  line-height: 24px;
+  color: #3a3a3a;
+  font-style: italic;
+  text-align: center;
+
+  @include --max-xl {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  @include --max-md {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.complete-total {
+  border: 1px solid #e3e3e3;
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  @include --max-xl {
+    padding: 24px 16px;
+    gap: 8px;
+  }
+}
+
+.complete-total__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1;
+
+  @include --max-xl {
+    font-size: 14px;
+  }
+}
+
+.complete-total__number {
+  font-size: 16px;
+  color: #0699bc;
+  line-height: 1;
+  font-weight: bold;
+
+  @include --max-xl {
+    font-size: 14px;
+  }
+}
+
+.complete-total__divider {
+  width: 100%;
+}
+
+.complete-total__desc {
+  font-size: 14px;
+  color: #3a3a3a;
+  line-height: 16px;
+
+  @include --max-xl {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

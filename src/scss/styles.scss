@@ -16,13 +16,16 @@
 @import 'cheaper';
 @import 'cart';
 @import 'order';
+@import 'complete';
 
 @import 'contacts';
 
 :root {
+  --header-height: 61px;
   --container-padding: 48px;
   --container-width: 1600px;
   @include --max-3xl {
+    --footer-height: 499px;
     --container-padding: 32px;
     --container-width: 1408px;
   }
@@ -35,6 +38,7 @@
     --container-width: 976px;
   }
   @include --max-lg {
+    --header-height: 89px;
     --container-padding: 24px;
     --container-width: calc(100vw - (var(--container-padding) * 2));
   }
@@ -72,15 +76,6 @@ h6 {
 .slick-slider {
   padding: 0;
   margin: 0;
-}
-
-.main {
-  .office-auth-login-wrapper,
-  .office-auth-register-wrapper {
-    min-height: 20px;
-    padding: 0;
-    margin-bottom: 20px;
-  }
 }
 
 .suggestions-wrapper {
@@ -5468,19 +5463,6 @@ th.forum-headline__replies {
 }
 .clearfix {
   zoom: 1;
-}
-
-.main {
-  padding-left: 10px;
-  padding-bottom: 30px;
-
-  @media (max-width: $breakpoint-small-max) {
-    padding-left: 0;
-    padding-bottom: 0;
-  }
-}
-.main h1 {
-  margin-bottom: 21px;
 }
 .page-404-html {
   height: 100%;

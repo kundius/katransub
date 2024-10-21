@@ -20,6 +20,9 @@ function updateDeliveries(deliveries) {
 
 export function initOrderCountry() {
   const form = document.getElementById('msOrder')
+
+  if (!form) return
+
   const input = form.querySelector('[name="country"]')
   const buttons = form.querySelectorAll('[data-order-country]')
 

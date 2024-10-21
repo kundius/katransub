@@ -273,6 +273,11 @@ body:has(.header) {
   border-radius: 8px;
   height: 18px;
   line-height: 18px;
+  display: none;
+
+  .full & {
+    display: block;
+  }
 }
 
 .header-menu {
