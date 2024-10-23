@@ -7,6 +7,12 @@ body {
   .jGrowl.top-right {
     margin-right: var(--removed-body-scroll-bar-size, 0);
   }
+  .choices__list--dropdown {
+    box-sizing: border-box;
+  }
+  .is-open .choices__list--dropdown {
+    border-color: rgb(225, 227, 230);
+  }
 }
 
 .page-layout {
@@ -17,6 +23,25 @@ body {
 
 .page-layout__main {
   flex-grow: 1;
+}
+
+.page-main {
+  margin: 48px auto 96px;
+  max-width: 1280px;
+}
+
+.page-main__title {
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 400;
+  margin: 0 0 32px;
+}
+
+.page-main__content {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .container {
@@ -295,7 +320,7 @@ body {
     gap: 20px;
   }
   @include --max-md {
-    gap: 12px;
+    gap: 10px;
   }
 }
 

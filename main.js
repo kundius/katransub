@@ -1,3 +1,4 @@
+import './src/js/components/contacts'
 import './src/js/components/headerSearch'
 import './src/js/components/floatingNav'
 import './src/js/components/sliders'
@@ -24,6 +25,7 @@ import { initOrderCountry } from './src/js/components/orderCountry'
 import { initOrderTotal } from './src/js/components/orderTotal'
 import { initOrderDeliveryPrice } from './src/js/components/orderDeliveryPrice'
 import { initOrderPaymentDescription } from './src/js/components/orderPaymentDescription'
+import { initContactsSelect } from './src/js/components/contacts-select'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -46,6 +48,7 @@ initOrderCountry()
 initOrderTotal()
 initOrderDeliveryPrice()
 initOrderPaymentDescription()
+initContactsSelect()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

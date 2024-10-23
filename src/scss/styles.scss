@@ -17,7 +17,6 @@
 @import 'cart';
 @import 'order';
 @import 'complete';
-
 @import 'contacts';
 
 :root {
@@ -2081,14 +2080,6 @@ jdiv {
   & + .white-container {
     margin-top: 15px;
   }
-}
-.content {
-  border-radius: 5px;
-  padding: 10px;
-  border: 1px solid #01556b;
-  background-color: #ffffff;
-  position: relative;
-  margin-top: 10px;
 }
 
 .home-text {
@@ -8577,129 +8568,6 @@ textarea.order-control {
 //     }
 // }
 
-.contacts-types {
-  padding: 0;
-  margin: 0 0 4px;
-  display: flex;
-  list-style: none;
-  @media (max-width: $breakpoint-mini-max) {
-    margin: -10px -10px 1px;
-  }
-  li {
-    width: 50%;
-    a {
-      display: block;
-      text-align: center;
-      cursor: pointer;
-      background-color: #e5b612;
-      line-height: 33px;
-      color: #014b63;
-      font-size: 16px;
-      &:hover {
-        background-color: darken(#e5b612, 5%);
-        color: #014b63;
-      }
-    }
-    &.active {
-      a {
-        background-color: #026282;
-        color: #fff;
-      }
-    }
-  }
-}
-
-.contacts-city {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-  position: relative;
-  z-index: 20;
-  @media (max-width: $breakpoint-mini-max) {
-    flex-wrap: wrap;
-  }
-  .choices__list--single {
-    padding-right: 40px;
-  }
-  .choices[data-type*='select-one']::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-    width: 40px;
-    height: 100%;
-    background: #002837;
-    border-radius: 0 4px 4px 0;
-  }
-  .choices[data-type*='select-one']::after {
-    z-index: 3;
-    border-top-color: #fff;
-    right: 15px;
-  }
-  .choices[data-type*='select-one'].is-open::before {
-    border-radius: 0 4px 0 0;
-  }
-  .choices[data-type*='select-one'].is-open::after {
-    border-color: transparent transparent #fff;
-  }
-  .choices[data-type*='select-one'] .choices__inner {
-    padding-bottom: 3px;
-    padding-top: 3px;
-    min-height: 42px;
-  }
-}
-
-.contacts-city__select {
-  position: relative;
-  min-width: 264px;
-  .selectric-wrapper {
-    width: 100%;
-  }
-  @media (max-width: $breakpoint-mini-max) {
-    width: 100%;
-  }
-  // span {
-  //     position: absolute;
-  //     right: 0;
-  //     top: 0;
-  //     z-index: 2;
-  //     width: 40px;
-  //     height: 100%;
-  //     background: #171a61;
-  //     pointer-events: none;
-  //     &::after {
-  //         content: '';
-  //         width: 5px;
-  //         height: 5px;
-  //         border-left: 2px solid #fff;
-  //         border-bottom: 2px solid #fff;
-  //         transform: rotate(-45deg) translate(-50%, -50%);
-  //         position: absolute;
-  //         left: 50%;
-  //         top: 50%;
-  //         margin-top: -5px;
-  //     }
-  // }
-  // select {
-  //     padding: 10px 60px 10px 20px;
-  //     border: 2px solid #02748e;
-  //     position: relative;
-  //     z-index: 1;
-  //     box-sizing: border-box;
-  //     width: 100%;
-  // }
-}
-
-.contacts-city__label {
-  margin-left: 35px;
-  font-size: 16px;
-  color: #992c25;
-  @media (max-width: $breakpoint-mini-max) {
-    margin: 0;
-  }
-}
-
 .contacts-cities {
   padding: 0;
   margin: 0 0 0 -3px;
@@ -11040,78 +10908,6 @@ td.u-product-options__items {
 
 .cart-info a {
   text-decoration: underline;
-}
-
-.contacts-offices {
-  display: flex;
-  margin-left: -48px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  @media (max-width: $breakpoint-medium-max) {
-    margin-left: -16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-}
-
-.contacts-offices__item {
-  width: 50%;
-  padding-left: 48px;
-  @media (max-width: $breakpoint-medium-max) {
-    padding-left: 16px;
-  }
-}
-
-.contacts-offices-item {
-  display: flex;
-}
-
-.contacts-offices-item__image {
-  width: 40%;
-  margin-right: 20px;
-  position: relative;
-  @media (max-width: $breakpoint-medium-max) {
-    width: 100%;
-    margin-right: 0;
-  }
-}
-
-.contacts-offices-item__image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.contacts-offices-item__title {
-  width: 60%;
-  font-size: 20px;
-  line-height: 1.5;
-  color: #444;
-  @media (max-width: $breakpoint-medium-max) {
-    display: none;
-  }
-}
-
-.contacts-offices-item__image-label {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #014b63;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 8px;
-  background: #57d4e9;
-  text-align: center;
-  width: 120px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  @media (max-width: $breakpoint-medium-max) {
-    display: block;
-  }
 }
 
 .tippy-content {

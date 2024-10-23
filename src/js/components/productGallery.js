@@ -14,13 +14,20 @@ export function applyProductGallery(productGallery) {
   const thumbs = productGallery.querySelector('[data-product-gallery-thumbs]')
 
   const fullscreenIn = () => {
+    // galleryThumbs.update({
+    //   slidesPerView: 12
+    // })
     productGallery.setAttribute('data-product-gallery-fullscreen', '')
     disableScroll()
   }
 
   const fullscreenOut = () => {
+    // galleryThumbs.update({
+    //   slidesPerView: 5
+    // })
     productGallery.removeAttribute('data-product-gallery-fullscreen')
     enableScroll()
+    // slidesPerView: "auto",
   }
 
   main.addEventListener('click', (e) => {
@@ -35,7 +42,7 @@ export function applyProductGallery(productGallery) {
     modules: [Navigation, Pagination, Autoplay, Thumbs],
     allowTouchMove: false,
     spaceBetween: 12,
-    slidesPerView: 5,
+    slidesPerView: 'auto',
     watchSlidesProgress: true
   })
 

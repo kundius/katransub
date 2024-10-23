@@ -254,6 +254,11 @@ body:has(.header) {
   background: #efde00;
   box-sizing: border-box;
   white-space: nowrap;
+  display: none;
+
+  .full & {
+    display: block;
+  }
 }
 
 .header-cart__count {
@@ -273,11 +278,6 @@ body:has(.header) {
   border-radius: 8px;
   height: 18px;
   line-height: 18px;
-  display: none;
-
-  .full & {
-    display: block;
-  }
 }
 
 .header-menu {
