@@ -237,6 +237,17 @@
   }
 }
 
+.product-card__article {
+  font-size: 14px;
+  line-height: 1;
+  margin-top: 8px;
+  color: #9c9c9c;
+
+  @include --max-md {
+    font-size: 11px;
+  }
+}
+
 .product-card__controls {
   margin-top: 24px;
   display: grid;

@@ -1,7 +1,7 @@
 .filters {
   display: grid;
   align-items: end;
-  column-gap: 16px;
+  column-gap: 20px;
   row-gap: 12px;
   padding: 8px 0;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -73,8 +73,8 @@
   &::before {
     content: '';
     position: absolute;
-    left: -24px;
-    right: -24px;
+    left: calc(var(--container-padding) * -1);
+    right: calc(var(--container-padding) * -1);
     top: 0;
     bottom: 0;
     background: #fff;
@@ -213,7 +213,7 @@
   }
 }
 
-[id='mse2_msoption|view'] {
+.category-products [id='mse2_msoption|view'] {
   @include --lg {
     display: none;
   }

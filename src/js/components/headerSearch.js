@@ -1,9 +1,12 @@
-const toggle = document.querySelector('[data-header-search="toggle"]')
-const search = document.querySelector('[data-header-search="form"]')
-const input = document.querySelector('[data-header-search="input"]')
+export function initHeaderSearch() {
+  const search = document.querySelector('[data-header-search]')
 
-$(function () {
-  if (!(toggle && search && input)) return
+  if (!search) return
+
+  const input = search.querySelector('[data-search-input]')
+  const toggle = document.querySelector('[data-header-search-toggle]')
+
+  if (!input || !toggle) return
 
   const $input = $(input)
 
@@ -118,4 +121,4 @@ $(function () {
     }
   })
   observer.observe(input, { attributes: true, childList: false, subtree: false })
-})
+}

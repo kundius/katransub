@@ -18,6 +18,8 @@
 @import 'order';
 @import 'complete';
 @import 'contacts';
+@import 'comparison';
+@import 'favorites';
 
 :root {
   --header-height: 61px;
@@ -6641,52 +6643,6 @@ textarea.order-control {
   }
 }
 
-.scrolltop {
-  position: fixed;
-  z-index: 999;
-  display: block;
-  right: 20px;
-  bottom: 60px;
-  width: 64px;
-  height: 64px;
-  border-radius: 6px;
-  text-align: center;
-  background-color: rgba(88, 215, 226, 0.741);
-  text-transform: uppercase;
-  color: #004558;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 1.7;
-  padding-top: 12px;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  i {
-    font-size: 18px;
-  }
-  &_visible {
-    opacity: 1;
-  }
-  &:hover {
-    background-color: rgb(88, 215, 226);
-  }
-
-  @media (max-width: $breakpoint-medium-max) {
-    left: 20px;
-    right: auto;
-    bottom: 30px;
-    width: 48px;
-    height: 48px;
-    padding-top: 8px;
-    line-height: 1.5;
-    font-size: 10px;
-    i {
-      font-size: 14px;
-    }
-  }
-}
-
 .yashare-auto-init {
   display: inline-block;
   vertical-align: middle;
@@ -6805,49 +6761,6 @@ textarea.order-control {
 .product-content {
 }
 
-.product-info__row {
-  border-bottom: 2px solid #ccc;
-  overflow: hidden;
-  position: relative;
-  padding: 16px 16px 14px 13px;
-  &:last-child {
-    border-bottom: 0;
-  }
-}
-.product-info__image {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  width: 80px;
-  img {
-    position: absolute;
-    top: 14px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    /*position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);*/
-  }
-}
-.product-info__info {
-  padding-left: 70px;
-}
-.product-info__title {
-  color: #333;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.3;
-  font-size: 1em;
-}
-.product-info__desc {
-  color: #666;
-  font-weight: 400;
-  line-height: 18px;
-  font-size: 1em;
-}
 
 .modal-popap {
   max-width: 100%;
@@ -8609,38 +8522,6 @@ textarea.order-control {
     &.active a {
       background-color: #e5b612;
     }
-  }
-}
-
-.fixed-catalog {
-  position: fixed;
-  z-index: 100;
-  color: #023c4e;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 29px;
-  border-radius: 6px;
-  background-color: #e5b612;
-  text-transform: uppercase;
-  padding: 9px 15px;
-  text-align: center;
-  box-sizing: initial;
-  left: 50%;
-  bottom: 31px;
-  transform: translateX(-50%);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  &_visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  &:hover {
-    text-decoration: none;
-    background: #ffce23;
-  }
-  @media (min-width: $breakpoint-large) {
-    display: none;
   }
 }
 

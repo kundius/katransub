@@ -15,7 +15,7 @@ body:has(.header) {
     left: 0;
     right: 0;
     margin-right: var(--removed-body-scroll-bar-size, 0);
-    z-index: 50;
+    z-index: 150;
   }
 }
 
@@ -66,7 +66,7 @@ body:has(.header) {
   top: 36px;
   left: 0;
   right: var(--removed-body-scroll-bar-size, 0);
-  z-index: 110;
+  z-index: 210;
 
   @include --lg {
     position: relative;
@@ -106,7 +106,7 @@ body:has(.header) {
   left: 0;
   right: var(--removed-body-scroll-bar-size, 0);
   padding: 2px var(--container-padding);
-  z-index: 120;
+  z-index: 220;
   display: grid;
   grid-template-rows: 1fr;
   align-items: center;
@@ -146,11 +146,11 @@ body:has(.header) {
 
 .header-layout__third {
   position: relative;
-  z-index: 100;
+  z-index: 200;
 
   @include --lg {
     grid-area: 1 / 5 / 2 / 6;
-    z-index: 130;
+    z-index: 230;
   }
 }
 
@@ -159,7 +159,7 @@ body:has(.header) {
   top: 36px;
   left: 0;
   right: var(--removed-body-scroll-bar-size, 0);
-  z-index: 100;
+  z-index: 200;
   border-bottom: 1px solid rgba(191, 191, 191, 0.478);
   padding: 4px var(--container-padding);
   background: #fff;
@@ -177,7 +177,7 @@ body:has(.header) {
   }
   @include --3xl {
     grid-area: 1 / 9 / 2 / 10;
-    z-index: 140;
+    z-index: 240;
     padding: 0;
     border: none;
   }
@@ -350,6 +350,10 @@ body:has(.header) {
   @include --max-2xl {
     font-size: 13px;
   }
+}
+
+.header-menu li.active a {
+  color: #f18a16;
 }
 
 .header-contacts {

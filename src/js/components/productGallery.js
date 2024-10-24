@@ -84,6 +84,5 @@ export function applyProductGallery(productGallery) {
 }
 
 export function initProductGallery() {
-  console.log(document.querySelectorAll('[data-product-gallery]'))
   document.querySelectorAll('[data-product-gallery]')?.forEach(applyProductGallery)
 }

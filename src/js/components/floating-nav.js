@@ -1,9 +1,11 @@
 import { disableScroll, enableScroll } from '../utils'
 
-const toggle = document.querySelectorAll('[data-floating-nav="toggle"]') || []
-const nav = document.querySelector('[data-floating-nav="nav"]')
+export function initdFloatingNav() {
+  const toggle = document.querySelectorAll('[data-floating-nav="toggle"]') || []
+  const nav = document.querySelector('[data-floating-nav="nav"]')
 
-if (toggle && nav) {
+  if (!nav) return
+
   let prevScroll = null
   let scrollDir = null
   let prevScrollDir = null

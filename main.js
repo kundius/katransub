@@ -1,6 +1,4 @@
 import './src/js/components/contacts'
-import './src/js/components/headerSearch'
-import './src/js/components/floatingNav'
 import './src/js/components/sliders'
 import './src/js/components/imageFlipper'
 import './src/js/components/messengers'
@@ -26,6 +24,10 @@ import { initOrderTotal } from './src/js/components/orderTotal'
 import { initOrderDeliveryPrice } from './src/js/components/orderDeliveryPrice'
 import { initOrderPaymentDescription } from './src/js/components/orderPaymentDescription'
 import { initContactsSelect } from './src/js/components/contacts-select'
+import { initHeaderSearch } from './src/js/components/headerSearch'
+import { initdFloatingNav } from './src/js/components/floating-nav'
+import { initScrolltop } from './src/js/components/scrolltop'
+import { initFloatingElements } from './src/js/components/floating-elements'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -49,6 +51,10 @@ initOrderTotal()
 initOrderDeliveryPrice()
 initOrderPaymentDescription()
 initContactsSelect()
+initHeaderSearch()
+initdFloatingNav()
+initScrolltop()
+initFloatingElements()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

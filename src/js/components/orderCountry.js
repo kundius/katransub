@@ -38,15 +38,17 @@ export function initOrderCountry() {
   }
 
   // колбек запустится после изменения страны и обновит доставку
-  miniShop2.Callbacks.add(
-    'Order.add.response.success',
-    'order_country_change',
-    function (response) {
-      if (typeof response.data.country === 'undefined') return
+  document.addEventListener('DOMContentLoaded', () => {
+    miniShop2.Callbacks.add(
+      'Order.add.response.success',
+      'order_country_change',
+      function (response) {
+        if (typeof response.data.country === 'undefined') return
 
-      setCountry(response.data.country)
-    }
-  )
+        setCountry(response.data.country)
+      }
+    )
+  })
 
   // задать страну по умолчанию
   setCountry(input.value)

@@ -7,24 +7,30 @@ export function initOrderPaymentDescription() {
   const delivery = msOrder.querySelector('[name="delivery"]:checked')
 
   // После получения стоимости заказа обновить описание каждого варианта оплаты
-  miniShop2.Callbacks.add('Order.getcost.response.success', 'OrderPaymentDescription', function () {
-    items.forEach((item) => {
-      $.post(
-        '/assets/nemopro/actions.php',
-        {
-          action: 'payment/description',
-          delivery: delivery?.value,
-          payment: item.dataset.orderPaymentDescription
-        },
-        function (response) {
-          if (response.description) {
-            item.innerHTML = response.description
-          } else {
-            item.innerHTML = ''
-          }
-        },
-        'json'
-      )
-    })
+  document.addEventListener('DOMContentLoaded', () => {
+    miniShop2.Callbacks.add(
+      'Order.getcost.response.success',
+      'OrderPaymentDescription',
+      function () {
+        items.forEach((item) => {
+          $.post(
+            '/assets/nemopro/actions.php',
+            {
+              action: 'payment/description',
+              delivery: delivery?.value,
+              payment: item.dataset.orderPaymentDescription
+            },
+            function (response) {
+              if (response.description) {
+                item.innerHTML = response.description
+              } else {
+                item.innerHTML = ''
+              }
+            },
+            'json'
+          )
+        })
+      }
+    )
   })
 }

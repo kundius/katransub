@@ -21,7 +21,6 @@ export function initDiscountCode() {
         ctx: 'web'
       },
       function (data) {
-        console.log(data)
         if (data.success) {
           form.dataset.discountCodeStatus = 'success'
           message.innerHTML = 'Купон применен'

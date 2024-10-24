@@ -1,0 +1,117 @@
+.comparison-page {
+  margin: 12px 0 96px;
+}
+
+.comparison-page__headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 32px;
+}
+
+.comparison-page__clear {
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.comparison-page__title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 36px;
+  font-weight: 400;
+  margin: 0;
+
+  @include --max-lg {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.comparison-page__info {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 960px;
+  text-wrap: balance;
+  margin: 32px auto;
+  a {
+    color: #0699bc;
+    &:hover {
+      color: #f18a16;
+    }
+  }
+}
+
+.comparison-page__achievements {
+  margin-top: 96px;
+  .product-achievements {
+    justify-content: space-around;
+  }
+}
+
+.comparison-page__list [id='mse2_mscomparison|product'] {
+  display: none;
+}
+
+.comparison-page__list [id='mse2_msfavorites|product'] {
+  display: none;
+}
+
+.comparison-page__list .sticky-filter__container {
+  width: calc(100vw - (100vw - var(--container-width)));
+
+  @include --max-2xl {
+    width: calc(100vw - (100vw - var(--container-width)));
+  }
+
+  @include --max-lg {
+    width: calc(100vw - (var(--container-padding) * 2));
+  }
+}
+
+.comparison-page__list #mse2_results {
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12px;
+  row-gap: 24px;
+  @include --md {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    > *:nth-child(15) + * {
+      display: none;
+    }
+  }
+  @include --lg {
+    grid-template-columns: repeat(4, 1fr);
+    > *:nth-child(15) + * {
+      display: flex;
+    }
+  }
+  @include --3xl {
+    grid-template-columns: repeat(5, 1fr);
+    > *:nth-child(15) + * {
+      display: none;
+    }
+  }
+}
+
+.comparison-page__nodata {
+  font-size: 18px;
+  text-align: center;
+  display: none;
+}
+
+.comparison-page:has(.mse2_results_nodata) .comparison-page__nodata {
+  display: block;
+}
+
+.comparison-page:has(.mse2_results_nodata) .comparison-page__list {
+  display: none;
+}
+
+.comparison-page:has(.mse2_results_nodata) .comparison-page__clear {
+  display: none;
+}
