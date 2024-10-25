@@ -165,7 +165,7 @@
 
   @include --max-md {
     gap: 12px;
-    margin: 36px 0;
+    margin: 32px 0;
   }
 }
 
@@ -258,7 +258,7 @@
   @include --max-md {
     font-size: 14px;
     line-height: 18px;
-    margin: 36px 0;
+    margin: 32px 0;
   }
 }
 
@@ -345,6 +345,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-grow: 1;
+
+  @include --max-md {
+    flex-direction: column;
+  }
 }
 
 .profile-form-avatar__image {
