@@ -328,15 +328,27 @@ body {
   text-decoration: none;
   gap: 4px;
   height: 44px;
+  height: 52px; //
   padding: 0 24px;
   border-radius: 4px;
+  border-radius: 12px; //
   border: none;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
+  letter-spacing: 1px; //
+  text-transform: uppercase; //
+  width: 320px;
+  max-width: 100%;
   @include --hover {
     background: #eed20e;
     color: #000;
+  }
+  @include --max-md {
+    font-size: 14px;
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -435,6 +447,93 @@ body {
   @include --hover {
     background: #f4f4f4;
     color: #000;
+  }
+}
+
+.button-outline-obscure {
+  height: 36px;
+  white-space: nowrap;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 2px solid #878787;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #878787;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background: #878787;
+    color: #fff;
+  }
+
+  @include --max-md {
+    padding: 0 16px;
+  }
+}
+
+.button-filled-primary {
+  height: 36px;
+  white-space: nowrap;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #efde00;
+  border: 2px solid #efde00;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-image: linear-gradient(37deg, #ffed66, #ffde2c);
+    color: #000;
+  }
+
+  @include --max-md {
+    padding: 0 16px;
+  }
+}
+
+.button-outline-secondary {
+  height: 36px;
+  white-space: nowrap;
+  padding: 0 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 2px solid #0699bc;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0699bc;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background: #0699bc;
+    color: #fff;
+  }
+
+  @include --max-md {
+    padding: 0 16px;
   }
 }
 
@@ -994,5 +1093,142 @@ body {
 
   @include --lg {
     display: none;
+  }
+}
+
+.tabs-nav {
+  padding: 0;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-bottom: 1px solid #f3f3f3;
+  gap: 48px;
+  li {
+    a {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      line-height: 44px;
+      color: #bababa;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        color: #f18a16;
+      }
+    }
+    &.active {
+      a {
+        color: #000;
+        font-weight: 500;
+        &:hover {
+          color: #f18a16;
+        }
+      }
+    }
+  }
+  @include --max-md {
+    margin: 8px 0;
+    gap: 24px;
+    justify-content: flex-start;
+    li {
+      a {
+        line-height: 32px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.checkboxed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 7px 0;
+}
+
+.checkboxed__control {
+  align-self: flex-start;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 2px;
+  border: 1px solid #beced6;
+
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  &::after {
+    content: '';
+    display: none;
+    width: 14px;
+    height: 8px;
+    margin-top: -3px;
+    box-sizing: border-box;
+    border-left: 3px solid #0699bc;
+    border-bottom: 3px solid #0699bc;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:has(input:checked)::after {
+    display: block;
+  }
+
+  @include --max-xl {
+    width: 18px;
+    height: 18px;
+    &::after {
+      width: 12px;
+      height: 6px;
+      margin-top: -2px;
+      border-left-width: 3px;
+      border-bottom-width: 3px;
+    }
+  }
+}
+
+.checkboxed__label {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+
+  a {
+    color: #007be4;
+    &:hover {
+      color: #f18a16;
+    }
+  }
+
+  @include --max-xl {
+    font-size: 12px;
   }
 }

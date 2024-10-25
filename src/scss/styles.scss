@@ -20,6 +20,7 @@
 @import 'contacts';
 @import 'comparison';
 @import 'favorites';
+@import 'office';
 
 :root {
   --header-height: 61px;
@@ -5259,21 +5260,6 @@ th.forum-headline__replies {
   color: #fe0;
 }
 
-.profile-form-avatar__image {
-  float: left;
-  margin-right: 20px;
-}
-.profile-form-avatar__desc {
-  line-height: 1;
-  overflow: hidden;
-}
-.profile-form-avatar__remove {
-  margin: 5px 0;
-}
-.profile-form-avatar__input {
-  margin: 5px 0;
-}
-
 .menu-profile {
   padding: 0 10px;
   margin: 0 -10px 20px;
@@ -6760,7 +6746,6 @@ textarea.order-control {
 
 .product-content {
 }
-
 
 .modal-popap {
   max-width: 100%;

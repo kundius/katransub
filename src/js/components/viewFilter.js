@@ -1,5 +1,8 @@
 export function applyViewFilter(viewFilter) {
   const select = document.querySelector('#mse2_filters [name="msoption|view"]')
+
+  if (!select) return
+
   const options = select.querySelectorAll('option')
   const itemsContainer = viewFilter.querySelector('[data-view-filter-items]')
 
