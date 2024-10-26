@@ -28,6 +28,7 @@ import { initHeaderSearch } from './src/js/components/headerSearch'
 import { initdFloatingNav } from './src/js/components/floating-nav'
 import { initScrolltop } from './src/js/components/scrolltop'
 import { initFloatingElements } from './src/js/components/floating-elements'
+import { applyOrderAction, initOrderAction } from './src/js/components/order-action'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -55,6 +56,7 @@ initHeaderSearch()
 initdFloatingNav()
 initScrolltop()
 initFloatingElements()
+initOrderAction()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
@@ -72,5 +74,15 @@ $(document).on('mse2_load', function (e, response) {
     card.querySelectorAll('[data-quantity]')?.forEach(applyQuantity)
     card.querySelectorAll('[data-options-modal]')?.forEach(applyOptionsModal)
     card.querySelectorAll('[data-option-items]')?.forEach(applyOptionItems)
+  })
+})
+
+// применить скрипты к загруженным карточкам
+$(document).on('pdopage_load', function (e, config, response) {
+  const results = document.querySelector(config.rows)
+  const addedCards = Array.from(results.children)
+
+  addedCards.forEach((card) => {
+    card.querySelectorAll('[data-order-action]')?.forEach(applyOrderAction)
   })
 })

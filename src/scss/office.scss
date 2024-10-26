@@ -2,24 +2,20 @@
   color: red;
 }
 
-.auth-page {
-  max-width: 1216px;
-  margin: 12px auto 96px;
-}
+.auth-container {
+  max-width: 480px;
+  margin: 32px auto 96px;
 
-.auth-page__title {
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000;
-  font-weight: 400;
-  margin: 32px 0;
+  @include --md {
+    padding: 24px;
+    border-radius: 12px;
+    // background-color: #f8f8f8;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
+  }
 }
 
 .office-auth {
-  max-width: 440px;
-  margin: 32px auto;
 }
 
 .office-auth__form {
@@ -53,13 +49,17 @@
     box-sizing: border-box;
     width: 100%;
   }
+  // @include --max-md {
+  //   > input {
+  //     background-color: #f8f8f8;
+  //   }
+  // }
 }
 
 .office-auth__desc {
   font-size: 14px;
   line-height: 1;
   color: #000;
-  text-wrap: balance;
 }
 
 .office-auth__submit {
@@ -93,18 +93,19 @@
 }
 
 .office-auth__message {
-  padding: 16px;
   line-height: 1.25;
   font-size: 14px;
+  background-color: #37bc214d;
+  padding: 24px;
   border-radius: 12px;
-  background-color: #f8f8f8;
-  border: 1px solid #e3e3e3;
-  box-sizing: border-box;
+
+  @include --max-md {
+    padding: 16px;
+  }
 }
 
 .office-logout {
   display: flex;
-  margin: 32px auto;
   align-items: center;
   gap: 24px;
   justify-content: center;
@@ -116,8 +117,9 @@
 
 .office-logout__avatar {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
 
   img {
     display: block;
@@ -131,7 +133,7 @@
 }
 
 .office-logout__welcome {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.25;
 
   @include --max-md {
@@ -143,25 +145,29 @@
 .office-logout__links {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 16px;
 
   @include --max-md {
     justify-content: center;
   }
 }
 
-.office-page {
+.office-container {
   margin: 32px auto 96px;
 
   @include --md {
-    max-width: 640px;
+    max-width: 680px;
+    padding: 24px;
+    border-radius: 12px;
+    // background-color: #f8f8f8;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
   }
 }
 
 .user-card {
   display: flex;
   gap: 24px;
-  margin: 48px 0;
 
   @include --max-md {
     gap: 12px;
@@ -172,8 +178,8 @@
 .user-card__avatar {
   display: flex;
   flex-shrink: 0;
-  width: 100px;
-  height: 100px;
+  width: 84px;
+  height: 84px;
 
   img {
     width: 100%;
@@ -191,6 +197,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .user-card__email {
@@ -220,11 +227,12 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid #e3e3e3;
 
   @include --max-md {
     padding-bottom: 8px;
     margin-top: 16px;
+    border-bottom-color: #f3f3f3;
   }
 }
 
@@ -325,13 +333,17 @@
     box-sizing: border-box;
     width: 100%;
   }
+  // @include --max-md {
+  //   > input {
+  //     background: #f8f8f8;
+  //   }
+  // }
 }
 
 .profile-form__desc {
   font-size: 14px;
   line-height: 1;
   color: #000;
-  text-wrap: balance;
   display: block;
   margin-top: 8px;
 }
