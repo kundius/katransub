@@ -273,11 +273,13 @@ body:has(.header) {
 
 .header-cart__price {
   bottom: -10px;
-  right: -2px;
   padding: 0 6px;
   border-radius: 8px;
   height: 18px;
   line-height: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
 }
 
 .header-menu {

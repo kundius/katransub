@@ -56,6 +56,11 @@ body {
   font-size: 18px;
   line-height: 1.5;
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   p {
     margin: 0;
   }
