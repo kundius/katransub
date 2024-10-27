@@ -204,6 +204,18 @@
   }
 }
 
+.product-card__prices {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 4px;
+  @include --max-xl {
+    column-gap: 8px;
+    row-gap: 4px;
+  }
+}
+
 .product-card__price {
   font-size: 24px;
   color: rgb(0, 0, 0);
@@ -211,6 +223,16 @@
   line-height: 1;
   @include --max-xl {
     font-size: 14px;
+  }
+}
+
+.product-card__old-price {
+  font-size: 16px;
+  color: #9c9c9c;
+  text-decoration: line-through;
+  line-height: 1;
+  @include --max-xl {
+    font-size: 10px;
   }
 }
 
@@ -243,8 +265,9 @@
   margin-top: 8px;
   color: #9c9c9c;
 
-  @include --max-md {
+  @include --max-xl {
     font-size: 11px;
+    margin-top: 4px;
   }
 }
 

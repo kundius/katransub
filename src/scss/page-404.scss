@@ -1,0 +1,106 @@
+.page-404-html {
+  height: 100%;
+}
+
+.page-404-body {
+  background: #5b4583 url('../images/bg-404-x.jpg') repeat-x center top;
+  height: 100%;
+}
+
+.page-404-wrapper {
+  background: url('../images/bg-404.jpg') no-repeat center top;
+  min-height: 100%;
+  position: relative;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.page-404-container {
+  width: 740px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.page-404-logo {
+  width: 240px;
+  margin: 32px 0 0;
+  display: flex;
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include --max-md {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.page-404-nav {
+  margin: 32px 0;
+
+  @include --max-md {
+    text-align: center;
+  }
+
+  a {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 40px;
+    padding: 0 12px;
+    display: inline-block;
+    position: relative;
+    background-color: #ffee00;
+    text-decoration: none;
+
+    @include --max-md {
+      font-size: 12px;
+    }
+
+    &._first {
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: -10px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 10px 20px 0;
+        border-color: transparent #ffee00 transparent transparent;
+      }
+      &:hover {
+        background-color: #ffb000;
+        &:before {
+          border-color: transparent #ffb000 transparent transparent;
+        }
+      }
+    }
+    &._last {
+      background-color: #ffba00;
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        right: -10px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 0 20px 10px;
+        border-color: transparent transparent transparent #ffba00;
+      }
+      &:hover {
+        background-color: #ff9a00;
+        &:before {
+          border-color: transparent transparent transparent #ff9a00;
+        }
+      }
+    }
+  }
+}

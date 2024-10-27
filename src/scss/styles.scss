@@ -22,6 +22,7 @@
 @import 'favorites';
 @import 'office';
 @import 'orders';
+@import 'page-404';
 
 :root {
   --header-height: 61px;
@@ -5443,130 +5444,6 @@ th.forum-headline__replies {
 }
 .clearfix {
   zoom: 1;
-}
-.page-404-html {
-  height: 100%;
-}
-.page-404-body {
-  background: #5b4583 url('../img/bg-404-x.jpg') repeat-x center top;
-  height: 100%;
-}
-.page-404-wrapper {
-  background: url('../img/bg-404.jpg') no-repeat center top;
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 220px;
-  background-size: cover;
-}
-.page-404-logo {
-  width: 220px;
-  height: 82px;
-  position: relative;
-  margin: 20px 0 0;
-}
-.page-404-logo__image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
-.page-404-logo__text {
-  position: absolute;
-  left: 60px;
-  top: 59px;
-  color: #fff;
-  font-size: 11px;
-  font-style: italic;
-  line-height: 12px;
-  padding-left: 10px;
-  span {
-    display: block;
-    font-size: 10px;
-  }
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 2px;
-    height: 18px;
-    background-color: #fff;
-    left: 0;
-    top: 2px;
-  }
-}
-.page-404-nav {
-  margin: 48px 0;
-
-  @media (max-width: $breakpoint-mini-max) {
-    text-align: center;
-  }
-  a {
-    font-size: 14px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 40px;
-    padding: 0 12px;
-    display: inline-block;
-    position: relative;
-    background-color: #ffee00;
-    text-decoration: none;
-
-    @media (max-width: $breakpoint-mini-max) {
-      font-size: 12px;
-    }
-
-    &._first {
-      &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        left: -10px;
-        top: 0;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 20px 10px 20px 0;
-        border-color: transparent #ffee00 transparent transparent;
-      }
-      &:hover {
-        background-color: #ffb000;
-        &:before {
-          border-color: transparent #ffb000 transparent transparent;
-        }
-      }
-    }
-    &._last {
-      background-color: #ffba00;
-      &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        right: -10px;
-        top: 0;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 20px 0 20px 10px;
-        border-color: transparent transparent transparent #ffba00;
-      }
-      &:hover {
-        background-color: #ff9a00;
-        &:before {
-          border-color: transparent transparent transparent #ff9a00;
-        }
-      }
-    }
-  }
-}
-.page-404-footer {
-  border-top: 1px solid #006681;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 0;
 }
 .selection-eq-item__desc {
   color: #333333;

@@ -522,10 +522,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 
   @include --max-xl {
-    gap: 12px;
+    gap: 20px;
   }
   @include --max-md {
     gap: 0;
@@ -555,19 +555,48 @@
 }
 
 .cart-item__price-value {
-  font-size: 20px;
-  color: #000;
-  font-weight: 400;
-  line-height: 32px;
-  white-space: nowrap;
-  text-align: center;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
   @include --max-xl {
-    line-height: 28px;
-    font-size: 16px;
+    height: 28px;
   }
   @include --max-lg {
-    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.cart-item__price-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.cart-item__price-old {
+  font-size: 14px;
+  color: #9c9c9c;
+  text-decoration: line-through;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+
+  @include --max-xl {
+    font-size: 12px;
+  }
+}
+
+.cart-item__price-real {
+  font-size: 18px;
+  color: #000;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+
+  @include --max-xl {
+    font-size: 16px;
   }
 }
 
@@ -576,10 +605,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 
   @include --max-xl {
-    gap: 12px;
+    gap: 20px;
   }
   @include --max-md {
     flex-direction: row;
@@ -613,10 +642,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 
   @include --max-xl {
-    gap: 12px;
+    gap: 20px;
   }
   @include --max-md {
     gap: 0;
