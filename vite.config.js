@@ -1,6 +1,6 @@
 /** @type {import('vite').UserConfig} */
 export default {
-  base: '/assets/nemopro/dist/',
+  base: '/assets/template/dist/',
   build: {
     rollupOptions: {
       output: {

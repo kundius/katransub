@@ -11,7 +11,7 @@ export function initOrderDeliveryPrice() {
     miniShop2.Callbacks.add('Order.getcost.response.success', 'OrderDeliveryPrice', function () {
       items.forEach((item) => {
         $.post(
-          '/assets/nemopro/actions.php',
+          '/assets/template/actions.php',
           {
             action: 'delivery/price',
             payment: payment?.value,

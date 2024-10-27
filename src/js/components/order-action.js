@@ -30,7 +30,7 @@ export function applyOrderAction(orderAction) {
         description: actionQuestions[action],
         onConfirm: () => {
           $.post(
-            '/assets/nemopro/actions.php',
+            '/assets/template/actions.php',
             {
               action: `order/${action}`,
               id: orderId

@@ -14,7 +14,7 @@ export function initOrderPaymentDescription() {
       function () {
         items.forEach((item) => {
           $.post(
-            '/assets/nemopro/actions.php',
+            '/assets/template/actions.php',
             {
               action: 'payment/description',
               delivery: delivery?.value,
