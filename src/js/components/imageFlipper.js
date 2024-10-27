@@ -8,7 +8,7 @@ const findImageRoot = (target, scope) => {
   return findImageRoot(target.parentNode, scope)
 }
 
-if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+if (window.matchMedia('(max-width: 767px)').matches) {
   const containers = document.querySelectorAll('[data-products-container]') || []
 
   let turned = null
