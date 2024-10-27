@@ -89,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Сообщение о добавлении товара
   miniShop2.Callbacks.add('Cart.add.response.success', 'add_to_cart_message', function (response) {
-    const product = miniShop2.sendData.$form[0].closest('[data-product]')
-    const productThumb = product.querySelector('[itemprop="thumb"]').content
-    const productUri = product.querySelector('[itemprop="uri"]').content
-    const productTitle = product.querySelector('[itemprop="title"]').content
-    const productPrice = product.querySelector('[itemprop="price"]').content
+    const form = miniShop2.sendData.$form[0].closest('[data-product-form]')
+    const formThumb = form.querySelector('[itemprop="thumb"]').content
+    const formtUri = form.querySelector('[itemprop="uri"]').content
+    const formTitle = form.querySelector('[itemprop="title"]').content
+    const formPrice = form.querySelector('[itemprop="price"]').content
 
     const modalId = `cart-add-success-${response.data.row.id}`
 
@@ -124,15 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
     content.innerHTML = `
   <div class="cart-success">
   <div class="cart-success__product">
-  <a href="${productUri}" class="cart-success__product-image">
-  <img src="${productThumb}" alt="">
+  <a href="${formtUri}" class="cart-success__product-image">
+  <img src="${formThumb}" alt="">
   </a>
   <div class="cart-success__product-info">
   <div class="cart-success__product-desc">
-  <a href="${productUri}">${productTitle}</a>
+  <a href="${formtUri}">${formTitle}</a>
   </div>
   <div class="cart-success__product-totals">
-  ${response.data.row.count} x <strong>${productPrice}</strong>
+  ${response.data.row.count} x <strong>${formPrice}</strong>
   </div>
   </div>
   </div>
@@ -163,7 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ?.click()
 
     // повесить на форму статус добавлено и обновить количество
-    product.dataset.productStatus = 'added'
+    document.querySelectorAll(`[data-product-form="${response.data.row.id}"]`)?.forEach((el) => {
+      el.dataset.productFormStatus = 'added'
+    })
     miniShop2.sendData.$form[0].querySelector('[name="count"]').value = response.data.row.count
 
     // открыть созданное окно успешного добавления

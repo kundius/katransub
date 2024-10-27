@@ -343,7 +343,7 @@
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
-  [data-product][data-product-status='added'] & {
+  [data-product-form][data-product-form-status='added'] & {
     display: none;
   }
   svg {
@@ -396,7 +396,7 @@
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
-  [data-product]:not([data-product-status='added']) & {
+  [data-product-form]:not([data-product-form-status='added']) & {
     display: none;
   }
   svg {

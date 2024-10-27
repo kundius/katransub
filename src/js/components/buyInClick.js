@@ -2,14 +2,14 @@ import { disableScroll, enableScroll } from '../utils'
 
 export function applyBuyInClick(buyInClick) {
   buyInClick.addEventListener('click', (e) => {
-    const product = e.target.closest('[data-product]')
+    const form = e.target.closest('[data-product-form]')
 
     const modal = document.getElementById('modal-buy-in-click')
 
-    const fromImage = product.querySelector('[itemprop="thumb"]').content
-    const fromTitle = product.querySelector('[itemprop="title"]').content
-    const fromPrice = product.querySelector('[itemprop="price"]').content
-    const fromUri = product.querySelector('[itemprop="uri"]').content
+    const fromImage = form.querySelector('[itemprop="thumb"]').content
+    const fromTitle = form.querySelector('[itemprop="title"]').content
+    const fromPrice = form.querySelector('[itemprop="price"]').content
+    const fromUri = form.querySelector('[itemprop="uri"]').content
 
     const toProductName = modal.querySelector('[name="product"]')
     const toImage = modal.querySelector('[data-buy-in-click-image]')
