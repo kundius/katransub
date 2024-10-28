@@ -343,7 +343,7 @@
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
-  font-weight: 400;
+  font-weight: 500;
   [data-product-form][data-product-form-status='added'] & {
     display: none;
   }
@@ -397,7 +397,7 @@
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
-  font-weight: 400;
+  font-weight: 500;
   [data-product-form]:not([data-product-form-status='added']) & {
     display: none;
   }
