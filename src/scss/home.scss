@@ -326,6 +326,10 @@
   line-height: 1.15;
   margin-top: 5px;
 
+  a {
+    color: inherit;
+  }
+
   @include --max-xl {
     font-size: 16px;
   }

@@ -2,6 +2,7 @@
   display: flex;
   gap: 32px;
   margin-top: 12px;
+  margin-bottom: 96px;
 
   @include --max-2xl {
     gap: 24px;

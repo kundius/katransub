@@ -374,51 +374,43 @@ body:has(.header) {
 }
 
 .header-contacts {
-  display: grid;
-  grid-template-columns: auto 4px auto 16px auto;
-  grid-template-areas: 'a . b . c';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 10px;
   color: rgb(183, 180, 180);
   line-height: 1.2;
   white-space: nowrap;
 
   @include --lg {
-    grid-template-columns: auto 4px auto 1fr auto;
     color: rgb(76, 76, 76);
     font-size: 13px;
   }
   @include --xl {
     font-size: 14px;
-    grid-template-columns: auto 8px auto 1fr auto;
+  }
+}
+
+.header-contacts__main {
+  display: flex;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: #f18a16;
   }
 }
 
 .header-contacts__label {
-  grid-area: a;
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    color: #f18a16;
-  }
 }
 
 .header-contacts__city {
-  grid-area: b;
-  color: inherit;
-  text-decoration: none;
   border-bottom: 1px solid color-mix(in srgb, currentColor 50%, transparent);
-
-  &:hover {
-    color: #f18a16;
-  }
 }
 
 .header-contacts__more {
-  grid-area: c;
   color: inherit;
   text-decoration: none;
-  margin-left: auto;
   border-bottom: 1px dashed color-mix(in srgb, currentColor 50%, transparent);
 
   &:hover {
