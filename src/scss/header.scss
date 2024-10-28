@@ -301,7 +301,16 @@ body:has(.header) {
     margin-right: calc(var(--container-padding) * -1);
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
-    column-gap: 0;
+    column-gap: 24px;
+  }
+  @include --max-sm {
+    justify-content: center;
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      order: 35;
+    }
   }
 }
 
@@ -312,25 +321,31 @@ body:has(.header) {
   @include --max-sm {
     display: flex;
     &:nth-child(1) {
-      width: 33.33%;
-      display: flex;
-      justify-content: flex-start;
+      order: 10;
+      // width: 33.33%;
+      // display: flex;
+      // justify-content: flex-start;
     }
     &:nth-child(2) {
-      width: 33.33%;
-      justify-content: center;
+      order: 20;
+      margin: 0 14px 0 16px;
+      // width: 33.33%;
+      // justify-content: center;
     }
     &:nth-child(3) {
-      width: 33.33%;
-      justify-content: flex-end;
+      order: 30;
+      // width: 33.33%;
+      // justify-content: flex-end;
     }
     &:nth-child(4) {
-      width: 50%;
-      justify-content: flex-start;
+      order: 40;
+      // width: 50%;
+      // justify-content: flex-start;
     }
     &:nth-child(5) {
-      width: 50%;
-      justify-content: flex-end;
+      order: 50;
+      // width: 50%;
+      // justify-content: flex-end;
     }
   }
 }
