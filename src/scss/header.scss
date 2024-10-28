@@ -381,6 +381,7 @@ body:has(.header) {
   color: rgb(183, 180, 180);
   line-height: 1.2;
   white-space: nowrap;
+  gap: 12px;
 
   @include --lg {
     color: rgb(76, 76, 76);
@@ -388,6 +389,7 @@ body:has(.header) {
   }
   @include --xl {
     font-size: 14px;
+    gap: 16px;
   }
 }
 
