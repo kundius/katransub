@@ -325,7 +325,7 @@ body {
 }
 
 .button-primary {
-  background: #efde00;
+  background: #ffed00;
   color: #383838;
   display: flex;
   align-items: center;
@@ -500,8 +500,8 @@ body {
   padding: 0 24px;
   border-radius: 4px;
   font-weight: 500;
-  background-color: #efde00;
-  border: 2px solid #efde00;
+  background-color: #ffed00;
+  border: 2px solid #ffed00;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -1049,7 +1049,7 @@ body {
   width: 120px;
   border-radius: 8px;
   filter: drop-shadow(0 0 4px rgba(0, 29, 47, 0.33));
-  background-color: #efde00;
+  background-color: #ffed00;
   text-transform: uppercase;
   padding: 0 12px;
   display: flex;
@@ -1057,8 +1057,9 @@ body {
   justify-content: center;
   gap: 6px;
   box-sizing: border-box;
-  left: var(--container-padding);
+  left: 50%;
   bottom: calc(var(--container-padding) * 2);
+  transform: translateX(-50%);
   opacity: 0;
   visibility: hidden;
   transition: visibility 0.3s ease, opacity 0.3s ease;
@@ -1099,7 +1100,7 @@ body {
   justify-content: center;
   gap: 2px;
   box-sizing: border-box;
-  left: calc(var(--container-padding) * 2 + 120px);
+  right: var(--container-padding);
   bottom: calc(var(--container-padding) * 2);
   opacity: 0;
   visibility: hidden;

@@ -196,16 +196,7 @@ body:has(.header) {
   border: none;
   padding: 0;
   border-radius: 8px;
-  // background-color: rgb(239, 222, 0);
-  background: linear-gradient(
-    53deg,
-    rgb(255, 248, 58) 0%,
-    rgb(255, 223, 44) 25%,
-    rgb(239, 222, 0) 75%,
-    rgb(239, 222, 0) 100%
-  );
-  background-size: calc(44px * 8) 44px;
-  background-position: 100% 0;
+  background: #ffed00;
   width: 44px;
   height: 44px;
   display: flex;
@@ -216,8 +207,7 @@ body:has(.header) {
   cursor: pointer;
 
   &:hover {
-    // background-image: linear-gradient(53deg, rgb(255, 248, 58) 0%, rgb(255, 223, 44) 100%);
-    background-position: 0 0;
+    background: #eed20e;
     box-shadow: -0.139px 0.99px 6.86px 0.14px rgba(5, 85, 104, 0.35);
   }
 }
@@ -251,7 +241,7 @@ body:has(.header) {
   font-size: 10px;
   color: #000;
   text-align: center;
-  background: #efde00;
+  background: #ffed00;
   box-sizing: border-box;
   white-space: nowrap;
   display: none;
@@ -470,10 +460,10 @@ body:has(.header) {
 }
 
 .header-actions__button:has([data-msfavorites-indicator]:not([data-msfavorites-indicator='0'])) {
-  color: #efde00;
+  color: #ffed00;
   @include --hover {
     background: #8f8f8f;
-    color: #efde00;
+    color: #ffed00;
   }
   @include --lg {
     color: #0699bc;
@@ -493,10 +483,10 @@ body:has(.header) {
 }
 
 .header-actions__button:has([data-mscomparison-indicator]:not([data-mscomparison-indicator='0'])) {
-  color: #efde00;
+  color: #ffed00;
   @include --hover {
     background: #8f8f8f;
-    color: #efde00;
+    color: #ffed00;
   }
   @include --lg {
     color: #0699bc;
@@ -516,7 +506,7 @@ body:has(.header) {
   color: #000;
   line-height: 12px;
   text-align: center;
-  background: #efde00;
+  background: #ffed00;
   box-sizing: border-box;
   white-space: nowrap;
   top: 2px;

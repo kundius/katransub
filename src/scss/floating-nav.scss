@@ -111,7 +111,8 @@
     }
   }
   .floating-nav__close {
-    padding: 0 24px;
+    padding: 0 12px 0 24px;
+    justify-content: space-between;
     font-size: 14px;
     color: rgb(82, 82, 82);
     text-transform: uppercase;
@@ -139,7 +140,7 @@
     overflow: auto;
   }
   .floating-nav__content ul {
-    padding: 10px 30px;
+    padding: 0;
     margin: 0;
     list-style: none;
     line-height: 24px;
@@ -150,6 +151,9 @@
   .floating-nav__content ul li a {
     color: rgb(0, 103, 128);
     text-decoration: none;
+    display: block;
+    padding: 8px 24px;
+    line-height: 20px;
     &:hover {
       color: #f28316;
     }
