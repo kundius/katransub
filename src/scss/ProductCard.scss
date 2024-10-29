@@ -110,8 +110,9 @@
   justify-content: center;
   line-height: 1;
   text-align: center;
-  width: 32px;
+  min-width: 32px;
   border-radius: 4px;
+  padding: 0 2px;
   &_new {
     color: #000;
     background-color: #5fd7f6;
@@ -327,7 +328,7 @@
   }
 }
 
-.button-addtocart {
+.button-addedcart {
   background: #ffed00;
   color: #383838;
   display: flex;
@@ -381,7 +382,7 @@
   }
 }
 
-.button-addedcart {
+.button-addtocart {
   background: #0699bc;
   color: #fff;
   display: flex;

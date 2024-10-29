@@ -303,7 +303,8 @@
   justify-content: center;
   line-height: 1;
   text-align: center;
-  width: 42px;
+  min-width: 42px;
+  padding: 0 4px;
   border-radius: 4px;
 
   &_new {
