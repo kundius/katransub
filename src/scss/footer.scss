@@ -44,6 +44,7 @@
 
 .footer-primary__grid-logo {
   grid-area: logo;
+  padding: 24px 0;
   @include --max-lg {
     margin: 0 calc(var(--container-padding) * -1);
     padding: 16px var(--container-padding);
@@ -121,10 +122,10 @@
 
 .footer-logo__phone {
   text-align: right;
-  padding-top: 15px;
-  @include --max-md {
-    padding-top: 0;
-  }
+  // padding-top: 20px;
+  // @include --max-md {
+  //   padding-top: 0;
+  // }
 }
 
 .footer-logo__phone-number {
