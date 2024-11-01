@@ -325,7 +325,7 @@
 
   @include --max-md {
     font-size: 12px;
-    width: 32px;
+    min-width: 32px;
     height: 18px;
   }
 }
