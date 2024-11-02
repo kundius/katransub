@@ -8,6 +8,8 @@ export function initOrderInvoice() {
   const input = document.querySelector('[data-order-invoice-input]')
   const file = document.querySelector('[data-order-invoice-file]')
 
+  const defaultText = add.innerHTML
+
   if (!(add && remove && input && file)) {
     return
   }
@@ -18,6 +20,7 @@ export function initOrderInvoice() {
 
   file.addEventListener('change', async (e) => {
     add.setAttribute('data-order-invoice-loading', '')
+    add.setAttribute('disabled', '')
 
     const fd = new FormData()
     fd.append('action', 'upload_invoice')
@@ -28,25 +31,22 @@ export function initOrderInvoice() {
       body: fd
     })
 
-    if (uploadResponse.status === 500) {
+    if (uploadResponse.status !== 200) {
       miniShop2.Message.error('Не удалось загрузить файл!');
-      return;
+    } else {
+      const json = await uploadResponse.json()
+      
+      if (!json.success) {
+        miniShop2.Message.error(json.message);
+      } else {
+        input.value = json.url
+        $(input).trigger('change')
+        removeVisibilityChange()
+      }
     }
-    
-    const json = await uploadResponse.json()
-    
-    if (!json.success) {
-      miniShop2.Message.error(json.message);
-      return;
-    }
-  
-    input.value = json.url
-
-    $(input).trigger('change')
-
-    removeVisibilityChange()
 
     add.removeAttribute('data-order-invoice-loading')
+    add.removeAttribute('disabled')
   })
 
   remove.addEventListener('click', () => {
@@ -58,8 +58,13 @@ export function initOrderInvoice() {
   const removeVisibilityChange = () => {
     if (!input.value) {
       remove.setAttribute('hidden', '')
+      add.removeAttribute('title')
+      add.innerHTML = defaultText
     } else {
       remove.removeAttribute('hidden')
+      const filename = input.value.split('/').pop()
+      add.innerHTML = `<span>${filename}</span>`
+      add.setAttribute('title', filename)
     }
   }
 

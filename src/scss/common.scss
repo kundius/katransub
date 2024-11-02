@@ -476,6 +476,10 @@ body {
   text-align: center;
   text-decoration: none;
 
+  &[hidden] {
+    display: none;
+  }
+
   &:disabled {
     background-color: #fbfbfb;
     cursor: default;
@@ -492,6 +496,11 @@ body {
   @include --max-md {
     padding: 0 16px;
   }
+}
+
+.button-outline-obscure_size-icon {
+  padding: 0;
+  min-width: 36px;
 }
 
 .button-filled-primary {

@@ -127,44 +127,26 @@ try {
                 throw new RuntimeException('Invalid file format.');
             }
         
-            $filename = sprintf('%s.%s', sha1_file($_FILES['file']['tmp_name']), $ext);
-
+            $filedir = sprintf('files/invoices/%s', sha1_file($_FILES['file']['tmp_name']));
+            $filename = sprintf('%s.%s', $_FILES['file']['name'], $ext);
+            $filepath = sprintf('%s/%s', $filedir, $filename);
+            if (!is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $filedir)) {
+                mkdir($_SERVER['DOCUMENT_ROOT'] . '/' . $filedir);
+            }
             // You should name it uniquely.
             // DO NOT USE $_FILES['file']['name'] WITHOUT ANY VALIDATION !!
             // On this example, obtain safe unique name from its binary data.
             if (!move_uploaded_file(
                 $_FILES['file']['tmp_name'],
-                $_SERVER['DOCUMENT_ROOT'] . '/files/invoices/' . $filename
+                $_SERVER['DOCUMENT_ROOT'] . '/' . $filepath
             )) {
                 throw new RuntimeException('Failed to move uploaded file.');
             }
 
             $response = [
                 'success' => true,
-                'url' => $modx->getOption('site_url') . 'files/invoices/' . $filename
+                'url' => $modx->getOption('site_url') . $filepath
             ];
-            // print_r($_FILES);
-            // if (
-            //     !isset($_FILES['file']['error']) ||
-            //     is_array($_FILES['file']['error'])
-            // ) {
-            //     throw new RuntimeException('Invalid parameters.');
-            // }
-            // $filename = uniqid();
-            // $filename = sha1_file($_FILES['file']['tmp_name']);
-            // if (!move_uploaded_file(
-            //     $_FILES['file']['tmp_name'],
-            //     sprintf($_SERVER['DOCUMENT_ROOT'] . 'files/invoices/%s.%s', $filename, $ext)
-            // )) {
-            //     $response = [
-            //         'success' => false
-            //     ];
-            // } else {
-            //     $response = [
-            //         'success' => true,
-            //         'url' => 'https://katransub.ru/files/invoices/' . $filename
-            //     ];
-            // }
             break;
     }
 } catch (RuntimeException $e) {
