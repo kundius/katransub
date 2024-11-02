@@ -128,8 +128,7 @@ try {
             }
         
             $filedir = sprintf('files/invoices/%s', sha1_file($_FILES['file']['tmp_name']));
-            $filename = sprintf('%s.%s', $_FILES['file']['name'], $ext);
-            $filepath = sprintf('%s/%s', $filedir, $filename);
+            $filepath = sprintf('%s/%s', $filedir, $_FILES['file']['name']);
             if (!is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $filedir)) {
                 mkdir($_SERVER['DOCUMENT_ROOT'] . '/' . $filedir);
             }
