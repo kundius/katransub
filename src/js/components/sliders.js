@@ -18,7 +18,7 @@ homeSlider.forEach((wrapper) => {
     spaceBetween: 8,
     slidesPerView: 3,
     centeredSlides: true,
-    loop: true
+    loop: thumbs.querySelectorAll('.swiper-slide').length > 3
   })
 
   const galleryTop = new Swiper(main, {
