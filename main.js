@@ -29,6 +29,7 @@ import { initdFloatingNav } from './src/js/components/floating-nav'
 import { initScrolltop } from './src/js/components/scrolltop'
 import { initFloatingElements } from './src/js/components/floating-elements'
 import { applyOrderAction, initOrderAction } from './src/js/components/order-action'
+import { initOrderInvoice } from './src/js/components/order-invoice'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -57,6 +58,7 @@ initdFloatingNav()
 initScrolltop()
 initFloatingElements()
 initOrderAction()
+initOrderInvoice()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
