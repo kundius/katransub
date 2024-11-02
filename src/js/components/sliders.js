@@ -11,14 +11,16 @@ const homeSlider = document.querySelectorAll('[data-home-slider]') || []
 homeSlider.forEach((wrapper) => {
   const thumbs = wrapper.querySelector('[data-home-slider-thumbs]')
   const main = wrapper.querySelector('[data-home-slider-main]')
+  const thumbSlides = thumbs.querySelectorAll('.swiper-slide')
+  const isThumbLoop = thumbSlides && thumbSlides.length > 3
 
   const galleryThumbs = new Swiper(thumbs, {
     direction: 'vertical',
     allowTouchMove: false,
     spaceBetween: 8,
     slidesPerView: 3,
-    centeredSlides: true,
-    loop: thumbs.querySelectorAll('.swiper-slide').length > 3
+    centeredSlides: isThumbLoop,
+    loop: isThumbLoop
   })
 
   const galleryTop = new Swiper(main, {
