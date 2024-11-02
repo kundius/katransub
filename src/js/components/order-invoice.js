@@ -8,11 +8,11 @@ export function initOrderInvoice() {
   const input = document.querySelector('[data-order-invoice-input]')
   const file = document.querySelector('[data-order-invoice-file]')
 
-  const defaultText = add.innerHTML
-
   if (!(add && remove && input && file)) {
     return
   }
+
+  const defaultText = add.innerHTML
 
   add.addEventListener('click', () => {
     file.click()
