@@ -43,15 +43,24 @@ homeSlider.forEach((wrapper) => {
 
   thumbs.addEventListener('click', (e) => {
     const slide = e.target.closest('.swiper-slide')
-    if (slide.classList.contains('swiper-slide-prev')) {
-      galleryTop.slidePrev()
-    }
-    if (slide.classList.contains('swiper-slide-next')) {
-      galleryTop.slideNext()
+    if (isThumbLoop) {
+      if (slide.classList.contains('swiper-slide-prev')) {
+        galleryTop.slidePrev()
+      }
+      if (slide.classList.contains('swiper-slide-next')) {
+        galleryTop.slideNext()
+      }
+    } else {
+      galleryThumbs.slideTo(slide.dataset.homeSliderThumb)
     }
   })
+
   galleryTop.on('slideChange', function (e, a) {
-    galleryThumbs.slideToLoop(e.realIndex)
+    if (isThumbLoop) {
+      galleryThumbs.slideToLoop(e.realIndex)
+    } else {
+      galleryThumbs.slideTo(e.realIndex)
+    }
   })
 })
 
