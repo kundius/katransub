@@ -1,5 +1,5 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay, Thumbs } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,16 +11,28 @@ const homeSlider = document.querySelectorAll('[data-home-slider]') || []
 homeSlider.forEach((wrapper) => {
   const thumbs = wrapper.querySelector('[data-home-slider-thumbs]')
   const main = wrapper.querySelector('[data-home-slider-main]')
-  const thumbSlides = thumbs.querySelectorAll('.swiper-slide')
-  const isThumbLoop = thumbSlides && thumbSlides.length > 3
+  const thumbsWrapper = thumbs.querySelector('.swiper-wrapper')
+
+  const setActive = (index) => {
+    Array.from(thumbsWrapper.children).forEach((el) => {
+      if (el.dataset.homeSliderSlide == index) {
+        el.classList.add('swiper-slide-thumb-active')
+      } else {
+        el.classList.remove('swiper-slide-thumb-active')
+      }
+    })
+  }
+
+  const isLoopThumbs = thumbsWrapper.children.length > 4
 
   const galleryThumbs = new Swiper(thumbs, {
     direction: 'vertical',
     allowTouchMove: false,
     spaceBetween: 8,
     slidesPerView: 3,
-    centeredSlides: isThumbLoop,
-    loop: isThumbLoop
+    centeredSlides: true,
+    centeredSlidesBounds: !isLoopThumbs,
+    loop: isLoopThumbs
   })
 
   const galleryTop = new Swiper(main, {
@@ -43,24 +55,16 @@ homeSlider.forEach((wrapper) => {
 
   thumbs.addEventListener('click', (e) => {
     const slide = e.target.closest('.swiper-slide')
-    if (isThumbLoop) {
-      if (slide.classList.contains('swiper-slide-prev')) {
-        galleryTop.slidePrev()
-      }
-      if (slide.classList.contains('swiper-slide-next')) {
-        galleryTop.slideNext()
-      }
-    } else {
-      galleryThumbs.slideTo(slide.dataset.homeSliderThumb)
-    }
+    galleryTop.slideToLoop(slide.dataset.homeSliderSlide)
   })
 
-  galleryTop.on('slideChange', function (e, a) {
-    if (isThumbLoop) {
+  galleryTop.on('slideChange', function (e) {
+    if (isLoopThumbs) {
       galleryThumbs.slideToLoop(e.realIndex)
     } else {
       galleryThumbs.slideTo(e.realIndex)
     }
+    setActive(e.realIndex)
   })
 })
 
