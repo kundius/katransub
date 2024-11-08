@@ -451,7 +451,7 @@
   gap: 0px 0px;
   grid-template-areas: 'main . thumbs';
   padding: 16px;
-  background-color: #c0c0c0;
+  background-color: #e0e0e0;
   border-radius: 8px;
   user-select: none;
 
@@ -564,7 +564,7 @@
     &::after {
       content: '';
       opacity: 0.3;
-      background: #bcbcbc;
+      background: #e0e0e0;
       position: absolute;
       left: 0;
       top: 0;
