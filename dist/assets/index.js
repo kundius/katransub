@@ -2,7 +2,6 @@
   body {
     --removed-body-scroll-bar-size: ${i}px;
     overflow: hidden !important;
-    overscroll-behavior: contain;
     position: relative !important;
     padding-left: 0px;
     padding-top: 0px;

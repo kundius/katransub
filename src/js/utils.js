@@ -7,7 +7,6 @@ export function disableScroll() {
   body {
     --removed-body-scroll-bar-size: ${scrollbarWidth}px;
     overflow: hidden !important;
-    overscroll-behavior: contain;
     position: relative !important;
     padding-left: 0px;
     padding-top: 0px;
