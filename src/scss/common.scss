@@ -680,6 +680,7 @@ body {
 .breadcrumb-item a {
   color: #b6b6b6;
   text-decoration: none;
+  display: inline-block;
   &:hover {
     color: #000;
   }
