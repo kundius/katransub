@@ -50,7 +50,9 @@ export function applyProductGallery(productGallery) {
     modules: [Navigation, Pagination, Autoplay, Thumbs, Zoom],
     spaceBetween: 16,
     loop: true,
-    zoom: true,
+    zoom: {
+      toggle: false
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
