@@ -1,5 +1,5 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination, Autoplay, Thumbs, Zoom } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay, Thumbs } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -47,12 +47,9 @@ export function applyProductGallery(productGallery) {
   })
 
   const galleryTop = new Swiper(main, {
-    modules: [Navigation, Pagination, Autoplay, Thumbs, Zoom],
+    modules: [Navigation, Pagination, Autoplay, Thumbs],
     spaceBetween: 16,
     loop: true,
-    zoom: {
-      toggle: false
-    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
