@@ -5,10 +5,10 @@ import { disableScroll, enableScroll } from '../utils'
 
 export function applyProductGallery(productGallery) {
   const closes = productGallery.querySelectorAll('[data-product-gallery-close]')
-  const mainNode = carousel.querySelector('[data-product-gallery-main-viewport]')
-  const mainPrevNode = carousel.querySelector('[data-product-gallery-main-prev]')
-  const mainNextNode = carousel.querySelector('[data-product-gallery-main-next]')
-  const thumbsNode = carousel.querySelector('[data-product-gallery-thumbs-viewport]')
+  const mainNode = productGallery.querySelector('[data-product-gallery-main-viewport]')
+  const mainPrevNode = productGallery.querySelector('[data-product-gallery-main-prev]')
+  const mainNextNode = productGallery.querySelector('[data-product-gallery-main-next]')
+  const thumbsNode = productGallery.querySelector('[data-product-gallery-thumbs-viewport]')
 
   const fullscreenIn = () => {
     productGallery.setAttribute('data-product-gallery-fullscreen', '')
