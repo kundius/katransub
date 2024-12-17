@@ -30,6 +30,7 @@ import { initScrolltop } from './src/js/components/scrolltop'
 import { initFloatingElements } from './src/js/components/floating-elements'
 import { applyOrderAction, initOrderAction } from './src/js/components/order-action'
 import { initOrderInvoice } from './src/js/components/order-invoice'
+import { initHomeCarousel } from './src/js/components/homeCarousel'
 
 import 'normalize.css'
 import './src/scss/styles.scss'
@@ -59,6 +60,7 @@ initScrolltop()
 initFloatingElements()
 initOrderAction()
 initOrderInvoice()
+initHomeCarousel()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

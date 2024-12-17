@@ -39,6 +39,7 @@
     "awesomplete": "^1.1.5",
     "browserify": "^17.0.0",
     "choices.js": "^7.0.0",
+    "embla-carousel": "^8.5.1",
     "gulp-buffer": "0.0.2",
     "gulp-sass": "^5.1.0",
     "gulp-tap": "^2.0.0",
