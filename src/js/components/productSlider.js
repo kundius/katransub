@@ -3,7 +3,7 @@ import EmblaCarousel from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 
 export function applyProductSlider(el) {
-  const mainNode = el.querySelector('[data-product-slider]')
+  const mainNode = el.querySelector('[data-product-slider-viewport]')
   const mainPrevNode = el.querySelector('[data-product-slider-prev]')
   const mainNextNode = el.querySelector('[data-product-slider-next]')
 
@@ -22,6 +22,7 @@ export function applyProductSlider(el) {
 }
 
 export function initProductSlider() {
+  document.querySelectorAll('[data-product-slider]')?.forEach(applyProductSlider)
 }
 
 // 768: {
