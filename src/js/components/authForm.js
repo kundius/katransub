@@ -7,7 +7,10 @@ export function applyAuthForm(form) {
   const passwordRow = form.querySelector('[data-auth-form-password-row]')
   const passwordInput = form.querySelector('[data-auth-form-password-input]')
 
+  let isShowReset = false
+
   const showReset = () => {
+    isShowReset = true
     passwordInput.value = ''
     passwordRow.setAttribute('hidden', '')
     showResetButton.setAttribute('hidden', '')
@@ -16,6 +19,7 @@ export function applyAuthForm(form) {
   }
 
   const hideReset = () => {
+    isShowReset = false
     passwordInput.value = ''
     passwordRow.removeAttribute('hidden')
     hideResetButton.setAttribute('hidden', '')
@@ -27,7 +31,11 @@ export function applyAuthForm(form) {
 
   hideResetButton.addEventListener('click', hideReset)
 
-  form.addEventListener('submit', hideReset)
+  form.addEventListener('submit', () => {
+    if (isShowReset) {
+      hideReset()
+    }
+  })
 }
 
 export function initAuthForm() {
