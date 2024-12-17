@@ -1248,7 +1248,7 @@
 }
 
 .product-slider {
-  --carousel-gap: 12px;
+  --carousel-gap: 24px;
   --carousel-columns: 5;
 
   overflow: hidden;
@@ -1273,6 +1273,8 @@
 .product-slider__viewport {
   overflow: hidden;
   position: relative;
+  margin: -15px;
+  padding: 15px;
 }
 
 .product-slider__container {
@@ -1305,6 +1307,9 @@
   filter: none;
   color: #fff;
   transition: .3s ease;
+  &:disabled {
+    display: none;
+  }
   &:hover {
     filter: none;
     box-shadow: 1px 8px 9px 0px rgba(0, 25, 41, 0.15);
