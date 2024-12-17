@@ -203,6 +203,7 @@
   border-radius: 50%;
   box-shadow: 0 0 9px #00192914;
   background-color: #0003;
+  border: none;
   filter: none;
   color: #fff;
   transition: .3s ease;
@@ -282,7 +283,7 @@
   grid-column-gap: var(--carousel-gap);
 }
 
-.home-carousel-thumbs__slide {
+.product-gallery-thumbs__slide {
   border: 1px solid #e3e3e3;
   box-sizing: border-box;
   position: relative;
@@ -291,7 +292,7 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
-  width: calc(20% - 10px);
+  flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap)*(var(--carousel-columns) - 1) / var(--carousel-columns));
 
   [data-product-gallery-fullscreen] & {
     width: 80px;
