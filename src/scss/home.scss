@@ -550,10 +550,10 @@
 .home-carousel-thumbs__container {
   display: flex;
   touch-action: pan-x pinch-zoom;
-  height: 100%;
+  height: calc(100% + var(--carousel-gap));
   flex-direction: column;
   // gap: var(--carousel-gap);
-  margin-top: calc(0px - var(--carousel-gap));
+  margin: calc(0px - calc(var(--carousel-gap) / 2)) 0;
 }
 
 .home-carousel-thumbs__slide {
@@ -561,7 +561,7 @@
   flex: 0 0 calc(100% / var(--carousel-rows));
   min-height: 0;
   position: relative;
-  padding-top: var(--carousel-gap);
+  margin: calc(var(--carousel-gap) / 2) 0;
 
   img {
     height: 100%;
