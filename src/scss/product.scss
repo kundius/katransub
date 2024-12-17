@@ -1312,6 +1312,11 @@
   filter: none;
   color: #fff;
   transition: .3s ease;
+  @include --max-md {
+    top: 96px;
+    width: 32px;
+    height: 32px;
+  }
   &:disabled {
     display: none;
   }
@@ -1337,6 +1342,11 @@
     display: block;
     transform: rotate(45deg) translateX(0px);
     margin-left: 4px;
+    @include --max-md {
+      width: 8px;
+      height: 8px;
+      margin-left: 2px;
+    }
   }
 }
 
@@ -1355,6 +1365,11 @@
     display: block;
     transform: rotate(-45deg) translateX(0px);
     margin-left: -4px;
+    @include --max-md {
+      width: 8px;
+      height: 8px;
+      margin-left: -2px;
+    }
   }
 }
 
