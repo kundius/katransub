@@ -471,6 +471,9 @@
   --carousel-gap: 24px;
   --carousel-columns: 1;
 
+  grid-area: main;
+  min-height: 0;
+  min-width: 0;
   position: relative;
 }
 
@@ -497,8 +500,10 @@
   --carousel-gap: 12px;
   --carousel-columns: 4;
 
+  grid-area: thumbs;
   position: relative;
-  margin-top: 20px;
+  min-height: 0;
+  min-width: 0;
 
   @include --max-md {
     --carousel-columns: 3;
