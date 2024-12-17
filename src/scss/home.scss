@@ -494,6 +494,12 @@
     );
   min-width: 0;
   position: relative;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .home-carousel-thumbs {
@@ -519,7 +525,13 @@
   display: flex;
 }
 
-.home-carousel-thumbs__slide {}
+.home-carousel-thumbs__slide {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
 .home-slider {
   display: grid;
