@@ -11,22 +11,28 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 12px;
   row-gap: 24px;
+
   @include --md {
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-    > *:nth-child(15) + * {
+
+    >*:nth-child(15)+* {
       display: none;
     }
   }
+
   @include --lg {
     grid-template-columns: repeat(4, 1fr);
-    > *:nth-child(15) + * {
+
+    >*:nth-child(15)+* {
       display: flex;
     }
   }
+
   @include --3xl {
     grid-template-columns: repeat(5, 1fr);
-    > *:nth-child(15) + * {
+
+    >*:nth-child(15)+* {
       display: none;
     }
   }
@@ -61,6 +67,7 @@
   @include --max-md {
     font-size: 24px;
     margin-bottom: 24px;
+
     &::after {
       margin-top: 20px;
     }
@@ -83,6 +90,7 @@
     font-size: 24px;
     color: #000000;
     font-weight: 700;
+
     &::after {
       content: '';
       width: 64px;
@@ -96,6 +104,7 @@
   ul {
     padding-left: 64px;
     margin: 32px 0;
+
     li {
       margin: 8px 0;
     }
@@ -103,17 +112,21 @@
 
   @include --max-md {
     font-size: 16px;
+
     p {
       margin: 24px 0;
     }
+
     ul {
       padding-left: 32px;
       margin: 24px 0;
     }
+
     h2 {
       font-weight: 500;
       margin: 48px 0 24px;
       font-size: 20px;
+
       &::after {
         margin-top: 20px;
       }
@@ -149,6 +162,7 @@
     --swiper-navigation-sides-offset: -12px;
     font-size: 16px;
     padding: 36px;
+
     .swiper-button-prev,
     .swiper-button-next {
       color: #616161;
@@ -159,9 +173,11 @@
       box-shadow: 0 0 9px #00192914;
       filter: none;
       transition: 0.3s ease;
+
       &:hover {
         background: #fff;
       }
+
       &::after {
         font-size: calc(var(--swiper-navigation-size) / 2);
       }
@@ -191,18 +207,22 @@
   text-align: center;
   white-space: unset;
   text-wrap: balance;
+
   a {
     color: inherit;
     text-decoration: underline;
     display: inline-block;
+
     &:hover {
       color: #0699bc;
     }
   }
+
   ul {
     padding: 0;
     margin: 0;
     list-style: none;
+
     li {
       display: inline-block;
       padding: 0 12px;
@@ -212,12 +232,14 @@
   @include --max-xl {
     font-size: 16px;
     line-height: 20px;
+
     ul {
       li {
         padding: 0 8px;
       }
     }
   }
+
   @include --max-md {
     font-size: 14px;
     line-height: 22px;
@@ -234,6 +256,7 @@
     padding-left: 32px;
     padding-right: 32px;
   }
+
   @include --max-md {
     padding-left: 0;
     padding-right: 0;
@@ -261,10 +284,12 @@
 
   @include --max-2xl {
     margin-bottom: 16px;
+
     &::after {
       margin-top: 16px;
     }
   }
+
   @include --max-md {
     font-size: 16px;
   }
@@ -279,14 +304,14 @@
   @include --max-xl {
     column-gap: 32px;
   }
+
   @include --max-md {
     grid-template-columns: 1fr;
     row-gap: 20px;
   }
 }
 
-.buy-from-us__item {
-}
+.buy-from-us__item {}
 
 .buy-from-us__item-title {
   font-size: 20px;
@@ -300,6 +325,7 @@
   @include --max-xl {
     font-size: 18px;
   }
+
   @include --max-md {
     font-size: 16px;
     gap: 12px;
@@ -311,7 +337,8 @@
   height: 28px;
   position: relative;
   flex-shrink: 0;
-  > * {
+
+  >* {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -333,6 +360,7 @@
   @include --max-xl {
     font-size: 16px;
   }
+
   @include --max-md {
     font-size: 14px;
     margin-top: 8px;
@@ -377,14 +405,17 @@
 
   @include --max-2xl {
     margin-bottom: 16px;
+
     &::after {
       margin-top: 16px;
     }
   }
+
   @include --max-md {
     font-size: 16px;
     line-height: 18px;
     margin-bottom: 54px;
+
     &::after {
       margin-top: 20px;
     }
@@ -398,6 +429,7 @@
   @include --max-2xl {
     column-gap: 24px;
   }
+
   @include --max-md {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -421,7 +453,8 @@
   height: 80px;
   position: relative;
   flex-shrink: 0;
-  > * {
+
+  >* {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -459,6 +492,7 @@
     padding: 8px;
     grid-template-columns: 3fr 8px 1fr;
   }
+
   @include --max-md {
     padding: 2px;
     border-radius: 0;
@@ -487,11 +521,7 @@
 }
 
 .home-carousel-main__slide {
-  flex: 0 0
-    calc(
-      100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) /
-        var(--carousel-columns)
-    );
+  flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) / var(--carousel-columns));
   min-width: 0;
   position: relative;
 
@@ -530,6 +560,7 @@
   flex: 0 0 calc(100% / var(--carousel-rows));
   min-height: 0;
   position: relative;
+
   img {
     height: 100%;
     width: 100%;
@@ -538,6 +569,7 @@
     top: 0;
     position: absolute;
   }
+
   &::after {
     content: "";
     opacity: .3;
@@ -549,6 +581,7 @@
     height: 100%;
     transition: .3s ease;
   }
+
   &.embla-thumbs__slide--selected::after {
     opacity: 0;
   }
@@ -573,6 +606,7 @@
   left: 12px;
   right: auto;
   border: none;
+
   &:hover {
     color: #000;
     background-color: #ffffffb3;
@@ -610,6 +644,7 @@
   right: 12px;
   left: auto;
   border: none;
+
   &:hover {
     color: #000;
     background-color: #ffffffb3;
@@ -628,6 +663,45 @@
   margin-left: -4px;
 }
 
+.home-carousel-main__dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  transition: .3s opacity;
+  transform: translateZ(0);
+  z-index: 10;
+  bottom: 24px;
+  top: auto;
+  left: 0;
+  width: 100%;
+  .embla__dot {
+    margin: 0 8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0;
+    background: transparent;
+    &::before {
+      content: "";
+      display: block;
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      transition: .3s ease;
+      background: #bcbcbc;
+    }
+  }
+  .embla__dot--selected::before {
+    width: 100%;
+    height: 100%;
+    background: #f8f428;
+  }
+}
+
 .home-slider {
   display: grid;
   grid-template-columns: 3fr 16px 1fr;
@@ -643,6 +717,7 @@
     padding: 8px;
     grid-template-columns: 3fr 8px 1fr;
   }
+
   @include --max-md {
     padding: 2px;
     border-radius: 0;
@@ -666,6 +741,7 @@
   min-width: 0;
   position: relative;
   overflow: hidden;
+
   .swiper-slide {
     img {
       display: block;
@@ -673,6 +749,7 @@
       height: auto;
     }
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     width: var(--swiper-navigation-size);
@@ -682,19 +759,23 @@
     background-color: rgba(255, 255, 255, 0.502);
     box-shadow: 0px 0px 9px 0px rgba(0, 25, 41, 0.08);
     color: #616161;
+
     &:hover {
       color: #000000;
       background-color: rgba(255, 255, 255, 0.702);
       box-shadow: 1.113px 7.922px 9px 0px rgba(0, 25, 41, 0.15);
     }
+
     &::after {
       font-size: calc(var(--swiper-navigation-size) / 2);
     }
   }
+
   .swiper-pagination {
     display: flex;
     justify-content: center;
   }
+
   .swiper-pagination-bullet {
     background: transparent;
     display: flex;
@@ -702,6 +783,7 @@
     justify-content: center;
     background: transparent;
   }
+
   .swiper-pagination-bullet::before {
     content: '';
     display: block;
@@ -711,6 +793,7 @@
     transition: 0.3s ease;
     background: var(--swiper-pagination-bullet-inactive-color);
   }
+
   .swiper-pagination-bullet-active::before {
     width: 100%;
     height: 100%;
@@ -724,6 +807,7 @@
     --swiper-pagination-bottom: 8px;
     --swiper-pagination-bullet-horizontal-gap: 4px;
     --swiper-pagination-bullet-size: 12px;
+
     .swiper-button-prev,
     .swiper-button-next {
       border-radius: 0;
@@ -740,11 +824,13 @@
 
   .swiper-slide {
     position: relative;
+
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
+
     &::after {
       content: '';
       opacity: 0.3;
@@ -756,13 +842,16 @@
       height: 100%;
       transition: 0.3s ease;
     }
+
     &:hover::after {
       opacity: 0;
     }
+
     &.swiper-slide-thumb-active::after {
       opacity: 0;
     }
   }
+
   .swiper-container {
     width: 100%;
     height: 100%;
