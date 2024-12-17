@@ -540,6 +540,10 @@
   position: relative;
   min-height: 0;
   min-width: 0;
+
+  @include --max-md {
+    display: none;
+  }
 }
 
 .home-carousel-thumbs__viewport {
