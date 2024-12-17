@@ -90,6 +90,7 @@
 .product-gallery {
   position: relative;
   z-index: 1;
+  
   &[data-product-gallery-fullscreen] {
     display: flex;
     flex-direction: column;
@@ -164,6 +165,7 @@
 .product-gallery-main__container {
   display: flex;
   grid-column-gap: var(--carousel-gap);
+  height: 100%;
 }
 
 .product-gallery-main__slide {
@@ -256,6 +258,7 @@
 
   [data-product-gallery-fullscreen] & {
     min-height: 80px;
+    max-height: 80px;
   }
 }
 
@@ -280,7 +283,7 @@
   flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap)*(var(--carousel-columns) - 1) / var(--carousel-columns));
 
   [data-product-gallery-fullscreen] & {
-    width: 80px;
+    flex: 0 0 80px;
   }
 
   &:hover {
