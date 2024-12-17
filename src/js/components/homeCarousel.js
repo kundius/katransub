@@ -1,11 +1,13 @@
 import EmblaCarousel from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 import { addThumbBtnsClickHandlers, addToggleThumbBtnsActive } from './EmblaCarouselThumbsButton'
+import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
 
 export function applyCarousel(carousel) {
   const mainNode = carousel.querySelector('[data-home-carousel-main-viewport]')
   const mainPrevNode = carousel.querySelector('[data-home-carousel-main-prev]')
   const mainNextNode = carousel.querySelector('[data-home-carousel-main-next]')
+  const mainDotsNode = carousel.querySelector('[data-home-carousel-main-dots]')
   const thumbsNode = carousel.querySelector('[data-home-carousel-thumbs-viewport]')
 
   const emblaApiMain = EmblaCarousel(mainNode, {
@@ -27,11 +29,16 @@ export function applyCarousel(carousel) {
   )
   const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumbs)
   const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumbs)
+  const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+    emblaApiMain,
+    mainDotsNode
+  )
 
   emblaApiMain
     .on('destroy', removeMainPrevNextBtnsClickHandlers)
     .on('destroy', removeThumbBtnsClickHandlers)
     .on('destroy', removeToggleThumbBtnsActive)
+    .on('destroy', removeDotBtnsAndClickHandlers)
   emblaApiThumbs
     .on('destroy', removeThumbBtnsClickHandlers)
     .on('destroy', removeToggleThumbBtnsActive)
