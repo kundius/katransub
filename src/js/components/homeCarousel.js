@@ -9,11 +9,12 @@ export function applyCarousel(carousel) {
   const thumbsNode = carousel.querySelector('[data-home-carousel-thumbs-viewport]')
 
   const emblaApiMain = EmblaCarousel(mainNode, {
-    loop: false,
+    loop: true,
     slidesToScroll: 'auto'
   })
   const emblaApiThumbs = EmblaCarousel(thumbsNode, {
     // containScroll: 'trimSnaps',
+    axis: 'y',
     containScroll: 'trimSnaps',
     // loop: true,
     dragFree: true
