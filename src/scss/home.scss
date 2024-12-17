@@ -607,6 +607,14 @@
   right: auto;
   border: none;
 
+  @include --max-md {
+    width: 32px;
+    height: 32px;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+
   &:hover {
     color: #000;
     background-color: #ffffffb3;
@@ -623,6 +631,12 @@
   display: block;
   transform: rotate(45deg) translateX(0px);
   margin-left: 4px;
+
+  @include --max-md {
+    width: 8px;
+    height: 8px;
+    margin-left: 2px;
+  }
 }
 
 .home-carousel-main__next {
@@ -645,6 +659,14 @@
   left: auto;
   border: none;
 
+  @include --max-md {
+    width: 32px;
+    height: 32px;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+
   &:hover {
     color: #000;
     background-color: #ffffffb3;
@@ -661,6 +683,12 @@
   display: block;
   transform: rotate(-45deg) translateX(0px);
   margin-left: -4px;
+
+  @include --max-md {
+    width: 8px;
+    height: 8px;
+    margin-left: -2px;
+  }
 }
 
 .home-carousel-main__dots {
@@ -675,7 +703,11 @@
   top: auto;
   left: 0;
   width: 100%;
+  @include --max-md {
+    bottom: 8px;
+  }
   .embla__dot {
+    cursor: pointer;
     margin: 0 8px;
     width: 16px;
     height: 16px;
@@ -685,6 +717,11 @@
     border: none;
     padding: 0;
     background: transparent;
+    @include --max-md {
+      margin: 0 4px;
+      width: 12px;
+      height: 12px;
+    }
     &::before {
       content: "";
       display: block;
