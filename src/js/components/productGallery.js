@@ -1,33 +1,25 @@
-import Swiper from 'swiper'
-import { Navigation, Pagination, Autoplay, Thumbs } from 'swiper/modules'
-
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/autoplay'
-import 'swiper/css/thumbs'
+import EmblaCarousel from 'embla-carousel'
+import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
+import { addThumbBtnsClickHandlers, addToggleThumbBtnsActive } from './EmblaCarouselThumbsButton'
 import { disableScroll, enableScroll } from '../utils'
 
 export function applyProductGallery(productGallery) {
   const closes = productGallery.querySelectorAll('[data-product-gallery-close]')
   const main = productGallery.querySelector('[data-product-gallery-main]')
-  const thumbs = productGallery.querySelector('[data-product-gallery-thumbs]')
+
+  const mainNode = carousel.querySelector('[data-product-gallery-main-viewport]')
+  const mainPrevNode = carousel.querySelector('[data-product-gallery-main-prev]')
+  const mainNextNode = carousel.querySelector('[data-product-gallery-main-next]')
+  const thumbsNode = carousel.querySelector('[data-product-gallery-thumbs-viewport]')
 
   const fullscreenIn = () => {
-    // galleryThumbs.update({
-    //   slidesPerView: 12
-    // })
     productGallery.setAttribute('data-product-gallery-fullscreen', '')
     disableScroll()
   }
 
   const fullscreenOut = () => {
-    // galleryThumbs.update({
-    //   slidesPerView: 5
-    // })
     productGallery.removeAttribute('data-product-gallery-fullscreen')
     enableScroll()
-    // slidesPerView: "auto",
   }
 
   main.addEventListener('click', (e) => {
@@ -38,49 +30,32 @@ export function applyProductGallery(productGallery) {
 
   closes.forEach((close) => close.addEventListener('click', fullscreenOut))
 
-  const galleryThumbs = new Swiper(thumbs, {
-    modules: [Navigation, Pagination, Autoplay, Thumbs],
-    allowTouchMove: false,
-    spaceBetween: 12,
-    slidesPerView: 'auto',
-    watchSlidesProgress: true
-  })
-
-  const galleryTop = new Swiper(main, {
-    modules: [Navigation, Pagination, Autoplay, Thumbs],
-    spaceBetween: 16,
+  const emblaApiMain = EmblaCarousel(mainNode, {
     loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    thumbs: {
-      swiper: galleryThumbs
-    }
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: false
-    // }
+    slidesToScroll: 'auto'
+  })
+  const emblaApiThumbs = EmblaCarousel(thumbsNode, {
+    // containScroll: 'trimSnaps',
+    containScroll: 'trimSnaps',
+    // loop: true,
+    dragFree: true
   })
 
-  // thumbs.addEventListener('click', (e) => {
-  //   const slide = e.target.closest('.swiper-slide')
-  //   galleryTop.slideToLoop(slide.dataset.swiperSlideIndex)
-  //   // if (slide.classList.contains('swiper-slide-prev')) {
-  //   // }
-  //   // if (slide.classList.contains('swiper-slide-next')) {
-  //   //   galleryTop.slideNext()
-  //   // }
-  // })
+  const removeMainPrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+    emblaApiMain,
+    mainPrevNode,
+    mainNextNode
+  )
+  const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumbs)
+  const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumbs)
 
-  // galleryTop.on('slideChange', function (e, a) {
-  //   console.log(galleryThumbs, e.realIndex)
-  //   galleryThumbs.slideTo(e.realIndex)
-  // })
+  emblaApiMain
+    .on('destroy', removeMainPrevNextBtnsClickHandlers)
+    .on('destroy', removeThumbBtnsClickHandlers)
+    .on('destroy', removeToggleThumbBtnsActive)
+  emblaApiThumbs
+    .on('destroy', removeThumbBtnsClickHandlers)
+    .on('destroy', removeToggleThumbBtnsActive)
 }
 
 export function initProductGallery() {
