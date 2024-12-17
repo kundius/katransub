@@ -2,10 +2,10 @@
 import EmblaCarousel from 'embla-carousel'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 
-export function initProductSlider() {
-  const mainNode = carousel.querySelector('[data-product-slider]')
-  const mainPrevNode = carousel.querySelector('[data-product-slider-prev]')
-  const mainNextNode = carousel.querySelector('[data-product-slider-next]')
+export function applyProductSlider(el) {
+  const mainNode = el.querySelector('[data-product-slider]')
+  const mainPrevNode = el.querySelector('[data-product-slider-prev]')
+  const mainNextNode = el.querySelector('[data-product-slider-next]')
 
   const emblaApiMain = EmblaCarousel(mainNode, {
     loop: true,
@@ -19,6 +19,9 @@ export function initProductSlider() {
   )
 
   emblaApiMain.on('destroy', removeMainPrevNextBtnsClickHandlers)
+}
+
+export function initProductSlider() {
 }
 
 // 768: {
