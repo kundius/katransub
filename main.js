@@ -34,6 +34,7 @@ import { initHomeCarousel } from './src/js/components/homeCarousel'
 import 'normalize.css'
 import './src/scss/styles.scss'
 import 'choices.js/public/assets/styles/choices.css'
+import { initAuthForm } from './src/js/components/authForm'
 
 initOptionItems()
 initBuyInClick()
@@ -60,6 +61,7 @@ initFloatingElements()
 initOrderAction()
 initOrderInvoice()
 initHomeCarousel()
+initAuthForm()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

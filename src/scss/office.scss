@@ -24,6 +24,23 @@
   gap: 24px;
 }
 
+.office-auth__label-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.office-auth__link-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #0699bc;
+  cursor: pointer;
+  border-bottom: 1px dashed currentColor;
+  font-size: 16px;
+  line-height: 1;
+}
+
 .office-auth__row {
   display: flex;
   flex-direction: column;
