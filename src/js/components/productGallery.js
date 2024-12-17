@@ -5,8 +5,6 @@ import { disableScroll, enableScroll } from '../utils'
 
 export function applyProductGallery(productGallery) {
   const closes = productGallery.querySelectorAll('[data-product-gallery-close]')
-  const main = productGallery.querySelector('[data-product-gallery-main]')
-
   const mainNode = carousel.querySelector('[data-product-gallery-main-viewport]')
   const mainPrevNode = carousel.querySelector('[data-product-gallery-main-prev]')
   const mainNextNode = carousel.querySelector('[data-product-gallery-main-next]')
@@ -22,7 +20,7 @@ export function applyProductGallery(productGallery) {
     enableScroll()
   }
 
-  main.addEventListener('click', (e) => {
+  mainNode.addEventListener('click', (e) => {
     if (e.target.closest('[data-product-gallery-slide]')) {
       fullscreenIn()
     }
