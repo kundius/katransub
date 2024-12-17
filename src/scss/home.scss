@@ -550,7 +550,7 @@
 .home-carousel-thumbs__container {
   display: flex;
   touch-action: pan-x pinch-zoom;
-  height: calc(100% + var(--carousel-gap));
+  height: 100%;
   flex-direction: column;
   gap: var(--carousel-gap);
   // margin: calc(0px - calc(var(--carousel-gap) / 2)) 0;
