@@ -1274,15 +1274,11 @@
 
 .product-slider__viewport {
   overflow: hidden;
-  height: 100%;
 }
 
 .product-slider__container {
   display: flex;
-  touch-action: pan-x pinch-zoom;
-  height: 100%;
-  flex-direction: column;
-  gap: var(--carousel-gap);
+  grid-column-gap: var(--carousel-gap);
 }
 
 .product-slider__slide {
