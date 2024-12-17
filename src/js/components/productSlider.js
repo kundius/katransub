@@ -1,41 +1,39 @@
-import Swiper from 'swiper'
-import { Navigation } from 'swiper/modules'
 
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/autoplay'
+import EmblaCarousel from 'embla-carousel'
+import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 
 export function initProductSlider() {
-  const sliders = document.querySelectorAll('[data-product-slider]') || []
-  sliders.forEach((slider) => {
-    new Swiper(slider, {
-      modules: [Navigation],
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      spaceBetween: 12,
-      slidesPerView: 2,
-      loop: true,
-      breakpoints: {
-        768: {
-          spaceBetween: 20,
-          slidesPerView: 3
-        },
-        1024: {
-          spaceBetween: 20,
-          slidesPerView: 4
-        },
-        1280: {
-          spaceBetween: 20,
-          slidesPerView: 4
-        },
-        1792: {
-          spaceBetween: 20,
-          slidesPerView: 5
-        }
-      }
-    })
+  const mainNode = carousel.querySelector('[data-product-slider]')
+  const mainPrevNode = carousel.querySelector('[data-product-slider-prev]')
+  const mainNextNode = carousel.querySelector('[data-product-slider-next]')
+
+  const emblaApiMain = EmblaCarousel(mainNode, {
+    loop: true,
+    slidesToScroll: 'auto'
   })
+
+  const removeMainPrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+    emblaApiMain,
+    mainPrevNode,
+    mainNextNode
+  )
+
+  emblaApiMain.on('destroy', removeMainPrevNextBtnsClickHandlers)
 }
+
+// 768: {
+//   spaceBetween: 20,
+//   slidesPerView: 3
+// },
+// 1024: {
+//   spaceBetween: 20,
+//   slidesPerView: 4
+// },
+// 1280: {
+//   spaceBetween: 20,
+//   slidesPerView: 4
+// },
+// 1792: {
+//   spaceBetween: 20,
+//   slidesPerView: 5
+// }
