@@ -37,7 +37,7 @@ export function applyCarousel(carousel) {
 }
 
 export function initHomeCarousel() {
-  const items = document.querySelectorAll('[data-home-carousel-main]') || []
+  const items = document.querySelectorAll('[data-home-carousel]') || []
 
   Array.from(items).forEach(applyCarousel)
 }
