@@ -24,20 +24,3 @@ export function applyProductSlider(el) {
 export function initProductSlider() {
   document.querySelectorAll('[data-product-slider]')?.forEach(applyProductSlider)
 }
-
-// 768: {
-//   spaceBetween: 20,
-//   slidesPerView: 3
-// },
-// 1024: {
-//   spaceBetween: 20,
-//   slidesPerView: 4
-// },
-// 1280: {
-//   spaceBetween: 20,
-//   slidesPerView: 4
-// },
-// 1792: {
-//   spaceBetween: 20,
-//   slidesPerView: 5
-// }
