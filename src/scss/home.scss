@@ -533,7 +533,7 @@
 }
 
 .home-carousel-thumbs {
-  --carousel-gap: 10px;
+  --carousel-gap: 12px;
   --carousel-rows: 3;
 
   grid-area: thumbs;
@@ -552,8 +552,8 @@
   touch-action: pan-x pinch-zoom;
   height: calc(100% + var(--carousel-gap));
   flex-direction: column;
-  // gap: var(--carousel-gap);
-  margin: calc(0px - calc(var(--carousel-gap) / 2)) 0;
+  gap: var(--carousel-gap);
+  // margin: calc(0px - calc(var(--carousel-gap) / 2)) 0;
 }
 
 .home-carousel-thumbs__slide {
@@ -561,7 +561,7 @@
   flex: 0 0 calc(100% / var(--carousel-rows) - (var(--carousel-gap) * (var(--carousel-rows) - 1) / var(--carousel-rows)));
   min-height: 0;
   position: relative;
-  margin: calc(var(--carousel-gap) / 2) 0;
+  // margin: calc(var(--carousel-gap) / 2) 0;
 
   img {
     height: 100%;
