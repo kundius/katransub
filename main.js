@@ -1,5 +1,4 @@
 import './src/js/components/contacts'
-import './src/js/components/sliders'
 import './src/js/components/imageFlipper'
 import './src/js/components/messengers'
 import './src/js/components/formValidations'
