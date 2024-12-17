@@ -305,7 +305,8 @@
 
 .profile-form {
   display: grid;
-  gap: 24px;
+  row-gap: 24px;
+  column-gap: 16px;
   grid-template-columns: repeat(12, 1fr);
 }
 
