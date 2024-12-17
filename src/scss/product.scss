@@ -1331,7 +1331,7 @@
   left: 20px;
   right: auto;
   @include --max-md {
-    left: 15px;
+    left: 17px;
   }
   &::before {
     content: '';
@@ -1354,7 +1354,7 @@
   right: 20px;
   left: auto;
   @include --max-md {
-    right: 15px;
+    right: 17px;
   }
   &::before {
     content: '';
