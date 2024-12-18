@@ -9,16 +9,16 @@ footerFeedbackFormValidate
       errorMessage: 'Укажите телефон'
     }
   ])
-  .addField('[name="email"]', [
-    {
-      rule: 'required',
-      errorMessage: 'Укажите e-mail'
-    },
-    {
-      rule: 'email',
-      errorMessage: 'Некорректный e-mail'
-    }
-  ])
+  // .addField('[name="email"]', [
+  //   {
+  //     rule: 'required',
+  //     errorMessage: 'Укажите e-mail'
+  //   },
+  //   {
+  //     rule: 'email',
+  //     errorMessage: 'Некорректный e-mail'
+  //   }
+  // ])
   .addField('[name="rules"]', [
     {
       rule: 'required',

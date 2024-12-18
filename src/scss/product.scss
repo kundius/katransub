@@ -197,6 +197,7 @@
   height: 46px;
   margin-top: calc(0px - (46px / 2));
   z-index: 10;
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1284,6 +1285,7 @@
   display: flex;
   grid-column-gap: var(--carousel-gap);
   min-width: 0;
+  flex-grow: 1;
 }
 
 .product-slider__slide {
@@ -1300,6 +1302,7 @@
   height: 46px;
   margin-top: calc(0px - (46px / 2));
   z-index: 10;
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
