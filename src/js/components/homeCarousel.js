@@ -1,4 +1,5 @@
 import EmblaCarousel from 'embla-carousel'
+import Autoplay from 'embla-carousel-autoplay'
 import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
 import { addThumbBtnsClickHandlers, addToggleThumbBtnsActive } from './EmblaCarouselThumbsButton'
 import { addDotBtnsAndClickHandlers } from './EmblaCarouselDotButton'
@@ -13,7 +14,9 @@ export function applyCarousel(carousel) {
   const emblaApiMain = EmblaCarousel(mainNode, {
     loop: true,
     slidesToScroll: 'auto'
-  })
+  }, [
+    Autoplay({ playOnInit: true, delay: 4000 })
+  ])
   const emblaApiThumbs = EmblaCarousel(thumbsNode, {
     // containScroll: 'trimSnaps',
     axis: 'y',
