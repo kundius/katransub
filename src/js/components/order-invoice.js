@@ -62,13 +62,10 @@ export function initOrderInvoice() {
   }
 
   add.addEventListener('click', () => {
-    console.log('1')
     file.click()
   })
 
   file.addEventListener('change', async (e) => {
-    console.log('2')
-
     add.setAttribute('data-order-invoice-loading', '')
     add.setAttribute('disabled', '')
 
