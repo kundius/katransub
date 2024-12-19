@@ -57,15 +57,17 @@ export function initOrderInvoice() {
     input.value = JSON.stringify(value)
   }
 
-  // const defaultText = add.innerHTML
-
   add.addEventListener('click', () => {
+    console.log('1')
     file.click()
   })
 
   file.addEventListener('change', async (e) => {
+    console.log('2')
+    
     add.setAttribute('data-order-invoice-loading', '')
     add.setAttribute('disabled', '')
+
 
     const fd = new FormData()
     fd.append('action', 'upload_invoice')
