@@ -34,6 +34,14 @@ export function initOrderInvoice() {
       const row = document.createElement('div')
       row.classList.add('order-invoice__row')
 
+      const title = document.createElement('div')
+      title.classList.add('order-invoice__row-title')
+      const titleInner = document.createElement('div')
+      titleInner.classList.add('order-invoice__row-title-inner')
+      titleInner.innerHTML = value
+      title.appendChild(titleInner)
+      row.appendChild(title)
+
       const remove = document.createElement('div')
       remove.classList.add('order-invoice__row-remove')
       row.appendChild(remove)
@@ -44,17 +52,13 @@ export function initOrderInvoice() {
         renderList()
       })
 
-      const title = document.createElement('div')
-      title.classList.add('order-invoice__row-title')
-      title.innerHTML = value
-      row.appendChild(title)
-
       list.appendChild(row)
     })
   }
 
   const setInputValue = (value) => {
     input.value = JSON.stringify(value)
+    $(input).trigger('change')
   }
 
   add.addEventListener('click', () => {
@@ -64,7 +68,7 @@ export function initOrderInvoice() {
 
   file.addEventListener('change', async (e) => {
     console.log('2')
-    
+
     add.setAttribute('data-order-invoice-loading', '')
     add.setAttribute('disabled', '')
 
@@ -89,7 +93,6 @@ export function initOrderInvoice() {
         const value = getInputValue()
         value.push(json.url)
         setInputValue(value)
-        $(input).trigger('change')
         renderList()
       }
     }
