@@ -38,7 +38,7 @@ export function initOrderInvoice() {
       title.classList.add('order-invoice__row-title')
       const titleInner = document.createElement('div')
       titleInner.classList.add('order-invoice__row-title-inner')
-      titleInner.innerHTML = value
+      titleInner.innerHTML = value.split('/').pop()
       title.appendChild(titleInner)
       row.appendChild(title)
 

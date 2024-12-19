@@ -6,9 +6,11 @@
   @include --max-xl {
     gap: 48px;
   }
+
   @include --max-lg {
     gap: 36px;
   }
+
   @include --max-md {
     flex-wrap: wrap;
     gap: 16px;
@@ -33,9 +35,11 @@
   @include --max-xl {
     width: 280px;
   }
+
   @include --max-lg {
     width: 264px;
   }
+
   @include --max-md {
     width: 100%;
   }
@@ -215,6 +219,7 @@
   @include --max-xl {
     width: 18px;
     height: 18px;
+
     &::after {
       width: 12px;
       height: 6px;
@@ -233,6 +238,7 @@
 
   a {
     color: #007be4;
+
     &:hover {
       color: #f18a16;
     }
@@ -280,6 +286,7 @@
   .order-radiobox__label {
     color: #000;
   }
+
   .order-radiobox__control::after {
     display: block;
   }
@@ -289,6 +296,7 @@
   .order-radiobox__label {
     color: #bababa;
   }
+
   .order-radiobox__control::before {
     background: #f5f5f5;
   }
@@ -379,6 +387,7 @@
 
 .order-radiobox__label {
   color: #656565;
+
   span {
     font-style: italic;
     color: #bababa;
@@ -509,8 +518,7 @@ textarea.order-textfield__control {
   padding-bottom: 8px;
 }
 
-.order-country {
-}
+.order-country {}
 
 .order-country__title {
   font-size: 18px;
@@ -534,6 +542,7 @@ textarea.order-textfield__control {
   @include --max-xl {
     gap: 48px;
   }
+
   @include --max-md {
     gap: 8px;
   }
@@ -605,6 +614,7 @@ textarea.order-textfield__control {
     font-size: 16px;
     line-height: 16px;
   }
+
   @include --max-md {
     font-size: 14px;
     line-height: 16px;
@@ -626,6 +636,7 @@ textarea.order-textfield__control {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 4px;
 }
 
 .order-invoice__row-remove {
@@ -636,6 +647,12 @@ textarea.order-textfield__control {
   color: #333;
   border-radius: 4px;
   border: 2px solid #e3e3e3;
+  box-sizing: border-box;
+
+  &:hover {
+    background: #e3e3e3;
+    color: #000;
+  }
 }
 
 .order-invoice__row-remove::before {
@@ -693,15 +710,19 @@ textarea.order-textfield__control {
   0% {
     content: "";
   }
+
   25% {
     content: ".";
   }
+
   50% {
     content: "..";
   }
+
   75% {
     content: "...";
   }
+
   100% {
     content: "...";
   }
