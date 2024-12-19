@@ -613,8 +613,61 @@ textarea.order-textfield__control {
 
 .order-invoice {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-grow: 1;
+  flex-direction: column;
+
+  @include --max-md {
+    gap: 4px;
+  }
+}
+
+.order-invoice__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-invoice__row-remove {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  cursor: pointer;
+}
+
+.order-invoice__row-remove::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: currentColor;
+}
+
+.order-invoice__row-remove::after {
+  content: '';
+  width: 16px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: currentColor;
+}
+
+.order-invoice__row-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100% - 40px);
+}
+
+.order-invoice__list {
+  display: flex;
+  gap: 8px;
+  flex-grow: 1;
+  flex-direction: column;
 
   @include --max-md {
     gap: 4px;
@@ -644,15 +697,15 @@ textarea.order-textfield__control {
   position: relative;
 }
 
-.order-invoice__add span {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+// .order-invoice__add span {
+//   position: absolute;
+//   left: 16px;
+//   right: 16px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+// }
 
 [data-order-invoice-file] {
   display: none;
@@ -668,5 +721,5 @@ textarea.order-textfield__control {
   margin-right: -10px;
 }
 
-.order-invoice__remove {
-}
+// .order-invoice__remove {
+// }

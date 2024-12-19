@@ -1,18 +1,63 @@
 import { confirmation } from '../modal-confirmation'
 import { disableScroll, enableScroll } from '../utils'
 
+
+{/* <button type="button" class="order-invoice__remove button-outline-obscure button-outline-obscure_size-icon" data-order-invoice-remove>
+{'SpriteIcon' | chunk : ['name' => 'xmark', 'size' => 18]}
+</button> */}
+
 export function initOrderInvoice() {
-  // const control = document.querySelector('[data-order-invoice-control]')
+  const list = document.querySelector('[data-order-invoice-list]')
   const add = document.querySelector('[data-order-invoice-add]')
-  const remove = document.querySelector('[data-order-invoice-remove]')
+  // const remove = document.querySelector('[data-order-invoice-remove]')
   const input = document.querySelector('[data-order-invoice-input]')
   const file = document.querySelector('[data-order-invoice-file]')
 
-  if (!(add && remove && input && file)) {
+  if (!(add && list && input && file)) {
     return
   }
 
-  const defaultText = add.innerHTML
+  const getInputValue = () => {
+    try {
+      return JSON.parse(input.value)
+    } catch {
+      return []
+    }
+  }
+
+  const renderList = () => {
+    const values = getInputValue()
+
+    list.innerHTML = ''
+
+    values.forEach((value, index) => {
+      const row = document.createElement('div')
+      row.classList.add('order-invoice__row')
+
+      const remove = document.createElement('div')
+      remove.classList.add('order-invoice__row-remove')
+      row.appendChild(remove)
+      remove.addEventListener('click', () => {
+        const values = getInputValue()
+        values.splice(index, 1)
+        setInputValue(values)
+        renderList()
+      })
+
+      const title = document.createElement('div')
+      title.classList.add('order-invoice__row-title')
+      title.innerHTML = value
+      row.appendChild(title)
+
+      list.appendChild(row)
+    })
+  }
+
+  const setInputValue = (value) => {
+    input.value = JSON.stringify(value)
+  }
+
+  // const defaultText = add.innerHTML
 
   add.addEventListener('click', () => {
     file.click()
@@ -35,13 +80,15 @@ export function initOrderInvoice() {
       miniShop2.Message.error('Не удалось загрузить файл!');
     } else {
       const json = await uploadResponse.json()
-      
+
       if (!json.success) {
         miniShop2.Message.error(json.message);
       } else {
-        input.value = json.url
+        const value = getInputValue()
+        value.push(json.url)
+        setInputValue(value)
         $(input).trigger('change')
-        removeVisibilityChange()
+        renderList()
       }
     }
 
@@ -49,28 +96,30 @@ export function initOrderInvoice() {
     add.removeAttribute('disabled')
   })
 
-  remove.addEventListener('click', () => {
-    input.value = ''
-    $(input).trigger('change')
-    removeVisibilityChange()
-  })
+  renderList()
 
-  const removeVisibilityChange = () => {
-    if (!input.value) {
-      remove.setAttribute('hidden', '')
-      add.removeAttribute('title')
-      add.innerHTML = defaultText
-    } else {
-      remove.removeAttribute('hidden')
-      const filename = input.value.split('/').pop()
-      add.innerHTML = `<span>${filename}</span>`
-      add.setAttribute('title', filename)
-    }
-  }
+  // remove.addEventListener('click', () => {
+  //   input.value = ''
+  //   $(input).trigger('change')
+  //   removeVisibilityChange()
+  // })
 
-  input.addEventListener('change', removeVisibilityChange)
+  // const removeVisibilityChange = () => {
+  //   if (!input.value) {
+  //     remove.setAttribute('hidden', '')
+  //     add.removeAttribute('title')
+  //     add.innerHTML = defaultText
+  //   } else {
+  //     remove.removeAttribute('hidden')
+  //     const filename = input.value.split('/').pop()
+  //     add.innerHTML = `<span>${filename}</span>`
+  //     add.setAttribute('title', filename)
+  //   }
+  // }
 
-  removeVisibilityChange()
+  // input.addEventListener('change', removeVisibilityChange)
+
+  // removeVisibilityChange()
 
   // if (elements) {
   //   elements.forEach(applyOrderAction)
@@ -79,7 +128,7 @@ export function initOrderInvoice() {
   // miniShop2.Callbacks.add('Order.add.before', 'upload_invoice', function (a, b, c) {
   //   console.log(a, b, c)
   //   miniShop2.Message.error('Добавление товаров в корзину запрещено!');
-  
+
   //   return false;
   // });
 
