@@ -15,7 +15,7 @@ export function applyShare(wrapper) {
 
     const toggle = () => {
         if (wrapper.hasAttribute('data-share-active')) {
-            open()
+            close()
         } else {
             open()
         }
