@@ -35,6 +35,7 @@ import 'normalize.css'
 import './src/scss/styles.scss'
 import 'choices.js/public/assets/styles/choices.css'
 import { initAuthForm } from './src/js/components/authForm'
+import { initShare } from './src/js/components/share'
 
 initOptionItems()
 initBuyInClick()
@@ -62,6 +63,7 @@ initOrderAction()
 initOrderInvoice()
 initHomeCarousel()
 initAuthForm()
+initShare()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {

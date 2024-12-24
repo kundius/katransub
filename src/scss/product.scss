@@ -553,8 +553,7 @@
 .product-share {
   position: relative;
   z-index: 1;
-  &:has(*:focus),
-  &:hover {
+  &[data-share-active] {
     .product-share__title {
       color: #000;
     }
