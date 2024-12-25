@@ -680,16 +680,29 @@ textarea.order-textfield__control {
 .order-invoice__row-title {
   flex-grow: 1;
   position: relative;
+  height: 36px;
+  white-space: nowrap;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  box-sizing: border-box;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
 }
 
 .order-invoice__row-title-inner {
   text-overflow: ellipsis;
   overflow: hidden;
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 48px);
   white-space: nowrap;
   line-height: 1;
   font-size: 14px;
