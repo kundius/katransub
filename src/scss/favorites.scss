@@ -110,3 +110,38 @@
 .favorites-page:has(.mse2_results_nodata) .favorites-page__clear {
   display: none;
 }
+
+.favorites-page__card {
+  display: flex;
+}
+
+.favorites-page__remove {
+  background: transparent;
+  margin-left: auto;
+  border: none;
+  font-size: 16px;
+  color: #005976;
+  padding: 0;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.favorites-page__remove:after {
+  display: block;
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #c01116;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.favorites-page__remove span {
+  text-decoration: underline;
+}
+
+.favorites-page__remove:hover span {
+  text-decoration: none;
+}
