@@ -34,7 +34,8 @@ export function applyProductGallery(productGallery) {
   })
   const emblaApiThumbs = EmblaCarousel(thumbsNode, {
     // containScroll: 'trimSnaps',
-    containScroll: 'trimSnaps',
+    // containScroll: 'trimSnaps',
+    containScroll: false,
     // loop: true,
     dragFree: true
   })
