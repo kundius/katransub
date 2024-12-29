@@ -3,6 +3,13 @@ import { disableScroll, enableScroll } from './utils'
 export function confirmation(options) {
   const modalId = `modal-confirmation`
 
+  const onConfirm = () => {
+    MicroModal.close(modalId)
+    if (options.onConfirm) {
+      options.onConfirm()
+    }
+  }
+
   const modal = document.createElement('div')
   modal.classList.add('modal', 'modal-confirm')
   modal.setAttribute('id', modalId)
@@ -46,8 +53,7 @@ export function confirmation(options) {
   const confirmationSubmit = document.createElement('button')
   confirmationSubmit.classList.add('button-filled-primary')
   confirmationSubmit.innerHTML = 'Да'
-  confirmationSubmit.addEventListener('click', options.onConfirm)
-  confirmationSubmit.dataset.modalClose = true
+  confirmationSubmit.addEventListener('click', onConfirm)
 
   confirmationFooter.appendChild(confirmationCancel)
   confirmationFooter.appendChild(confirmationSubmit)
