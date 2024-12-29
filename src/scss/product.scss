@@ -276,6 +276,10 @@
 .product-gallery-thumbs__container {
   display: flex;
   grid-column-gap: var(--carousel-gap);
+
+  &.product-gallery-thumbs__container_centered {
+    justify-content: center;
+  }
 }
 
 .product-gallery-thumbs__slide {

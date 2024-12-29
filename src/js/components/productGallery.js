@@ -12,11 +12,17 @@ export function applyProductGallery(productGallery) {
 
   const fullscreenIn = () => {
     productGallery.setAttribute('data-product-gallery-fullscreen', '')
+    const fSlides = thumbsNode.querySelectorAll('.product-gallery-thumbs__slide')
+    const fContainer = thumbsNode.querySelector('.product-gallery-thumbs__container')
+    if (window.innerWidth > fSlides.length * 80 - 12 - 12 - ((fSlides.length - 1) * 12)) {
+      fContainer.classList.add('product-gallery-thumbs__container_centered')
+    }
     disableScroll()
   }
 
   const fullscreenOut = () => {
     productGallery.removeAttribute('data-product-gallery-fullscreen')
+    fContainer.classList.remove('product-gallery-thumbs__container_centered')
     enableScroll()
   }
 
@@ -34,8 +40,7 @@ export function applyProductGallery(productGallery) {
   })
   const emblaApiThumbs = EmblaCarousel(thumbsNode, {
     // containScroll: 'trimSnaps',
-    // containScroll: 'trimSnaps',
-    containScroll: false,
+    containScroll: 'trimSnaps',
     // loop: true,
     dragFree: true
   })
