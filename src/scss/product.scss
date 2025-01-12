@@ -747,8 +747,19 @@
 .product-remains__value {
   font-size: 14px;
   text-transform: uppercase;
-  color: #37bc21;
   line-height: 1;
+
+  .product-remains_red & {
+    color: red;
+  }
+
+  .product-remains_gray & {
+    color: #8d8d8d;
+  }
+
+  .product-remains_green & {
+    color: #37bc21;
+  }
 
   @include --max-lg {
     font-size: 11px;
