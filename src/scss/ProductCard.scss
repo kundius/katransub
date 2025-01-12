@@ -145,8 +145,8 @@
   border-radius: 4px;
   padding: 0 2px;
   color: #fff;
-  background-color: #a5a5a5;
-  border-color: #858585;
+  background-color: #8d8d8d;
+  border-color: #8d8d8d;
 
   @include --max-xl {
     left: 6px;
@@ -387,7 +387,7 @@
   font-size: 16px;
   white-space: nowrap;
   font-weight: 500;
-  [data-product-form][data-product-form-status='added'] & {
+  [data-product-form][data-product-form-status] & {
     display: none;
   }
   svg {
@@ -395,6 +395,60 @@
   }
   @include --hover {
     background: #0283a2;
+  }
+  @include --max-lg {
+    font-size: 14px;
+    height: 48px;
+    padding: 0 12px;
+  }
+  .product-card & {
+    gap: 4px;
+    padding: 0 12px;
+    border-radius: 4px;
+    height: 44px;
+    text-transform: initial;
+    @include --max-xl {
+      font-size: 12px;
+      height: 30px;
+      gap: 2px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    @include --max-md {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+}
+
+.button-expected {
+  background: #8d8d8d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 12px;
+  border: none;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 500;
+  display: none;
+  [data-product-form]:not([data-product-form-status='expected']) & {
+    display: none;
+  }
+  svg {
+    margin-top: -2px;
+  }
+  @include --hover {
+    background: #7e7e7e;
   }
   @include --max-lg {
     font-size: 14px;
