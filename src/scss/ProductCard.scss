@@ -387,7 +387,7 @@
   font-size: 16px;
   white-space: nowrap;
   font-weight: 500;
-  [data-product-form][data-product-form-status] & {
+  [data-product-form]:not([data-product-form-status='ready']) & {
     display: none;
   }
   svg {
@@ -440,7 +440,6 @@
   font-size: 16px;
   white-space: nowrap;
   font-weight: 500;
-  display: none;
   [data-product-form]:not([data-product-form-status='expected']) & {
     display: none;
   }
