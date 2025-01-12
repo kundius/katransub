@@ -387,47 +387,6 @@
   }
 }
 
-.product-availability {
-  position: absolute;
-  width: 69px;
-  height: 82px;
-  overflow: hidden;
-  left: 0;
-  top: 0;
-  border-radius: 10px 0 0 0;
-  transition: 0.3s ease;
-  will-change: left, top;
-  span {
-    position: absolute;
-    z-index: 20;
-    color: #fff;
-    font-size: 14px;
-    line-height: 1;
-    top: 40px;
-    left: 0;
-    text-align: center;
-    display: block;
-    transform-origin: left;
-    transform: rotate(-50deg);
-  }
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    width: 0;
-    height: 0;
-    border-top: 82px solid #e65100;
-    border-right: 69px solid transparent;
-  }
-  .product-card:hover & {
-    left: -10px;
-    top: -10px;
-  }
-}
-
 .product-back {
   font-size: 16px;
   line-height: 1;
