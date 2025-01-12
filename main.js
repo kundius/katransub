@@ -36,6 +36,7 @@ import './src/scss/styles.scss'
 import 'choices.js/public/assets/styles/choices.css'
 import { initAuthForm } from './src/js/components/authForm'
 import { initShare } from './src/js/components/share'
+import { initExpected } from './src/js/components/expected'
 
 initOptionItems()
 initBuyInClick()
@@ -64,6 +65,7 @@ initOrderInvoice()
 initHomeCarousel()
 initAuthForm()
 initShare()
+initExpected()
 
 // событие на упешную отправку
 $(document).on('af_complete', function (event, response) {
