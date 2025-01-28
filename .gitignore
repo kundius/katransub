@@ -75,3 +75,5 @@ yarn-error.log
 
 # nextjs
 .next
+
+.ipynb_checkpoints
