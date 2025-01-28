@@ -32,13 +32,16 @@
     //   'logo logo phone';
   }
   @include --max-md {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 24px auto 24px auto 24px auto;
     grid-template-areas:
-      'payment'
-      'feedback'
-      'social'
-      'logo';
+      'payment payment payment'
+      '. . .'
+      'feedback feedback feedback'
+      '. . .'
+      'social social social'
+      '. . .'
+      'logo . phone';
   }
 }
 
@@ -109,9 +112,6 @@
   @include --max-lg {
     padding-top: 24px;
     padding-bottom: 24px;
-  }
-  @include --max-md {
-    padding-top: 0;
   }
 }
 
