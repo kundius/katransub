@@ -17,11 +17,14 @@
   }
   @include --max-xl {
     grid-template-columns: 460px 1fr 360px;
-    grid-template-rows: auto 40px auto auto;
+    grid-template-rows: auto 24px auto 24px auto 24px 1fr;
     grid-template-areas:
       'logo . feedback'
       '. . feedback'
+      'phone . feedback'
+      '. . feedback'
       'social . feedback'
+      '. . feedback'
       'payment . feedback';
   }
   @include --max-lg {
