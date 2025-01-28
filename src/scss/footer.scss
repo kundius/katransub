@@ -1,7 +1,7 @@
 .footer-primary__grid {
   display: grid;
   grid-template-columns: 474px 2fr 420px 1fr 520px;
-  grid-template-rows: auto 70px auto 70px auto;
+  grid-template-rows: auto 40px auto 40px 1fr;
   gap: 0px 0px;
   grid-template-areas:
     'logo . payment . feedback'
@@ -44,9 +44,12 @@
   }
 }
 
+.footer-primary__grid-phone {
+  grid-area: phone;
+}
+
 .footer-primary__grid-logo {
   grid-area: logo;
-  padding: 20px 0;
   @include --max-lg {
     margin: 0 calc(var(--container-padding) * -1);
     padding: 16px var(--container-padding);
@@ -60,39 +63,28 @@
 
 .footer-primary__grid-social {
   grid-area: social;
-  padding-top: 20px;
-  padding-bottom: 20px;
   @include --max-md {
-    padding-top: 28px;
-    padding-bottom: 28px;
   }
 }
 
 .footer-primary__grid-payment {
   grid-area: payment;
-  padding-top: 20px;
-  padding-bottom: 20px;
   @include --max-md {
-    padding-top: 28px;
-    padding-bottom: 28px;
     border-bottom: 1px solid #949494;
   }
 }
 
 .footer-primary__grid-feedback {
   grid-area: feedback;
-  padding: 20px 0;
   @include --max-md {
-    padding-top: 28px;
-    padding-bottom: 28px;
     border-bottom: 1px solid #949494;
   }
 }
 
 .footer-primary {
   background: #888888;
-  padding-top: 18px;
-  padding-bottom: 24px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   @include --max-lg {
     padding-bottom: 0;
   }
