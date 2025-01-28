@@ -23,12 +23,13 @@
   }
   @include --max-lg {
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto 24px auto;
     grid-template-areas:
       'payment . feedback'
       '. . feedback'
       'social . feedback'
-      'logo logo logo';
+      '. . .'
+      'logo . phone';
   }
   @include --max-md {
     grid-template-columns: 1fr;
@@ -43,18 +44,15 @@
 
 .footer-primary__grid-phone {
   grid-area: phone;
+  @include --max-lg {
+    background: #464646;
+  }
 }
 
 .footer-primary__grid-logo {
   grid-area: logo;
   @include --max-lg {
-    margin: 0 calc(var(--container-padding) * -1);
-    padding: 16px var(--container-padding);
     background: #464646;
-    margin-top: 16px;
-  }
-  @include --max-md {
-    margin-top: 0;
   }
 }
 
@@ -87,7 +85,8 @@
     padding-bottom: 32px;
   }
   @include --max-lg {
-    padding-bottom: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   @include --max-md {
     padding-top: 0;
