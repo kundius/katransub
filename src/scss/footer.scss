@@ -9,6 +9,7 @@
     'phone . payment . feedback'
     '. . payment . feedback'
     'social . payment . feedback';
+
   @include --max-xl {
     grid-template-columns: 460px 1fr 360px;
     grid-template-rows: auto 24px auto 24px auto 24px auto;
@@ -21,16 +22,11 @@
       '. . feedback'
       'payment . feedback';
   }
+
   @include --max-lg {
     grid-template-columns: 360px 1fr 360px;
-    // grid-template-rows: auto auto auto 48px auto;
-    // grid-template-areas:
-    //   'payment . feedback'
-    //   '. . feedback'
-    //   'social . feedback'
-    //   '. . .'
-    //   'logo logo phone';
   }
+
   @include --max-md {
     grid-template-columns: auto auto auto;
     grid-template-rows: auto 24px auto 24px auto 48px auto;
@@ -41,15 +37,17 @@
       '. . .'
       'social social social'
       '. . .'
-      'logo . phone';
+      'logo logo phone';
   }
 }
 
 .footer-primary__grid-phone {
   grid-area: phone;
+
   @include --max-md {
     position: relative;
     z-index: 1;
+
     &::before {
       content: '';
       background: #464646;
@@ -65,9 +63,11 @@
 
 .footer-primary__grid-logo {
   grid-area: logo;
+
   @include --max-md {
     position: relative;
     z-index: 1;
+
     &::before {
       content: '';
       background: #464646;
@@ -83,32 +83,28 @@
 
 .footer-primary__grid-social {
   grid-area: social;
-  @include --max-md {
-  }
+
+  @include --max-md {}
 }
 
 .footer-primary__grid-payment {
   grid-area: payment;
-  // @include --max-md {
-  //   border-bottom: 1px solid #949494;
-  // }
 }
 
 .footer-primary__grid-feedback {
   grid-area: feedback;
-  // @include --max-md {
-  //   border-bottom: 1px solid #949494;
-  // }
 }
 
 .footer-primary {
   background: #888888;
   padding-top: 40px;
   padding-bottom: 40px;
+
   @include --max-xl {
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   @include --max-lg {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -126,32 +122,30 @@
   display: block;
   width: 236px;
   flex-shrink: 0;
+
   img {
     display: block;
     width: 100%;
     height: auto;
   }
+
   @include --max-md {
     width: 130px;
   }
 }
 
-.footer-phone {
-  // text-align: right;
-  // padding-top: 20px;
-  // @include --max-md {
-  //   padding-top: 0;
-  // }
-}
+.footer-phone {}
 
 .footer-phone__number {
   font-size: 22px;
   line-height: 1;
   text-transform: uppercase;
   color: #ffffff;
+
   a {
     color: inherit;
   }
+
   @include --max-md {
     font-size: 16px;
   }
@@ -164,6 +158,7 @@
   color: #464646;
   line-height: 1;
   margin-top: 12px;
+
   @include --max-lg {
     display: none;
   }
@@ -173,10 +168,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  // @include --max-lg {
-  //   flex-direction: column;
-  //   align-items: flex-start;
-  // }
+
   @include --max-md {
     gap: 12px;
   }
@@ -188,6 +180,7 @@
   text-transform: uppercase;
   color: #ffffff;
   white-space: nowrap;
+
   @include --max-md {
     font-size: 16px;
   }
@@ -196,6 +189,7 @@
 .footer-social__links {
   display: flex;
   gap: 16px;
+
   @include --max-md {
     gap: 12px;
   }
@@ -210,6 +204,7 @@
   background: #c4c4c4;
   border-radius: 6px;
   color: #888;
+
   &:hover {
     color: #fff;
   }
@@ -220,14 +215,12 @@
 }
 
 .footer-social__link_instagram:hover {
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
+  background: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
 }
 
 .footer-social__link_youtube:hover {
@@ -242,17 +235,16 @@
   background: #1b92d1;
 }
 
-.footer-payment {
-}
+.footer-payment {}
 
-.footer-payment__headline {
-}
+.footer-payment__headline {}
 
 .footer-payment__headline-title {
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
   color: #ffffff;
+
   @include --max-md {
     font-size: 16px;
   }
@@ -264,6 +256,7 @@
   opacity: 0.4;
   line-height: 1;
   margin-top: 12px;
+
   @include --max-md {
     font-size: 14px;
     line-height: 1.15;
@@ -274,12 +267,15 @@
 .footer-payment__content {
   display: flex;
   margin-top: 36px;
+
   img {
     max-width: 100%;
   }
+
   @include --max-xl {
     margin-top: 16px;
   }
+
   @include --max-md {
     margin-top: 12px;
   }
@@ -289,20 +285,21 @@
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
+
   @include --max-md {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
-.footer-feedback__headline {
-}
+.footer-feedback__headline {}
 
 .footer-feedback__headline-title {
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
   color: #ffffff;
+
   @include --max-md {
     font-size: 16px;
   }
@@ -314,6 +311,7 @@
   opacity: 0.4;
   line-height: 1;
   margin-top: 12px;
+
   @include --max-md {
     font-size: 14px;
     line-height: 1.15;
@@ -335,11 +333,14 @@
   overflow: hidden;
   height: 42px;
   transition: 0.3s ease;
+
   &[data-state='active'] {
     filter: drop-shadow(-0.696px 4.951px 5px rgba(22, 6, 63, 0.35));
+
     .messengers__front {
       transform: translateY(-100%);
     }
+
     .messengers__back {
       transform: translateY(-100%);
     }
@@ -449,9 +450,11 @@
   line-height: 1;
   color: #b8b8b8;
   letter-spacing: -0.02em;
+
   a {
     color: currentColor;
     text-decoration: underline;
+
     &:hover {
       color: #fff;
     }
@@ -473,6 +476,7 @@
   gap: 8px;
   border: none;
   cursor: pointer;
+
   &:hover {
     filter: drop-shadow(-0.696px 4.951px 5px rgba(22, 6, 63, 0.35));
     background-image: linear-gradient(37deg, #ffed66 0%, #ffde2c 100%);
@@ -522,6 +526,7 @@
 .footer-secondary {
   background: #464646;
   padding: 12px 0;
+
   @include --max-md {
     padding: 0;
   }
@@ -534,12 +539,15 @@
   grid-template-rows: auto;
   gap: 0px 0px;
   grid-template-areas: 'jur . address . links';
+
   @include --max-3xl {
     grid-template-columns: 474px 2fr 420px 1fr 420px;
   }
+
   @include --max-2xl {
     grid-template-columns: 460px 2fr 360px 1fr 340px;
   }
+
   @include --max-xl {
     grid-template-columns: 460px 1fr 360px;
     grid-template-rows: auto 20px auto;
@@ -548,6 +556,7 @@
       '. . .'
       'links links links';
   }
+
   @include --max-lg {
     grid-template-columns: 360px 1fr 360px;
     grid-template-rows: auto 20px auto;
@@ -556,6 +565,7 @@
       '. . .'
       'links links links';
   }
+
   @include --max-md {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -576,6 +586,7 @@
 
 .footer-secondary__grid-links {
   grid-area: links;
+
   @include --max-md {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -592,6 +603,7 @@
   align-items: center;
   display: flex;
   box-sizing: border-box;
+
   @include --max-md {
     padding: 6px 0;
   }
@@ -622,13 +634,16 @@
   font-size: 16px;
   line-height: 24px;
   color: #909090;
+
   a {
     color: inherit;
   }
+
   @include --max-3xl {
     font-size: 14px;
     line-height: 24px;
   }
+
   @include --max-md {
     font-size: 12px;
     line-height: 14px;
@@ -640,10 +655,12 @@
   font-size: 16px;
   line-height: 24px;
   color: #909090;
+
   @include --max-3xl {
     font-size: 14px;
     line-height: 20px;
   }
+
   @include --max-md {
     font-size: 12px;
     line-height: 14px;
@@ -666,27 +683,33 @@
   list-style: none;
   font-size: 16px;
   line-height: 24px;
+
   a {
     color: #909090;
     text-decoration: underline;
+
     &:hover {
       color: #fff;
     }
   }
+
   @include --max-3xl {
     font-size: 14px;
     line-height: 24px;
   }
+
   @include --max-lg {
     span {
       font-size: 0;
       display: inline-block;
+
       &::before {
         content: '.';
         font-size: 14px;
       }
     }
   }
+
   @include --max-md {
     font-size: 12px;
     line-height: 14px;
@@ -697,16 +720,17 @@
   font-size: 14px;
   text-decoration: underline;
   color: #909090;
+
   &:hover {
     color: #fff;
   }
+
   @include --max-md {
     font-size: 12px;
   }
 }
 
-.footer-tertiary__counters {
-}
+.footer-tertiary__counters {}
 
 .footer-tertiary__creator {
   color: #909090;
@@ -717,6 +741,7 @@
   align-items: center;
   text-decoration: none;
   gap: 8px;
+
   &::after {
     content: '';
     display: block;
@@ -725,12 +750,15 @@
     height: 24px;
     background: url('/assets/template/assets/creator.png') no-repeat 50% 50%;
   }
+
   &:hover {
     color: #fff;
+
     &::after {
       filter: grayscale(0);
     }
   }
+
   @include --max-md {
     font-size: 12px;
     flex-direction: column;
