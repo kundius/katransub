@@ -10,7 +10,7 @@
     '. . payment . feedback'
     'social . payment . feedback';
   @include --max-xl {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 460px 1fr 360px;
     grid-template-rows: auto 24px auto 24px auto 24px auto;
     grid-template-areas:
       'logo . feedback'
@@ -22,14 +22,14 @@
       'payment . feedback';
   }
   @include --max-lg {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto auto 48px auto;
-    grid-template-areas:
-      'payment . feedback'
-      '. . feedback'
-      'social . feedback'
-      '. . .'
-      'logo . phone';
+    grid-template-columns: 360px 1fr 360px;
+    // grid-template-rows: auto auto auto 48px auto;
+    // grid-template-areas:
+    //   'payment . feedback'
+    //   '. . feedback'
+    //   'social . feedback'
+    //   '. . .'
+    //   'logo logo phone';
   }
   @include --max-md {
     grid-template-columns: 1fr;
@@ -44,34 +44,38 @@
 
 .footer-primary__grid-phone {
   grid-area: phone;
-  @include --max-lg {
-    position: relative;
-    &::before {
-      content: '';
-      background: #464646;
-      position: absolute;
-      left: calc(var(--container-padding) * -1);
-      right: calc(var(--container-padding) * -1);
-      top: -24px;
-      bottom: -24px;
-    }
-  }
+  // @include --max-lg {
+  //   position: relative;
+  //   z-index: 1;
+  //   &::before {
+  //     content: '';
+  //     background: #464646;
+  //     position: absolute;
+  //     left: calc(var(--container-padding) * -1);
+  //     right: calc(var(--container-padding) * -1);
+  //     top: -24px;
+  //     bottom: -24px;
+  //     z-index: -1;
+  //   }
+  // }
 }
 
 .footer-primary__grid-logo {
   grid-area: logo;
-  @include --max-lg {
-    position: relative;
-    &::before {
-      content: '';
-      background: #464646;
-      position: absolute;
-      left: calc(var(--container-padding) * -1);
-      right: calc(var(--container-padding) * -1);
-      top: -24px;
-      bottom: -24px;
-    }
-  }
+  // @include --max-lg {
+  //   position: relative;
+  //   z-index: 1;
+  //   &::before {
+  //     content: '';
+  //     background: #464646;
+  //     position: absolute;
+  //     left: calc(var(--container-padding) * -1);
+  //     right: calc(var(--container-padding) * -1);
+  //     top: -24px;
+  //     bottom: -24px;
+  //     z-index: -1;
+  //   }
+  // }
 }
 
 .footer-primary__grid-social {
@@ -169,10 +173,10 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  @include --max-lg {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  // @include --max-lg {
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  // }
   @include --max-md {
     gap: 12px;
   }
