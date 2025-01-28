@@ -28,7 +28,7 @@
   }
 
   @include --max-md {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr auto;
     grid-template-rows: auto 24px auto 24px auto 48px auto;
     grid-template-areas:
       'payment payment payment'
@@ -141,6 +141,7 @@
   line-height: 1;
   text-transform: uppercase;
   color: #ffffff;
+  white-space: nowrap;
 
   a {
     color: inherit;
