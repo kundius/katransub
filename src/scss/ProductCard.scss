@@ -257,6 +257,11 @@
   margin-top: 8px;
   color: #9c9c9c;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   @include --max-xl {
     font-size: 11px;
     margin-top: 4px;
