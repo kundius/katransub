@@ -452,7 +452,7 @@ body:has(.header) {
 }
 
 .header-actions__button_mobile {
-  @include --md {
+  @include --lg {
     display: none;
   }
 }

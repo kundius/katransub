@@ -84,7 +84,8 @@
 .footer-primary__grid-social {
   grid-area: social;
 
-  @include --max-md {}
+  @include --max-md {
+  }
 }
 
 .footer-primary__grid-payment {
@@ -134,7 +135,8 @@
   }
 }
 
-.footer-phone {}
+.footer-phone {
+}
 
 .footer-phone__number {
   font-size: 22px;
@@ -216,12 +218,14 @@
 }
 
 .footer-social__link_instagram:hover {
-  background: linear-gradient(45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
 }
 
 .footer-social__link_youtube:hover {
@@ -236,9 +240,11 @@
   background: #1b92d1;
 }
 
-.footer-payment {}
+.footer-payment {
+}
 
-.footer-payment__headline {}
+.footer-payment__headline {
+}
 
 .footer-payment__headline-title {
   font-size: 20px;
@@ -293,7 +299,8 @@
   }
 }
 
-.footer-feedback__headline {}
+.footer-feedback__headline {
+}
 
 .footer-feedback__headline-title {
   font-size: 20px;
@@ -413,6 +420,17 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(90deg, #9046cb, #663992);
+}
+
+.messengers__telegram {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2298d6;
 }
 
 .footer-feedback-form {
@@ -731,7 +749,8 @@
   }
 }
 
-.footer-tertiary__counters {}
+.footer-tertiary__counters {
+}
 
 .footer-tertiary__creator {
   color: #909090;
