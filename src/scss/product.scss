@@ -668,15 +668,15 @@
 .product-pricing {
   display: grid;
   align-items: center;
-  grid-template-columns: auto 1fr auto 1fr auto;
+  grid-template-columns: auto 1fr auto 1fr auto 4fr;
   grid-template-rows: auto 16px auto;
   grid-auto-columns: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    'price . mrc . mpc'
-    '. . . . .'
-    'remains . . . .';
+    'price . mrc . mpc .'
+    '. . . . . .'
+    'remains . . . . .';
 }
 
 .product-pricing__price {
