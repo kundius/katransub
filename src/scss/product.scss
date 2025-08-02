@@ -90,7 +90,7 @@
 .product-gallery {
   position: relative;
   z-index: 1;
-  
+
   &[data-product-gallery-fullscreen] {
     display: flex;
     flex-direction: column;
@@ -169,7 +169,11 @@
 }
 
 .product-gallery-main__slide {
-  flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) / var(--carousel-columns));
+  flex: 0 0
+    calc(
+      100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) /
+        var(--carousel-columns)
+    );
   min-width: 0;
   position: relative;
   display: flex;
@@ -209,7 +213,7 @@
   border: none;
   filter: none;
   color: #fff;
-  transition: .3s ease;
+  transition: 0.3s ease;
   &:hover {
     filter: none;
     box-shadow: 1px 8px 9px 0px rgba(0, 25, 41, 0.15);
@@ -289,7 +293,11 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
-  flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap)*(var(--carousel-columns) - 1) / var(--carousel-columns));
+  flex: 0 0
+    calc(
+      100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) /
+        var(--carousel-columns)
+    );
 
   [data-product-gallery-fullscreen] & {
     @include --md {
@@ -666,9 +674,9 @@
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    'price . mrc .'
-    '. . . .'
-    'remains . . .';
+    'price . mrc . mpc'
+    '. . . . .'
+    'remains . . . .';
 }
 
 .product-pricing__price {
@@ -677,6 +685,10 @@
 
 .product-pricing__mrc {
   grid-area: mrc;
+}
+
+.product-pricing__mpc {
+  grid-area: mpc;
 }
 
 .product-pricing__remains {
@@ -723,6 +735,33 @@
 }
 
 .product-mrc__value {
+  font-size: 16px;
+  line-height: 1;
+  color: #9c9c9c;
+  // text-decoration: line-through;
+
+  @include --max-lg {
+    font-size: 12px;
+  }
+}
+
+.product-mpc {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.product-mpc__label {
+  font-size: 16px;
+  color: #9c9c9c;
+  line-height: 1;
+
+  @include --max-lg {
+    font-size: 12px;
+  }
+}
+
+.product-mpc__value {
   font-size: 16px;
   line-height: 1;
   color: #9c9c9c;
@@ -1267,7 +1306,11 @@
 }
 
 .product-slider__slide {
-  flex: 0 0 calc(100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) / var(--carousel-columns));
+  flex: 0 0
+    calc(
+      100% / var(--carousel-columns) - var(--carousel-gap) * (var(--carousel-columns) - 1) /
+        var(--carousel-columns)
+    );
   min-width: 0;
   position: relative;
   display: flex;
@@ -1292,7 +1335,7 @@
   border: none;
   filter: none;
   color: #fff;
-  transition: .3s ease;
+  transition: 0.3s ease;
   @include --max-md {
     top: 96px;
     width: 32px;

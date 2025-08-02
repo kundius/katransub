@@ -421,7 +421,7 @@
   margin: 16px 0;
 
   &_danger {
-    color: #bb0000;
+    color: red;
   }
 
   @include --max-xl {
@@ -518,7 +518,8 @@ textarea.order-textfield__control {
   padding-bottom: 8px;
 }
 
-.order-country {}
+.order-country {
+}
 
 .order-country__title {
   font-size: 18px;
@@ -721,23 +722,23 @@ textarea.order-textfield__control {
 
 @keyframes dots {
   0% {
-    content: "";
+    content: '';
   }
 
   25% {
-    content: ".";
+    content: '.';
   }
 
   50% {
-    content: "..";
+    content: '..';
   }
 
   75% {
-    content: "...";
+    content: '...';
   }
 
   100% {
-    content: "...";
+    content: '...';
   }
 }
 
@@ -761,7 +762,7 @@ textarea.order-textfield__control {
 }
 
 .order-invoice__add[data-order-invoice-loading]::after {
-  content: "";
+  content: '';
   animation: dots 1.5s linear infinite;
   display: block;
   width: 15px;
