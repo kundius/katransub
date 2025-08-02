@@ -328,11 +328,13 @@ body:has(.header) {
       // justify-content: flex-end;
     }
     &:nth-child(4) {
+      display: none;
       order: 40;
       // width: 50%;
       // justify-content: flex-start;
     }
     &:nth-child(5) {
+      display: none;
       order: 50;
       // width: 50%;
       // justify-content: flex-end;
