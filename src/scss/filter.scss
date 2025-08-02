@@ -242,6 +242,10 @@
   list-style: none;
 }
 
+.brand-filter__items li {
+  display: flex;
+}
+
 .brand-filter__items a {
   font-size: 14px;
   line-height: 18px;
