@@ -451,6 +451,12 @@ body:has(.header) {
   }
 }
 
+.header-actions__button_mobile {
+  @include --max-md {
+    display: none;
+  }
+}
+
 .header-actions__button [data-msfavorites-indicator]::before {
   content: attr(data-msfavorites-indicator);
 }
