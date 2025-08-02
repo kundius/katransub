@@ -269,6 +269,7 @@
   background: transparent;
   padding: 0 10px;
   margin: 0 0 5px;
+  gap: 8px;
   cursor: pointer;
   background-color: #fff;
   border: 1px solid transparent;
@@ -277,12 +278,8 @@
     filter: drop-shadow(0 0 2.5px rgba(0, 25, 41, 0.08));
     border-color: #e2e2df;
   }
-  svg:first-child {
+  svg {
     margin-left: -4px;
-    margin-right: 4px;
-  }
-  svg:last-child {
-    margin-left: 4px;
     margin-right: -4px;
   }
 }
