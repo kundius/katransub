@@ -277,9 +277,13 @@
     filter: drop-shadow(0 0 2.5px rgba(0, 25, 41, 0.08));
     border-color: #e2e2df;
   }
-  svg {
+  svg:first-child {
     margin-left: -4px;
     margin-right: 4px;
+  }
+  svg:last-child {
+    margin-left: 4px;
+    margin-right: -4px;
   }
 }
 
