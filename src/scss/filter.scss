@@ -257,6 +257,22 @@
   text-decoration: underline;
 }
 
+.filter-switch__brand {
+  display: none;
+
+  .filter-switch[data-filter-switch='brand'] & {
+    display: block;
+  }
+}
+
+.filter-switch__view {
+  display: none;
+
+  .filter-switch[data-filter-switch='view'] & {
+    display: block;
+  }
+}
+
 .filter-switch__toggle {
   font-size: 14px;
   line-height: 1;
