@@ -642,9 +642,10 @@
   align-items: center;
 
   @include --max-lg {
-    flex-direction: column;
     gap: 4px;
-    align-items: flex-start;
+    span {
+      display: none;
+    }
   }
 }
 
