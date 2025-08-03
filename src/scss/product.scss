@@ -670,15 +670,18 @@
     font-size: 11px;
     line-height: 16px;
     margin: 0 2px;
-    span {
-      display: none;
-    }
-    &::before {
-      content: '(';
-    }
-    &::after {
-      content: ')';
-    }
+  }
+}
+
+.product-rating__reviews-long {
+  @include --max-lg {
+    display: none;
+  }
+}
+
+.product-rating__reviews-short {
+  @include --lg {
+    display: none;
   }
 }
 
