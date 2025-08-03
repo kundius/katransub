@@ -647,9 +647,6 @@
 
   @include --max-lg {
     gap: 4px;
-    span {
-      display: none;
-    }
   }
 }
 
@@ -673,6 +670,15 @@
     font-size: 11px;
     line-height: 16px;
     margin: 0 2px;
+    span {
+      display: none;
+    }
+    &::before {
+      content: '(';
+    }
+    &::after {
+      content: ')';
+    }
   }
 }
 
