@@ -458,6 +458,10 @@
   height: var(--size);
   background: url('../images/star-gray.svg') repeat 0 0;
   background-size: var(--size) var(--size);
+
+  @include --max-lg {
+    --size: 20px;
+  }
 }
 
 .product-rating__stars-fill {
