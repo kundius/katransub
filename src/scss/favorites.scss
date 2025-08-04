@@ -139,11 +139,11 @@
 }
 
 .favorites-page__remove::before {
-  content: "";
+  content: '';
   display: block;
   width: 12px;
   height: 2px;
-  background: #c01116;
+  background: red;
   border-radius: 3px;
   position: absolute;
   right: 0;
@@ -152,11 +152,11 @@
 }
 
 .favorites-page__remove::after {
-  content: "";
+  content: '';
   display: block;
   width: 12px;
   height: 2px;
-  background: #c01116;
+  background: red;
   border-radius: 3px;
   position: absolute;
   right: 0;
