@@ -38,7 +38,9 @@ import 'choices.js/public/assets/styles/choices.css'
 import { initAuthForm } from './src/js/components/authForm'
 import { initShare } from './src/js/components/share'
 import { initExpected } from './src/js/components/expected'
+import { initCopyText } from './src/js/components/copy-text'
 
+initCopyText()
 initOptionItems()
 initBuyInClick()
 initQuantity()
