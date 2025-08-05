@@ -6,11 +6,10 @@ export function applyCopyText(el) {
 
     try {
       await navigator.clipboard.writeText(text);
-      // Можно добавить визуальную обратную связь
-      // el.style.backgroundColor = '#d4edda';
-      // setTimeout(() => {
-      //   el.style.backgroundColor = '';
-      // }, 1000);
+      el.style.backgroundColor = '#f4f4f4';
+      setTimeout(() => {
+        el.style.backgroundColor = '';
+      }, 200);
     } catch (err) {
       console.error('Не удалось скопировать текст: ', err);
     }
