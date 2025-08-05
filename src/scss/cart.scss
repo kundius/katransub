@@ -728,7 +728,7 @@
   }
 }
 
-.cart-item__dicount {
+.cart-item__discount {
   grid-area: amount;
   display: flex;
   flex-direction: column;
@@ -744,7 +744,7 @@
   }
 }
 
-.cart-item__dicount-label {
+.cart-item__discount-label {
   font-size: 16px;
   line-height: 1;
   color: #9e9e9e;
@@ -769,7 +769,7 @@
   }
 }
 
-.cart-item__dicount-value {
+.cart-item__discount-value {
   font-size: 20px;
   color: #000;
   font-weight: 700;
