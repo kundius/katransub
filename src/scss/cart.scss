@@ -357,33 +357,33 @@
 
   @include --max-2xl {
     grid-template-columns:
-      30fr 24px minmax(min-content, 8fr) 24px 112px 24px minmax(min-content, 10fr) 24px 32px;
+      30fr 24px minmax(min-content, 8fr) 24px 112px 24px auto 24px minmax(min-content, 10fr) 24px 32px;
   }
 
   @include --max-xl {
     grid-template-columns:
-      30fr 16px minmax(min-content, 8fr) 16px 96px 16px minmax(min-content, 10fr) 16px 28px;
+      30fr 16px minmax(min-content, 8fr) 16px 96px 16px auto 16px minmax(min-content, 10fr) 16px 28px;
   }
 
   @include --max-lg {
-    grid-template-columns: 64px 24px minmax(min-content, 8fr) 16px 96px 16px minmax(min-content,
+    grid-template-columns: 64px 24px minmax(min-content, 8fr) 16px 96px 16px auto 16px minmax(min-content,
         10fr);
     grid-template-rows: auto 16px auto;
     grid-template-areas:
-      'product product product product product product product'
-      '. . . . . . .'
-      'remove . price . quantity . amount';
+      'product product product product product product product product product'
+      '. . . . . . . . .'
+      'remove . price . quantity . discount . amount';
   }
 
   @include --max-md {
-    grid-template-columns: 64px 24px min-content 1fr min-content;
+    grid-template-columns: 64px 24px min-content 1fr min-content 1fr min-content;
     grid-template-rows: auto 24px auto 24px auto;
     grid-template-areas:
-      'product product product product product'
-      '. . . . .'
-      'remove . quantity quantity quantity'
-      '. . . . .'
-      '. . price . amount';
+      'product product product product product product product'
+      '. . . . . . .'
+      'remove . quantity quantity quantity quantity quantity'
+      '. . . . . . .'
+      '. . price . discount . amount';
   }
 }
 
@@ -729,7 +729,7 @@
 }
 
 .cart-item__discount {
-  grid-area: amount;
+  grid-area: discount;
   display: flex;
   flex-direction: column;
   justify-content: center;
