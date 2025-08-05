@@ -14,12 +14,15 @@
   font-size: 16px;
   line-height: 1;
   color: #3a3a3a;
+
   a {
     color: #007be4;
+
     &:hover {
       color: #f18a16;
     }
   }
+
   @include --max-xl {
     font-size: 14px;
     padding: 16px;
@@ -72,11 +75,14 @@
   @include --max-xl {
     font-size: 18px;
   }
+
   @include --max-lg {
     font-size: 16px;
   }
+
   @include --max-md {
     font-size: 12px;
+
     span {
       display: none;
     }
@@ -273,9 +279,11 @@
   [data-discount-code-status='success'] & {
     color: hsl(142.1 70.6% 45.3%);
   }
+
   [data-discount-code-status='fail'] & {
     color: hsl(0 84.2% 60.2%);
   }
+
   &:empty {
     display: none;
   }
@@ -289,9 +297,11 @@
   @include --max-xl {
     gap: 48px;
   }
+
   @include --max-lg {
     gap: 36px;
   }
+
   @include --max-md {
     flex-wrap: wrap;
     gap: 20px;
@@ -316,9 +326,11 @@
   @include --max-xl {
     width: 280px;
   }
+
   @include --max-lg {
     width: 264px;
   }
+
   @include --max-md {
     width: 100%;
   }
@@ -336,35 +348,33 @@
 .cart-item {
   display: grid;
   grid-template-columns:
-    30fr 36px minmax(min-content, 8fr) 36px 112px 36px minmax(min-content, 10fr)
-    36px 80px;
+    30fr 36px minmax(min-content, 8fr) 36px 112px 36px auto 36px minmax(min-content, 10fr) 36px 80px;
   grid-template-rows: auto;
   grid-auto-columns: 1fr;
   gap: 0;
   grid-auto-flow: row;
-  grid-template-areas: 'product . price . quantity . amount . remove';
+  grid-template-areas: 'product . price . quantity . discount . amount . remove';
 
   @include --max-2xl {
     grid-template-columns:
-      30fr 24px minmax(min-content, 8fr) 24px 112px 24px minmax(min-content, 10fr)
-      24px 32px;
+      30fr 24px minmax(min-content, 8fr) 24px 112px 24px minmax(min-content, 10fr) 24px 32px;
   }
+
   @include --max-xl {
     grid-template-columns:
-      30fr 16px minmax(min-content, 8fr) 16px 96px 16px minmax(min-content, 10fr)
-      16px 28px;
+      30fr 16px minmax(min-content, 8fr) 16px 96px 16px minmax(min-content, 10fr) 16px 28px;
   }
+
   @include --max-lg {
-    grid-template-columns: 64px 24px minmax(min-content, 8fr) 16px 96px 16px minmax(
-        min-content,
-        10fr
-      );
+    grid-template-columns: 64px 24px minmax(min-content, 8fr) 16px 96px 16px minmax(min-content,
+        10fr);
     grid-template-rows: auto 16px auto;
     grid-template-areas:
       'product product product product product product product'
       '. . . . . . .'
       'remove . price . quantity . amount';
   }
+
   @include --max-md {
     grid-template-columns: 64px 24px min-content 1fr min-content;
     grid-template-rows: auto 24px auto 24px auto;
@@ -377,7 +387,7 @@
   }
 }
 
-.cart-item + .cart-item {
+.cart-item+.cart-item {
   margin-top: 36px;
   padding-top: 36px;
   border-top: 1px solid #f3f3f3;
@@ -398,9 +408,11 @@
   @include --max-2xl {
     gap: 16px;
   }
+
   @include --max-xl {
     gap: 12px;
   }
+
   @include --max-lg {
     gap: 24px;
   }
@@ -427,6 +439,7 @@
   @include --max-2xl {
     width: 80px;
   }
+
   @include --max-xl {
     width: 64px;
   }
@@ -444,6 +457,7 @@
     padding-right: 12px;
     margin-right: 12px;
     position: relative;
+
     &::after {
       content: '';
       width: 1px;
@@ -455,9 +469,11 @@
       margin-top: -6px;
       opacity: 0.4;
     }
+
     &:last-child {
       padding-right: 0;
       margin-right: 0;
+
       &::after {
         display: none;
       }
@@ -537,6 +553,7 @@
   @include --max-xl {
     gap: 20px;
   }
+
   @include --max-md {
     gap: 0;
   }
@@ -552,9 +569,11 @@
   @include --max-xl {
     font-size: 14px;
   }
+
   @include --max-lg {
     text-align: left;
   }
+
   @include --max-md {
     font-size: 12px;
     line-height: 20px;
@@ -574,6 +593,7 @@
   @include --max-xl {
     height: 28px;
   }
+
   @include --max-lg {
     align-items: flex-start;
   }
@@ -620,6 +640,7 @@
   @include --max-xl {
     gap: 20px;
   }
+
   @include --max-md {
     flex-direction: row;
     align-items: center;
@@ -638,6 +659,7 @@
   @include --max-xl {
     font-size: 14px;
   }
+
   @include --max-md {
     text-transform: none;
   }
@@ -657,6 +679,7 @@
   @include --max-xl {
     gap: 20px;
   }
+
   @include --max-md {
     gap: 0;
   }
@@ -672,9 +695,11 @@
   @include --max-xl {
     font-size: 14px;
   }
+
   @include --max-lg {
     text-align: right;
   }
+
   @include --max-md {
     font-size: 12px;
     line-height: 20px;
@@ -697,6 +722,66 @@
     line-height: 28px;
     font-size: 16px;
   }
+
+  @include --max-lg {
+    text-align: right;
+  }
+}
+
+.cart-item__dicount {
+  grid-area: amount;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+
+  @include --max-xl {
+    gap: 20px;
+  }
+
+  @include --max-md {
+    gap: 0;
+  }
+}
+
+.cart-item__dicount-label {
+  font-size: 16px;
+  line-height: 1;
+  color: #9e9e9e;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include --max-xl {
+    font-size: 14px;
+  }
+
+  @include --max-lg {
+    text-align: right;
+  }
+
+  @include --max-md {
+    font-size: 12px;
+    line-height: 20px;
+    border-bottom: 1px solid #f3f3f3;
+    width: 100%;
+    text-transform: none;
+    text-align: left;
+  }
+}
+
+.cart-item__dicount-value {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  line-height: 32px;
+  white-space: nowrap;
+  text-align: center;
+
+  @include --max-xl {
+    line-height: 28px;
+    font-size: 16px;
+  }
+
   @include --max-lg {
     text-align: right;
   }
