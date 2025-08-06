@@ -456,6 +456,10 @@
   gap: 12px;
 }
 
+.order-textfield .suggestions-promo {
+  display: none;
+}
+
 .order-textfield:has(input:disabled) {
   display: none;
 }
@@ -518,8 +522,7 @@ textarea.order-textfield__control {
   padding-bottom: 8px;
 }
 
-.order-country {
-}
+.order-country {}
 
 .order-country__title {
   font-size: 18px;

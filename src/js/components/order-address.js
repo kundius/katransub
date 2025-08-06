@@ -14,10 +14,10 @@ export function initOrderAddress() {
       // hint: false,
       // scrollOnFocus: false,
       // bounds: 'city',
-      // constraints: {
-      //   label: '',
-      //   locations: { city_type_full: 'город' }
-      // },
+      constraints: {
+        label: '',
+        locations: { city_type_full: 'город' }
+      },
       // onSelect: (e) => setCity(e.data.city)
     })
   })
