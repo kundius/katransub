@@ -14,7 +14,7 @@ export function initOrderAddress() {
       // hint: false,
       // scrollOnFocus: false,
       // bounds: 'city',
-      geolocation: false,
+      geoLocation: false,
       // constraints: {
       //   label: '',
       //   locations: { city_type_full: 'город' }
