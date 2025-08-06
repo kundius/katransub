@@ -5,21 +5,21 @@ export function initOrderAddress() {
     if (!msOrder) return
 
     const cityInput = msOrder.querySelector('#city')
+    if (cityInput) {
+      $(cityInput).suggestions({
+        token: '4b25f9cb98a44de7c49207580b8644f4c4cfa2ba',
+        type: 'ADDRESS',
+        bounds: 'city',
+        geoLocation: false,
+      })
+    }
 
-    if (!cityInput) return
-
-    $(cityInput).suggestions({
+    const regionInput = msOrder.querySelector('#region')
+    $(regionInput).suggestions({
       token: '4b25f9cb98a44de7c49207580b8644f4c4cfa2ba',
       type: 'ADDRESS',
-      // hint: false,
-      // scrollOnFocus: false,
-      // bounds: 'city',
+      bounds: 'region-area',
       geoLocation: false,
-      // constraints: {
-      //   label: '',
-      //   locations: { city_type_full: 'город' }
-      // },
-      // onSelect: (e) => setCity(e.data.city)
     })
   })
 }
