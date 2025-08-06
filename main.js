@@ -39,7 +39,9 @@ import { initAuthForm } from './src/js/components/authForm'
 import { initShare } from './src/js/components/share'
 import { initExpected } from './src/js/components/expected'
 import { initCopyText } from './src/js/components/copy-text'
+import { initOrderAddress } from './src/js/components/order-address'
 
+initOrderAddress()
 initCopyText()
 initOptionItems()
 initBuyInClick()
