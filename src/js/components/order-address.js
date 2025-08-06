@@ -4,7 +4,7 @@ export function initOrderAddress() {
 
     if (!msOrder) return
 
-    const cityInput = msOrder.getElementById('city')
+    const cityInput = msOrder.querySelector('#city')
 
     if (!cityInput) return
 
