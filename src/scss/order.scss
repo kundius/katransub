@@ -457,7 +457,9 @@
 }
 
 .order-textfield .suggestions-promo {
-  display: none;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .order-textfield:has(input:disabled) {
