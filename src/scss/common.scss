@@ -15,6 +15,44 @@ body {
   }
 }
 
+.form-approve {
+  display: flex;
+  gap: 8px;
+  position: relative;
+  align-items: center;
+}
+
+.form-approve__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.form-approve__checkbox {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.form-approve__input:checked + .form-approve__checkbox {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 12.611L8.923 17.5 20 6.5' stroke='%23002837' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.form-approve__input:focus + .form-approve__checkbox {
+  outline: 2px solid #0699bc;
+}
+
+.form-approve__text {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
 .page-layout {
   display: flex;
   flex-direction: column;
