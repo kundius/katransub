@@ -156,152 +156,179 @@ export function initCalc() {
       resultDelivery.innerHTML = delivery.label
 
       if (['Воронеж', 'Курск'].indexOf(cityInput.value) !== -1) {
-        resultTime.innerHTML = 'Сегодня'
-        resultPrice.innerHTML = 'Бесплатно'
-      } else if (['Москва'].indexOf(cityInput.value) !== -1) {
-        if (delivery.id === 1) {
-          if (payment.id === 2) {
             resultTime.innerHTML = 'Сегодня'
             resultPrice.innerHTML = 'Бесплатно'
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else if ([2, 3].indexOf(delivery.id) !== -1) {
-          if (payment.id === 1) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML = '350 руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML = '300 руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML = 'Бесплатно'
-            }
-          } else if (payment.id === 3) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML =
-                '400 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML =
-                '300 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 300) + ' руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
-              resultPrice.innerHTML =
-                '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.'
-            }
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else {
-          errors.push('Неверный способ доставки.')
         }
-      } else {
-        if (delivery.id === 4) {
-          if (payment.id === 1) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '4-6 дней'
-              resultPrice.innerHTML = '300 руб.'
-            } else if (costInput.value >= 5000) {
-              resultTime.innerHTML = '4-6 дней'
-              resultPrice.innerHTML = 'Бесплатно'
+        else if (['Москва'].indexOf(cityInput.value) !== -1) {
+            if (delivery.id === 1) {
+                if (payment.id === 2) {
+                    resultTime.innerHTML = 'Сегодня'
+                    resultPrice.innerHTML = 'Бесплатно'
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
             }
-          } else if (payment.id === 3) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '4-6 дней'
-              resultPrice.innerHTML =
-                '300 + ' + costInput.value * 0.08 + ' = ' + (costInput.value * 0.08 + 300) + ' руб.'
-            } else if (costInput.value >= 5000) {
-              resultTime.innerHTML = '4-6 дней'
-              resultPrice.innerHTML =
-                '0 + ' + costInput.value * 0.08 + ' = ' + costInput.value * 0.08 + ' руб.'
+            else if ([2, 3].indexOf(delivery.id) !== -1) {
+                if (payment.id === 1) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = '450 руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = '400 руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = 'Бесплатно'
+                    }
+                }
+                else if (payment.id === 3) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = '450 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 450) + ' руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = delivery.id === 3 ? '1-3 дня' : '1-2 дня'
+                        resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04) + ' руб.'
+                    }
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
             }
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else if (delivery.id === 5) {
-          if (payment.id === 1) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '3-5 дней'
-              resultPrice.innerHTML = '400 руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 15000) {
-              resultTime.innerHTML = '3-5 дней'
-              resultPrice.innerHTML = '350 руб.'
-            } else if (costInput.value >= 15000) {
-              resultTime.innerHTML = '3-5 дней'
-              resultPrice.innerHTML = 'Бесплатно'
+            else {
+                errors.push('Неверный способ доставки.')
             }
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else if (delivery.id === 6) {
-          if (payment.id === 1) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = '400 руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = '350 руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = 'Бесплатно'
-            }
-          } else if (payment.id === 3) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '500 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '400 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '0 + ' + costInput.value * 0.04 + ' = ' + costInput.value * 0.04 + ' руб.'
-            }
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else if (delivery.id === 7) {
-          if (payment.id === 1) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = '900 руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = '850 руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML = '500 руб.'
-            }
-          } else if (payment.id === 3) {
-            if (costInput.value < 5000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '1000 + ' +
-                costInput.value * 0.04 +
-                ' = ' +
-                (costInput.value * 0.04 + 1000) +
-                ' руб.'
-            } else if (costInput.value >= 5000 && costInput.value < 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '900 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 900) + ' руб.'
-            } else if (costInput.value >= 8000) {
-              resultTime.innerHTML = '2-4 дня'
-              resultPrice.innerHTML =
-                '500 + ' + costInput.value * 0.04 + ' = ' + (costInput.value * 0.04 + 500) + ' руб.'
-            }
-          } else {
-            errors.push('Неверный способ оплаты.')
-          }
-        } else {
-          errors.push('Неверный способ доставки.')
         }
-      }
+        else {
+            if (delivery.id === 4) { // Почта России
+                if (payment.id === 1) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = '450 руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = '400 руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = 'Бесплатно'
+                    }
+                }
+                else if (payment.id === 3) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = '450 + ' + (costInput.value * 0.08) + ' = ' + (costInput.value * 0.08 + 450) + ' руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = '400 + ' + (costInput.value * 0.08) + ' = ' + (costInput.value * 0.08 + 400) + ' руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '4-6 дней'
+                        resultPrice.innerHTML = '0 + ' + (costInput.value * 0.08) + ' = ' + (costInput.value * 0.08) + ' руб.'
+                    }
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
+            }
+            else if (delivery.id === 5) { // Транспортные компании
+                if (payment.id === 1) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '3-5 дней'
+                        resultPrice.innerHTML = '450 руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '3-5 дней'
+                        resultPrice.innerHTML = '400 руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '3-5 дней'
+                        resultPrice.innerHTML = 'Бесплатно'
+                    }
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
+            }
+            else if (delivery.id === 6) { // ТК СДЭК (до пункта выдачи)
+                if (payment.id === 1) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '450 руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '400 руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = 'Бесплатно'
+                    }
+                }
+                else if (payment.id === 3) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '450 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 450) + ' руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '400 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 400) + ' руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04) + ' руб.'
+                    }
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
+            }
+            else if (delivery.id === 7) { // ТК СДЭК (до двери получателя)
+                if (payment.id === 1) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '950 руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '900 руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '500 руб.'
+                    }
+                }
+                else if (payment.id === 3) {
+                    if (costInput.value < 5000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '950 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 950) + ' руб.'
+                    }
+                    else if (costInput.value >= 5000 && costInput.value < 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '900 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 900) + ' руб.'
+                    }
+                    else if (costInput.value >= 12000) {
+                        resultTime.innerHTML = '2-4 дня'
+                        resultPrice.innerHTML = '0 + ' + (costInput.value * 0.04) + ' = ' + (costInput.value * 0.04 + 0) + ' руб.'
+                    }
+                }
+                else {
+                    errors.push('Неверный способ оплаты.')
+                }
+            }
+            else {
+                errors.push('Неверный способ доставки.')
+            }
+        }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
