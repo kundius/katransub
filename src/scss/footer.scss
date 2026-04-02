@@ -411,6 +411,23 @@
   background: linear-gradient(90deg, #77dd70, #46b741);
 }
 
+.messengers__max {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    136.12% 140.74% at 99.77% 99.04%,
+    #8d28c8 0%,
+    #7c42fa 20%,
+    #007aff 80%,
+    #609ceb 100%
+  );
+}
+
 .messengers__viber {
   width: 42px;
   height: 42px;
